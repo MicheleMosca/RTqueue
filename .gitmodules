@@ -1,0 +1,6 @@
+[submodule "lib/lib/ptask"]
+	path = lib/lib/ptask
+	url = https://github.com/glipari/ptask.git
+[submodule "lib/ptask"]
+	path = lib/ptask
+	url = https://github.com/glipari/ptask.git
