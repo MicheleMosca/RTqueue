@@ -75,6 +75,20 @@ class Queue{
             return ret;
         }
 
+        void printQueue(int indiceCoda){
+            if(isEmpty()){
+                std::cout << "Queue is empty" << std::endl;
+                return;
+            }
+            
+            Node<T> *tmp = first;
+            while(first->getNext()){
+                std::cout << tmp->getData() << ' '; 
+                first = first->getNext();
+            }
+            std::cout << tmp->getData() << std::endl;
+        }
+
         T First(void){
             if (isEmpty())
                 std::cout << "Queue is empty" << std::endl;
@@ -121,6 +135,10 @@ ptask scrittori(){
     //stampa di debug
     std::cout << "Scrittore " << argomento << " ha scritto: " << queue[argomento].Last() << std::endl;
 
+    //stampo la coda
+    std::cout << "Scrittore " << argomento << " stampa coda: " << std::endl; 
+    queue[argomento].printQueue(argomento);
+
     //segnalo che ho inserito un elemento nella coda
     pthread_cond_signal(&condition);
         
@@ -145,6 +163,10 @@ ptask lettori(){
     while (queue[argomento].isEmpty()) {
         pthread_cond_wait(&condition, &mutex);
     }
+
+    //stampo la coda
+    std::cout << "Lettore " << argomento << " stampa coda: " << std::endl; 
+    queue[argomento].printQueue(argomento);
 
     //leggo un elemento nella coda
     int elemento = queue[argomento].pop();
