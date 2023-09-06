@@ -3,7 +3,7 @@ extern "C"	{
 }
 #include <iostream>
 
-int numQueue = 5;
+int numQueue = 3;
 int dimQueue = 10;
 pthread_cond_t condition = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -112,7 +112,7 @@ class Queue{
         }
 };
 
-Queue<int> queue[5];
+Queue<int> queue[3];
 
 ptask scrittori(){
     int argomento = *((int*)ptask_get_argument());
@@ -134,8 +134,10 @@ ptask scrittori(){
         }
 
         //inserisco un elemento nella coda
-        for(int i = 0; i < dimQueue; i++)
-            queue[argomento].push(argomento);
+        //nota: se la coda è piena, estraggo l'elemento più vecchio e inserisco quello nuovo
+        if(queue[argomento].Size() == dimQueue)
+            queue[argomento].pop();
+        queue[argomento].push(argomento);
 
         //stampa di debug
         std::cout << "Scrittore " << argomento << " ha scritto: " << queue[argomento].Last() << std::endl;
