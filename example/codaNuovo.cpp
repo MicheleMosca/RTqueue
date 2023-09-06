@@ -1,5 +1,6 @@
-#define _GNU_SOURCE
-#include <ptask.h>
+extern "C"	{
+	#include <ptask.h>
+}
 #include <iostream>
 
 int numQueue = 5;
@@ -75,7 +76,7 @@ class Queue{
             return ret;
         }
 
-        void printQueue(int indiceCoda){
+        void printQueue(){
             if(isEmpty()){
                 std::cout << "Queue is empty" << std::endl;
                 return;
@@ -142,7 +143,7 @@ ptask scrittori(){
         //stampo la coda
         std::cout << "Scrittore " << argomento << " stampa coda: " << std::endl; 
         std::cout << "dimCoda: " << queue[argomento].Size() << std::endl;
-        queue[argomento].printQueue(argomento);
+        queue[argomento].printQueue();
 
         //segnalo che ho inserito un elemento nella coda
         pthread_cond_signal(&condition);
@@ -181,7 +182,7 @@ ptask lettori(){
 
         //stampo la coda
         std::cout << "Lettore " << argomento << " stampa coda: " << std::endl; 
-        queue[argomento].printQueue(argomento);
+        queue[argomento].printQueue();
         
         //segnalo che ho letto un elemento
         pthread_cond_signal(&condition);
