@@ -1,7 +1,8 @@
-#define _GNU_SOURCE
 #include <stdlib.h>
 #include <unistd.h>
-#include <ptask.h>
+extern "C"	{
+	#include <ptask.h>
+}
 #include <pthread.h>
 #include <queue>
 #include <iostream>

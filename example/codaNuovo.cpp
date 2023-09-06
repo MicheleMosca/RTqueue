@@ -1,5 +1,6 @@
-#define _GNU_SOURCE
-#include <ptask.h>
+extern "C"	{
+	#include <ptask.h>
+}
 #include <iostream>
 
 int numQueue = 5;
