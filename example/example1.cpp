@@ -4,10 +4,25 @@ extern "C"	{
 	#include <ptask.h>
 }
 
-ptask prova()
+ptask pari()
 {
 	int id = ptask_get_index();
-	printf("[%d] Task Start!\n", id);
+	printf("[%d] Task pari Start!\n", id);
+
+	for (int i = 0; i < 3; i++)
+	{
+		printf("[%d] Start period %d\n", id, i);
+		ptask_wait_for_period();
+		printf("[%d] End period %d\n", id, i);
+	}
+
+	printf("[%d] Task End!\n", id);
+}
+
+ptask dispari()
+{
+	int id = ptask_get_index();
+	printf("[%d] Task dispari Start!\n", id);
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -39,11 +54,21 @@ int main()
 		if (last_proc >= max_proc)
                 last_proc = 0;
 
-		if (ptask_create_param(prova, &params) == -1)
+		if(i % 2 == 0)
 		{
-			perror("Error: Can't create task!\n");
-			exit(-1);
+			if (ptask_create_param(pari, &params) == -1)
+			{
+				perror("Error: Can't create task!\n");
+				exit(-1);
+			}	
+		}else{
+				if (ptask_create_param(dispari, &params) == -1)
+				{
+					perror("Error: Can't create task!\n");
+					exit(-1);
+				}
 		}
+		
 	}
 
 	sleep(10);
