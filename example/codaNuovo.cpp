@@ -66,7 +66,7 @@ class Queue{
         T pop(void){
             if ( isEmpty() )
                 std::cout << "Queue is empty" << std::endl;
-            
+
             T ret = first->getData();
             Node<T>* tmp = first;
             first = first->getNext();
@@ -80,13 +80,14 @@ class Queue{
                 std::cout << "Queue is empty" << std::endl;
                 return;
             }
-            
-            Node<T> *tmp = first;
-            while(first->getNext()){
-                std::cout << tmp->getData() << ' '; 
-                first = first->getNext();
+
+            //prendo la coda da stampare e la itero
+            Node<T>* current = first;
+            while (current->getNext()) {
+                std::cout << current->getData() << ' ';
+                current = current->getNext();
             }
-            std::cout << tmp->getData() << std::endl;
+            std::cout << current->getData() << std::endl;
         }
 
         T First(void){
@@ -116,70 +117,80 @@ ptask scrittori(){
     int argomento = *((int*)ptask_get_argument());
     if (argomento < 0 || argomento >= numQueue) {
         std::cerr << "Indice task non valido" << std::endl;
-        return;
+        //return;
     }
     std::cout << "Scrittore " << argomento << " partito!" << std::endl;
 
-    /*     SEZIONE CRITICA     */
-        
-    pthread_mutex_lock(&mutex);
+    while(true){
 
-    //aspetto che ci sia spazio nella coda
-    while (queue[argomento].Size() >= dimQueue) {
-        pthread_cond_wait(&condition, &mutex);
-    }
+        /*     SEZIONE CRITICA     */
+            
+        pthread_mutex_lock(&mutex);
 
-    //inserisco un elemento nella coda
-    queue[argomento].push(argomento);
+        //aspetto che ci sia spazio nella coda
+        while (queue[argomento].Size() >= dimQueue) {
+            pthread_cond_wait(&condition, &mutex);
+        }
 
-    //stampa di debug
-    std::cout << "Scrittore " << argomento << " ha scritto: " << queue[argomento].Last() << std::endl;
+        //inserisco un elemento nella coda
+        for(int i = 0; i < dimQueue; i++)
+            queue[argomento].push(argomento);
 
-    //stampo la coda
-    std::cout << "Scrittore " << argomento << " stampa coda: " << std::endl; 
-    queue[argomento].printQueue(argomento);
+        //stampa di debug
+        std::cout << "Scrittore " << argomento << " ha scritto: " << queue[argomento].Last() << std::endl;
 
-    //segnalo che ho inserito un elemento nella coda
-    pthread_cond_signal(&condition);
-        
-    pthread_mutex_unlock(&mutex);
+        //stampo la coda
+        std::cout << "Scrittore " << argomento << " stampa coda: " << std::endl; 
+        std::cout << "dimCoda: " << queue[argomento].Size() << std::endl;
+        queue[argomento].printQueue(argomento);
 
-    /*     FINE SEZIONE CRITICA     */
+        //segnalo che ho inserito un elemento nella coda
+        pthread_cond_signal(&condition);
+            
+        pthread_mutex_unlock(&mutex);
+
+        /*     FINE SEZIONE CRITICA     */
+
+        }
 }
 
 ptask lettori(){
     int argomento = *((int*)ptask_get_argument());
     if (argomento < 0 || argomento >= numQueue) {
         std::cerr << "Indice task non valido" << std::endl;
-        return;
+        //return;
     }
     std::cout << "Lettore " << argomento << " partito!" << std::endl;
 
-    /*     SEZIONE CRITICA     */
-        
-    pthread_mutex_lock(&mutex);
+    while(true){
 
-    //aspetto che ci siano elementi nella coda
-    while (queue[argomento].isEmpty()) {
-        pthread_cond_wait(&condition, &mutex);
+        /*     SEZIONE CRITICA     */
+            
+        pthread_mutex_lock(&mutex);
+
+        //aspetto che ci siano elementi nella coda
+        while (queue[argomento].isEmpty()) {
+            pthread_cond_wait(&condition, &mutex);
+        }
+
+        //leggo un elemento nella coda
+        int elemento = queue[argomento].pop();
+
+        //stampa di debug
+        std::cout << "Lettore " << argomento << " ha letto: " << elemento << std::endl;
+
+        //stampo la coda
+        std::cout << "Lettore " << argomento << " stampa coda: " << std::endl; 
+        queue[argomento].printQueue(argomento);
+        
+        //segnalo che ho letto un elemento
+        pthread_cond_signal(&condition);
+            
+        pthread_mutex_unlock(&mutex);
+
+        /*     FINE SEZIONE CRITICA     */
+
     }
-
-    //stampo la coda
-    std::cout << "Lettore " << argomento << " stampa coda: " << std::endl; 
-    queue[argomento].printQueue(argomento);
-
-    //leggo un elemento nella coda
-    int elemento = queue[argomento].pop();
-
-    //stampa di debug
-    std::cout << "Lettore " << argomento << " ha letto: " << elemento << std::endl;
-    
-    //segnalo che ho letto un elemento
-    pthread_cond_signal(&condition);
-        
-    pthread_mutex_unlock(&mutex);
-
-    /*     FINE SEZIONE CRITICA     */
 }
 
 int main(){
@@ -198,6 +209,7 @@ int main(){
             std::cerr << "errore ptask_create_'param()" << std::endl;
             return -1;
         }
+        sleep(1);
     }
 
     tpars params_lettori = TASK_SPEC_DFL;
@@ -213,6 +225,7 @@ int main(){
             std::cerr << "errore ptask_create_'param()" << std::endl;
             return -1;
         }
+        sleep(1);
     }
 
     for(int i = 0; i < numQueue * 2; i++){
