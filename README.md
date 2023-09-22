@@ -3,7 +3,13 @@ Multiple queue for Real-Time Systems
 
 ## Installation
 
-First build and install the **ptask** library:
+Pull submodules sources:
+
+```bash
+git submodule update --init
+```
+
+Build and install the **ptask** library:
 
 ```bash
 cd lib/ptask
@@ -21,7 +27,7 @@ Now to use the library, compile the program with this options:
 g++ example.cpp -o example lib/ptask/build/src/libptask.a -I lib/ptask/build/src/include -l pthread
 ```
 
-To include library in the code use:
+To include ptask library in the code use:
 
 ```c
 extern "C" {
