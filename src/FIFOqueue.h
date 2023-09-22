@@ -34,9 +34,10 @@ template <class T> class FIFOQueue {
         }
 
         T pop(void){
-            if ( isEmpty() )
-                std::cout << "Queue is empty" << std::endl;
-
+            if ( isEmpty() ){
+                throw std::logic_error("Queue is empty");
+            }
+                
             T ret = first->getData();
             Node<T>* tmp = first;
             first = first->getNext();
