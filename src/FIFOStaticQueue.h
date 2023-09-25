@@ -7,30 +7,21 @@
 template <class T> class FIFOStaticQueue {  
     private:
         T queue[];
-        T *firstElem;
-        T *lastElem;
+        size_t firstElem;
+        size_t lastElem;
         size_t dimension;
     
     public:
-        FIFOQueue(size_t dimension){
+        FIFOStaticQueue(size_t dimension){
             this->dimension = dimension;
             queue = new T[this->dimension];
+            this->firstElem = this->lastElem = 0;
         }
 
         void push(T element)
         {
-            Node<T>* tmp = new Node<T>();
-            tmp->setData(element);
-            tmp->setNext(NULL);
-
-            if (isEmpty()) {
-                first = last = tmp;
-            }
-            else {
-                last->setNext(tmp);
-                last = tmp;
-            }
-            count++;
+            this.queue[this->lastElem] = element;
+            this->lastElem++;
         }
 
         T pop(void){
@@ -38,12 +29,8 @@ template <class T> class FIFOStaticQueue {
                 throw std::logic_error("Queue is empty");
             }
                 
-            T ret = first->getData();
-            Node<T>* tmp = first;
-            first = first->getNext();
-            count--;
-            delete tmp;
-            return ret;
+            this->firstElem++;
+            return this.queue[this->firstElem -1];
         }
 
         void printQueue(){
