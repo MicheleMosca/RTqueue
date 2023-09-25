@@ -1,20 +1,20 @@
-#ifndef FIFOqueue
-#define FIFOqueue
+#ifndef FIFOstaticqueue
+#define FIFOstaticqueue
 
 #include <node.h>
 #include <iostream>
 
-template <class T> class FIFOQueue {  
+template <class T> class FIFOStaticQueue {  
     private:
-        Node<T>* first;
-        Node<T>* last;
-        int count;
+        T queue[];
+        T *firstElem;
+        T *lastElem;
+        size_t dimension;
     
     public:
-        FIFOQueue(void){
-            first = NULL;
-            last = NULL;
-            count = 0;
+        FIFOQueue(size_t dimension){
+            this->dimension = dimension;
+            queue = new T[this->dimension];
         }
 
         void push(T element)
@@ -34,7 +34,7 @@ template <class T> class FIFOQueue {
         }
 
         T pop(void){
-            if ( isEmpty() ){
+            if ( empty() ){
                 throw std::logic_error("Queue is empty");
             }
                 
@@ -47,9 +47,8 @@ template <class T> class FIFOQueue {
         }
 
         void printQueue(){
-            if(isEmpty()){
-                std::cout << "Queue is empty" << std::endl;
-                return;
+            if ( empty() ){
+                throw std::logic_error("Queue is empty");
             }
 
             //prendo la coda da stampare e la itero
@@ -61,24 +60,26 @@ template <class T> class FIFOQueue {
             std::cout << current->getData() << std::endl;
         }
 
-        T First(void){
-            if (isEmpty())
-                std::cout << "Queue is empty" << std::endl;
-            return first->getData();
+        T first(void){
+            if ( empty() ){
+                throw std::logic_error("Queue is empty");
+            }
+            return this.queue[this->firstElem];
         }
 
-        T Last(void){
-            if (isEmpty())
-                std::cout << "Queue is empty" << std::endl;
-            return last->getData();
+        T last(void){
+            if ( empty() ){
+                throw std::logic_error("Queue is empty");
+            }
+            return this.queue[this->lastElem];
         }
 
-        int Size(void){
-            return count;
+        int size(void){
+            return this->dimension;
         }
 
-        bool isEmpty(void){
-            return count == 0 ? true : false;
+        bool empty(void){
+            return this->firstElem == this->lastElem ? true : false;
         }
 };
 
