@@ -3,14 +3,14 @@ extern "C"	{
 }
 
 #include <iostream>
-#include <FIFOqueue.h>
+#include <RTqueue.h>
 #include <iostream>
 
 int numQueue = 3;
 int dimQueue = 10;
 pthread_cond_t condition = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-FIFOQueue<int>* queue = new FIFOQueue<int>();
+FIFOLinkedQueue<int>* queue = new FIFOLinkedQueue<int>();
 
 ptask scrittori(){
     int argomento = *((int*)ptask_get_argument());
@@ -27,22 +27,22 @@ ptask scrittori(){
         pthread_mutex_lock(&mutex);
 
         //aspetto che ci sia spazio nella coda
-        while (queue->Size() >= dimQueue) {
+        while (queue->size() >= dimQueue) {
             pthread_cond_wait(&condition, &mutex);
         }
 
         //inserisco un elemento nella coda
         //nota: se la coda è piena, estraggo l'elemento più vecchio e inserisco quello nuovo
-        if(queue->Size() == dimQueue)
+        if(queue->size() == dimQueue)
             queue->pop();
         queue->push(argomento);
 
         //stampa di debug
-        std::cout << "Scrittore " << argomento << " ha scritto: " << queue->Last() << std::endl;
+        std::cout << "Scrittore " << argomento << " ha scritto: " << queue->back() << std::endl;
 
         //stampo la coda
         std::cout << "Scrittore " << argomento << " stampa coda: " << std::endl; 
-        std::cout << "dimCoda: " << queue->Size() << std::endl;
+        std::cout << "dimCoda: " << queue->size() << std::endl;
         queue->printQueue();
 
         //segnalo che ho inserito un elemento nella coda
@@ -70,7 +70,7 @@ ptask lettori(){
         pthread_mutex_lock(&mutex);
 
         //aspetto che ci siano elementi nella coda
-        while (queue->isEmpty()) {
+        while (queue->empty()) {
             pthread_cond_wait(&condition, &mutex);
         }
 

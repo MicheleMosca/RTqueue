@@ -4,30 +4,42 @@
 #include <node.h>
 #include <iostream>
 
+#define UNLIMITED -1
+
 template <class T> class FIFOLinkedQueue {  
     private:
         Node<T>* first;
         Node<T>* last;
         int count;
-        pthread_cond_t condition;
+        pthread_cond_t conditionPush;
+        pthread_cond_t conditionPop;
         pthread_mutex_t mutex;
         bool blocked;
+        int dimension;
     
     public:
-        FIFOLinkedQueue(bool blocked = true){
+        FIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED){
             first = NULL;
             last = NULL;
             count = 0;
-            condition = PTHREAD_COND_INITIALIZER;
+            conditionPush = PTHREAD_COND_INITIALIZER;
+            conditionPop = PTHREAD_COND_INITIALIZER;
             mutex = PTHREAD_MUTEX_INITIALIZER;
 
             /* Make the pop function blocked or unblocked */
             this->blocked = blocked;
+
+            this->dimension = dimension;
         }
 
         void push(T element)
         {
             pthread_mutex_lock(&mutex);
+
+            //if the queue is full => block
+            while(this->count == this->dimension){
+                pthread_cond_wait(&conditionPop, &mutex);
+            }
 
             Node<T>* tmp = new Node<T>();
             tmp->setData(element);
@@ -42,7 +54,7 @@ template <class T> class FIFOLinkedQueue {
             }
             count++;
 
-            pthread_cond_signal(&condition);
+            pthread_cond_signal(&conditionPush);
 
             pthread_mutex_unlock(&mutex);
         }
@@ -56,8 +68,9 @@ template <class T> class FIFOLinkedQueue {
                 throw std::logic_error("Queue is empty");
             }
 
-            if (empty()){
-                pthread_cond_wait(&condition, &mutex);
+            //if the queue is empty => block
+            while (empty()){
+                pthread_cond_wait(&conditionPush, &mutex);
             }
                 
             T ret = first->getData();
@@ -65,6 +78,8 @@ template <class T> class FIFOLinkedQueue {
             first = first->getNext();
             count--;
             delete tmp;
+
+            pthread_cond_signal(&conditionPop);
 
             pthread_mutex_unlock(&mutex);
             return ret;

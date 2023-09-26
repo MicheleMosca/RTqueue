@@ -13,8 +13,8 @@ ptask writer(){
 
     for (int i=0; i < 10; i++)
     {
-        printf("[ptask %d] Write %d\n", id, i);
         queue->push(i);
+        printf("[ptask %d] Writed %d\n", id, i);
     }
 
     printf("[ptask %d] Writer Finish!\n", id);
