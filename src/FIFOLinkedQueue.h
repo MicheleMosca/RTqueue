@@ -1,82 +1,68 @@
 #ifndef FIFOlinkedqueue
 #define FIFOlinkedqueue
 
-#include <node.h>
+#include <LinkedQueue.h>
 #include <iostream>
 
-template <class T> class FIFOLinkedQueue {  
-    private:
-        Node<T>* first;
-        Node<T>* last;
-        int count;
-        pthread_cond_t condition;
-        pthread_mutex_t mutex;
-        bool blocked;
-    
-    public:
-        FIFOLinkedQueue(bool blocked = true){
-            first = NULL;
-            last = NULL;
-            count = 0;
-            condition = PTHREAD_COND_INITIALIZER;
-            mutex = PTHREAD_MUTEX_INITIALIZER;
+#define UNLIMITED -1
 
-            /* Make the pop function blocked or unblocked */
-            this->blocked = blocked;
-        }
+template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {  
+    public:
+        FIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
 
         void push(T element)
         {
-            pthread_mutex_lock(&mutex);
+            pthread_mutex_lock(&this->mutex);
 
             Node<T>* tmp = new Node<T>();
             tmp->setData(element);
             tmp->setNext(NULL);
 
-            if (empty()) {
-                first = last = tmp;
+            if (this->empty()) {
+                this->first = this->last = tmp;
             }
             else {
-                last->setNext(tmp);
-                last = tmp;
+                this->last->setNext(tmp);
+                this->last = tmp;
             }
-            count++;
+            this->count++;
 
-            pthread_cond_signal(&condition);
+            pthread_cond_signal(&this->condition);
 
-            pthread_mutex_unlock(&mutex);
+            pthread_mutex_unlock(&this->mutex);
         }
 
-        T pop(void){
-            pthread_mutex_lock(&mutex);
+        T pop(void)
+        {
+            pthread_mutex_lock(&this->mutex);
 
             /* release function if the queue is empty and unblocked function is enable */
-            if ( empty() && !blocked ){
-                pthread_mutex_unlock(&mutex);
+            if ( this->empty() && !this->blocked ){
+                pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
             }
 
-            if (empty()){
-                pthread_cond_wait(&condition, &mutex);
+            if (this->empty()){
+                pthread_cond_wait(&this->condition, &this->mutex);
             }
                 
-            T ret = first->getData();
-            Node<T>* tmp = first;
-            first = first->getNext();
-            count--;
+            T ret = this->first->getData();
+            Node<T>* tmp = this->first;
+            this->first = this->first->getNext();
+            this->count--;
             delete tmp;
 
-            pthread_mutex_unlock(&mutex);
+            pthread_mutex_unlock(&this->mutex);
             return ret;
         }
 
         void printQueue(){
-            if(empty()){
+            if(this->empty()){
                 throw std::logic_error("Queue is empty");
             }
 
             //prendo la coda da stampare e la itero
-            Node<T>* current = first;
+            Node<T>* current = this->first;
             while (current->getNext()) {
                 std::cout << current->getData() << ' ';
                 current = current->getNext();
@@ -84,24 +70,18 @@ template <class T> class FIFOLinkedQueue {
             std::cout << current->getData() << std::endl;
         }
 
-        T front(void){
-            if (empty())
+        T front(void)
+        {
+            if (this->empty())
                 throw std::logic_error("Queue is empty");
-            return first->getData();
+            return this->first->getData();
         }
 
-        T back(void){
-            if (empty())
+        T back(void)
+        {
+            if (this->empty())
                 throw std::logic_error("Queue is empty");
-            return last->getData();
-        }
-
-        int size(void){
-            return count;
-        }
-
-        bool empty(void){
-            return count == 0 ? true : false;
+            return this->last->getData();
         }
 };
 

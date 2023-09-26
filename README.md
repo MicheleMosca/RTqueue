@@ -34,3 +34,12 @@ extern "C" {
     #include <ptask.h>
 }
 ```
+
+## TODO list
+
+- [X] Create limited linked list
+- [X] Make limited linked list blocked and unblocked if is full
+- [ ] Create linked list in LIFO
+- [ ] Create linked list in ROS priority
+
+- [ ] Make Static queue as the same of linked list

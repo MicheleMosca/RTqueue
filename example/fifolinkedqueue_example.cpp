@@ -4,7 +4,7 @@ extern "C"	{
 #include <iostream>
 #include <RTqueue.h>
 
-FIFOLinkedQueue<int> *queue;
+LinkedQueue<int> *queue;
 
 ptask writer(){
     int id = ptask_get_index();
