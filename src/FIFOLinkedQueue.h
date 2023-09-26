@@ -36,6 +36,11 @@ template <class T> class FIFOLinkedQueue {
         {
             pthread_mutex_lock(&mutex);
 
+            if(this->count == this->dimension && !blocked){
+                pthread_mutex_unlock(&mutex);
+                throw std::logic_error("Queue is full");
+            }
+
             //if the queue is full => block
             while(this->count == this->dimension){
                 pthread_cond_wait(&conditionPop, &mutex);
