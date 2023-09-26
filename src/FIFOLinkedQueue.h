@@ -1,29 +1,39 @@
-#ifndef FIFOqueue
-#define FIFOqueue
+#ifndef FIFOlinkedqueue
+#define FIFOlinkedqueue
 
 #include <node.h>
 #include <iostream>
 
-template <class T> class FIFOQueue {  
+template <class T> class FIFOLinkedQueue {  
     private:
         Node<T>* first;
         Node<T>* last;
         int count;
+        pthread_cond_t condition;
+        pthread_mutex_t mutex;
+        bool blocked;
     
     public:
-        FIFOQueue(void){
+        FIFOLinkedQueue(bool blocked = true){
             first = NULL;
             last = NULL;
             count = 0;
+            condition = PTHREAD_COND_INITIALIZER;
+            mutex = PTHREAD_MUTEX_INITIALIZER;
+
+            /* Make the pop function blocked or unblocked */
+            this->blocked = blocked;
         }
 
         void push(T element)
         {
+            pthread_mutex_lock(&mutex);
+
             Node<T>* tmp = new Node<T>();
             tmp->setData(element);
             tmp->setNext(NULL);
 
-            if (isEmpty()) {
+            if (empty()) {
                 first = last = tmp;
             }
             else {
@@ -31,11 +41,23 @@ template <class T> class FIFOQueue {
                 last = tmp;
             }
             count++;
+
+            pthread_cond_signal(&condition);
+
+            pthread_mutex_unlock(&mutex);
         }
 
         T pop(void){
-            if ( isEmpty() ){
+            pthread_mutex_lock(&mutex);
+
+            /* release function if the queue is empty and unblocked function is enable */
+            if ( empty() && !blocked ){
+                pthread_mutex_unlock(&mutex);
                 throw std::logic_error("Queue is empty");
+            }
+
+            if (empty()){
+                pthread_cond_wait(&condition, &mutex);
             }
                 
             T ret = first->getData();
@@ -43,13 +65,14 @@ template <class T> class FIFOQueue {
             first = first->getNext();
             count--;
             delete tmp;
+
+            pthread_mutex_unlock(&mutex);
             return ret;
         }
 
         void printQueue(){
-            if(isEmpty()){
-                std::cout << "Queue is empty" << std::endl;
-                return;
+            if(empty()){
+                throw std::logic_error("Queue is empty");
             }
 
             //prendo la coda da stampare e la itero
@@ -61,23 +84,23 @@ template <class T> class FIFOQueue {
             std::cout << current->getData() << std::endl;
         }
 
-        T First(void){
-            if (isEmpty())
-                std::cout << "Queue is empty" << std::endl;
+        T front(void){
+            if (empty())
+                throw std::logic_error("Queue is empty");
             return first->getData();
         }
 
-        T Last(void){
-            if (isEmpty())
-                std::cout << "Queue is empty" << std::endl;
+        T back(void){
+            if (empty())
+                throw std::logic_error("Queue is empty");
             return last->getData();
         }
 
-        int Size(void){
+        int size(void){
             return count;
         }
 
-        bool isEmpty(void){
+        bool empty(void){
             return count == 0 ? true : false;
         }
 };
