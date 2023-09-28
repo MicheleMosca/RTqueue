@@ -2,6 +2,8 @@
 #define linkedqueue
 
 #include <node.h>
+#include <iostream>
+#include <pthread.h>
 
 template <class T> class LinkedQueue {  
     protected:
