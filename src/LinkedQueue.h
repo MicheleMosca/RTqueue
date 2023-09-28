@@ -8,7 +8,8 @@ template <class T> class LinkedQueue {
         Node<T>* first;
         Node<T>* last;
         int count;
-        pthread_cond_t condition;
+        pthread_cond_t conditionPush;
+        pthread_cond_t conditionPop;
         pthread_mutex_t mutex;
         bool blocked;
         int dimension;
@@ -18,7 +19,8 @@ template <class T> class LinkedQueue {
             first = NULL;
             last = NULL;
             count = 0;
-            condition = PTHREAD_COND_INITIALIZER;
+            conditionPush = PTHREAD_COND_INITIALIZER;
+            conditionPop = PTHREAD_COND_INITIALIZER;
             mutex = PTHREAD_MUTEX_INITIALIZER;
 
             /* Make the pop function blocked or unblocked */

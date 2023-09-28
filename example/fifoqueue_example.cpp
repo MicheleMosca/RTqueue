@@ -1,9 +1,9 @@
-#include <FIFOqueue.h>
+#include <RTqueue.h>
 #include <iostream>
 
 int main()
 {
-    FIFOQueue<int>* queue = new FIFOQueue<int>();
+    FIFOLinkedQueue<int>* queue = new FIFOLinkedQueue<int>();
 
     queue->push(1);
     queue->push(2);

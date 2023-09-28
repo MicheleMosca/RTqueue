@@ -4,7 +4,7 @@ extern "C"	{
 #include <iostream>
 #include <RTqueue.h>
 
-LinkedQueue<int> *queue;
+LIFOLinkedQueue<int> *queue;
 
 ptask writer(){
     int id = ptask_get_index();
@@ -35,7 +35,7 @@ int main()
 {
     ptask_init(SCHED_FIFO, GLOBAL, NO_PROTOCOL);
 
-    queue = new FIFOLinkedQueue<int>();
+    queue = new LIFOLinkedQueue<int>();
 
     tpars params_scrittori = TASK_SPEC_DFL;
     params_scrittori.period = tspec_from(20, MILLI);

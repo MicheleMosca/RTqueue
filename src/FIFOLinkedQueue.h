@@ -14,6 +14,16 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
+            if(this->count == this->dimension && !blocked){
+                pthread_mutex_unlock(&mutex);
+                throw std::logic_error("Queue is full");
+            }
+
+            //if the queue is full => block
+            while(this->count == this->dimension){
+                pthread_cond_wait(&conditionPop, &mutex);
+            }
+
             Node<T>* tmp = new Node<T>();
             tmp->setData(element);
             tmp->setNext(NULL);
@@ -27,7 +37,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             }
             this->count++;
 
-            pthread_cond_signal(&this->condition);
+            pthread_cond_signal(&this->conditionPush);
 
             pthread_mutex_unlock(&this->mutex);
         }
@@ -42,8 +52,9 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
                 throw std::logic_error("Queue is empty");
             }
 
-            if (this->empty()){
-                pthread_cond_wait(&this->condition, &this->mutex);
+            //if the queue is empty => block
+            while (this->empty()){
+                pthread_cond_wait(&this->conditionPush, &this->mutex);
             }
                 
             T ret = this->first->getData();
@@ -51,6 +62,8 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             this->first = this->first->getNext();
             this->count--;
             delete tmp;
+
+            pthread_cond_signal(&this->conditionPop);
 
             pthread_mutex_unlock(&this->mutex);
             return ret;
