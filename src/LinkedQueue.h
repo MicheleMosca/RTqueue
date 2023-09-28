@@ -33,9 +33,17 @@ template <class T> class LinkedQueue {
 
         virtual T pop(void) = 0;
 
-        virtual T front(void) = 0;
+        T front(void){
+            if (empty())
+                throw std::logic_error("Queue is empty");
+            return first->getData();
+        }
 
-        virtual T back(void) = 0;
+        T back(void){
+            if (empty())
+                throw std::logic_error("Queue is empty");
+            return last->getData();
+        }
 
         int size(void){
             return this->count;

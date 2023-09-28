@@ -6,31 +6,9 @@
 
 #define UNLIMITED -1
 
-template <class T> class LIFOLinkedQueue {  
-    private:
-        Node<T>* first;
-        Node<T>* last;
-        int count;
-        pthread_cond_t conditionPush;
-        pthread_cond_t conditionPop;
-        pthread_mutex_t mutex;
-        bool blocked;
-        int dimension;
-    
+template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {  
     public:
-        LIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED){
-            first = NULL;
-            last = NULL;
-            count = 0;
-            conditionPush = PTHREAD_COND_INITIALIZER;
-            conditionPop = PTHREAD_COND_INITIALIZER;
-            mutex = PTHREAD_MUTEX_INITIALIZER;
-
-            /* Make the pop function blocked or unblocked */
-            this->blocked = blocked;
-
-            this->dimension = dimension;
-        }
+        LIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
 
         void push(T element)
         {
@@ -109,8 +87,7 @@ template <class T> class LIFOLinkedQueue {
                 std::cout << current->getData() << ' ';
                 current = current->getNext();
             }
-            std::cout << current->getData() << std::endl;
-        }
+            std::cout 
 
         T front(void){
             if (empty())
@@ -122,14 +99,7 @@ template <class T> class LIFOLinkedQueue {
             if (empty())
                 throw std::logic_error("Queue is empty");
             return last->getData();
-        }
-
-        int size(void){
-            return count;
-        }
-
-        bool empty(void){
-            return count == 0 ? true : false;
+        }<< current->getData() << std::endl;
         }
 };
 

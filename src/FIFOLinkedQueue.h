@@ -82,20 +82,6 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             }
             std::cout << current->getData() << std::endl;
         }
-
-        T front(void)
-        {
-            if (this->empty())
-                throw std::logic_error("Queue is empty");
-            return this->first->getData();
-        }
-
-        T back(void)
-        {
-            if (this->empty())
-                throw std::logic_error("Queue is empty");
-            return this->last->getData();
-        }
 };
 
 #endif
