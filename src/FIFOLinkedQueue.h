@@ -14,14 +14,14 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
-            if(this->count == this->dimension && !blocked){
-                pthread_mutex_unlock(&mutex);
+            if(this->count == this->dimension && !this->blocked){
+                pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             //if the queue is full => block
             while(this->count == this->dimension){
-                pthread_cond_wait(&conditionPop, &mutex);
+                pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
             Node<T>* tmp = new Node<T>();
