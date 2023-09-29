@@ -1,10 +1,9 @@
-#ifndef MultipleLinkedQueue_H
-#define MultipleLinkedQueue_H
+#ifndef MultipleStaticQueue_H
+#define MultipleStaticQueue_H
 
 #include <iostream>
-#include <LinkedQueue.h>
-#include <FIFOLinkedQueue.h>
-#include <LIFOLinkedQueue.h>
+#include <StaticQueue.h>
+#include <FIFOStaticQueue.h>
 
 #ifndef queuetype
 #define queuetype
@@ -13,27 +12,28 @@ enum QueueType { FIFO, LIFO };
 
 #endif
 
-template <class T> class MultipleLinkedQueue {  
+template <class T> class MultipleStaticQueue {  
     protected:
-        LinkedQueue<T> *queue;
+    StaticQueue<T> *queue;
         size_t num;
     
     public:
-        MultipleLinkedQueue(size_t num, QueueType type, bool blocked = true, int dimension = UNLIMITED){
+        MultipleStaticQueue(size_t num, QueueType type, int dimension, bool blocked = true){
             this-> num = num;
 
             switch (type)
             {
                 case FIFO:
-                    this->queue = new FIFOLinkedQueue<T>[this->num];
+                    this->queue = new FIFOStaticQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = FIFOLinkedQueue<T>(blocked, dimension);
+                        this->queue[i] = FIFOStaticQueue<T>(dimension, blocked);
                     break;
 
                 case LIFO:
-                    this->queue = new LIFOLinkedQueue<T>[this->num];
+                    /*
+                    this->queue = new LIFOStaticQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = LIFOLinkedQueue<T>(blocked, dimension);
+                        this->queue[i] = LIFOStaticQueue<T>(dimension, blocked);*/
                     break;
                     
                 default:

@@ -1,7 +1,8 @@
-#ifndef RTqueue
-#define RTqueue
+#ifndef RTqueue_H
+#define RTqueue_H
 
 #include "MultipleLinkedQueue.h"
+#include "MultipleStaticQueue.h"
 
 #include "LinkedQueue.h"
 #include "StaticQueue.h"
