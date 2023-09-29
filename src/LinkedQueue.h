@@ -55,6 +55,9 @@ template <class T> class LinkedQueue {
             return this->count == 0 ? true : false;
         }
 
+        bool full(void){
+            return this->count == this->dimension ? true : false;
+        }
 };
 
 #endif
