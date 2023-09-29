@@ -41,7 +41,7 @@ template <class T> class StaticQueue {
         T back(void){
             if (empty())
                 throw std::logic_error("Queue is empty");
-            return this->queue[this->lastElem];
+            return this->queue[this->lastElem - 1];
         }
 
         int size(void){
