@@ -1,5 +1,5 @@
-#ifndef linkedqueue
-#define linkedqueue
+#ifndef LinkedQueue_H
+#define LinkedQueue_H
 
 #include <node.h>
 #include <iostream>
@@ -16,7 +16,10 @@ template <class T> class LinkedQueue {
         Node<T>* last;
 
         //! Number of element inside the queue
-        int count;
+        size_t count;
+
+        //! Define the maximum dimension of the queue 
+        size_t dimension;
 
         //! Condition variable to block thread or task waiting for a new Push function call
         pthread_cond_t conditionPush;
@@ -29,14 +32,11 @@ template <class T> class LinkedQueue {
 
         //! Define if the call of a Push or Pop function must be blocked or unblocked
         bool blocked;
-
-        //! Define the maximum dimension of the queue 
-        int dimension;
     
     public:
         //! Constructor of a LinkedQueue.
         //! blocked and dimension are mandatory value.
-        LinkedQueue(bool blocked, int dimension){
+        LinkedQueue(bool blocked, size_t dimension){
             first = NULL;
             last = NULL;
             count = 0;

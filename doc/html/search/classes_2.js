@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['multiplelinkedqueue_28',['MultipleLinkedQueue',['../classMultipleLinkedQueue.html',1,'']]],
-  ['multiplestaticqueue_29',['MultipleStaticQueue',['../classMultipleStaticQueue.html',1,'']]]
+  ['multiplelinkedqueue_35',['MultipleLinkedQueue',['../classMultipleLinkedQueue.html',1,'']]],
+  ['multiplestaticqueue_36',['MultipleStaticQueue',['../classMultipleStaticQueue.html',1,'']]]
 ];

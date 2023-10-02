@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pop_38',['pop',['../classFIFOLinkedQueue.html#abeadf7a27dd84c5d96a576cea0a7b7d3',1,'FIFOLinkedQueue::pop()'],['../classLIFOLinkedQueue.html#a3ab23f0ab7ff46fb3d9d0c43f06d9fab',1,'LIFOLinkedQueue::pop()'],['../classLinkedQueue.html#a2da765bc8256e88f60e98fc62d94643f',1,'LinkedQueue::pop()']]],
-  ['printqueue_39',['printQueue',['../classFIFOLinkedQueue.html#ada14f3daa368d5d55db687348ccebe02',1,'FIFOLinkedQueue']]],
-  ['push_40',['push',['../classFIFOLinkedQueue.html#ab137301fef6d2e8d675af9b85b27fb5c',1,'FIFOLinkedQueue::push()'],['../classLIFOLinkedQueue.html#a6d5bae79ec5e1fdfe6eaafd5d80fd91e',1,'LIFOLinkedQueue::push()'],['../classLinkedQueue.html#afae894c7b31a2cc3fd6dadbc707fad17',1,'LinkedQueue::push()']]]
+  ['linkedqueue_46',['LinkedQueue',['../classLinkedQueue.html#a92d9e2ad4c7e9922e21c3fca1f7711ac',1,'LinkedQueue']]]
 ];

@@ -75,59 +75,59 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classFIFOStaticQueue.html">    7</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue</a> : <span class="keyword">public</span> <a class="code" href="classStaticQueue.html">StaticQueue</a>&lt;T&gt; {  </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue</a>(<span class="keywordtype">size_t</span> dimension) : <a class="code" href="classStaticQueue.html">StaticQueue&lt;T&gt;</a>(dimension){}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue</a>(<span class="keywordtype">size_t</span> <a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>) : <a class="code" href="classStaticQueue.html">StaticQueue&lt;T&gt;</a>(<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>){}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">void</span> push(T element)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classFIFOStaticQueue.html#af16b4eef3469feac45698c559bba761b">   12</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classFIFOStaticQueue.html#af16b4eef3469feac45698c559bba761b">push</a>(T element)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            pthread_mutex_lock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            pthread_mutex_lock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="comment">//dimension control</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span>(this-&gt;full() &amp;&amp; !this-&gt;blocked){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                pthread_mutex_unlock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classStaticQueue.html#afb954a20662d63dc88e74a7e7a0f45ff">full</a>() &amp;&amp; !this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                pthread_mutex_unlock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Queue is full&quot;</span>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="comment">//blocked condition</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">while</span>(this-&gt;full()){</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                pthread_cond_wait(&amp;this-&gt;conditionPop, &amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">while</span>(this-&gt;<a class="code" href="classStaticQueue.html#afb954a20662d63dc88e74a7e7a0f45ff">full</a>()){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                pthread_cond_wait(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a>, &amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            this-&gt;queue[this-&gt;lastElem] = element;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this-&gt;lastElem = (this-&gt;lastElem + 1) % this-&gt;dimension;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a>[this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a>] = element;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> = (this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> + 1) % this-&gt;dimension;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this-&gt;printQueue();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this-&gt;count++;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a>++;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            pthread_cond_signal(&amp;this-&gt;conditionPush);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            pthread_cond_signal(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            pthread_mutex_unlock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            pthread_mutex_unlock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        T pop(<span class="keywordtype">void</span>){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            pthread_mutex_lock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classFIFOStaticQueue.html#acc52aef276f249c4706cdc4d9e08e4b7">   39</a></span>&#160;        T <a class="code" href="classFIFOStaticQueue.html#acc52aef276f249c4706cdc4d9e08e4b7">pop</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            pthread_mutex_lock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="comment">//empty control</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> ( this-&gt;empty() &amp;&amp; !this-&gt;blocked){</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                pthread_mutex_unlock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> ( this-&gt;<a class="code" href="classStaticQueue.html#a3009ac45a276de7ddfdc901fa9091635">empty</a>() &amp;&amp; !this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                pthread_mutex_unlock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Queue is empty&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">//block condition</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">while</span>(this-&gt;empty()){</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                pthread_cond_wait(&amp;this-&gt;conditionPush, &amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">while</span>(this-&gt;<a class="code" href="classStaticQueue.html#a3009ac45a276de7ddfdc901fa9091635">empty</a>()){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                pthread_cond_wait(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a>, &amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            T ret = this-&gt;front();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            this-&gt;firstElem = (this-&gt;firstElem + 1) % this-&gt;dimension;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            T ret = this-&gt;<a class="code" href="classStaticQueue.html#a6cd0be6da070784aaf2c56843e86fd3d">front</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> = (this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> + 1) % this-&gt;dimension;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            this-&gt;count--;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a>--;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            this-&gt;printQueue();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            pthread_cond_signal(&amp;this-&gt;conditionPop);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            pthread_cond_signal(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            pthread_mutex_unlock(&amp;this-&gt;mutex);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            pthread_mutex_unlock(&amp;this-&gt;<a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
@@ -135,16 +135,30 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> printQueue(){</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">size_t</span> i;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[ &quot;</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">for</span>(i = 0; i &lt; this-&gt;count; i++)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                std::cout &lt;&lt; this-&gt;queue[i] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">for</span>(i = 0; i &lt; this-&gt;<a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a>; i++)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                std::cout &lt;&lt; this-&gt;<a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a>[i] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot; ]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassStaticQueue_html_ad7235bbc1381b5fe9ab60bb51e17ac9b"><div class="ttname"><a href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">StaticQueue::queue</a></div><div class="ttdeci">T * queue</div><div class="ttdoc">Definition on the static queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00012">StaticQueue.h:12</a></div></div>
 <div class="ttc" id="aclassFIFOStaticQueue_html"><div class="ttname"><a href="classFIFOStaticQueue.html">FIFOStaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00007">FIFOStaticQueue.h:7</a></div></div>
-<div class="ttc" id="aclassStaticQueue_html"><div class="ttname"><a href="classStaticQueue.html">StaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00007">StaticQueue.h:7</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html"><div class="ttname"><a href="classStaticQueue.html">StaticQueue</a></div><div class="ttdoc">Struture definition of a StaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00009">StaticQueue.h:9</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_acc0d210b1988952e2110bda1e8929bf3"><div class="ttname"><a href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">StaticQueue::dimension</a></div><div class="ttdeci">size_t dimension</div><div class="ttdoc">Define the maximum dimension of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00024">StaticQueue.h:24</a></div></div>
+<div class="ttc" id="aclassFIFOStaticQueue_html_acc52aef276f249c4706cdc4d9e08e4b7"><div class="ttname"><a href="classFIFOStaticQueue.html#acc52aef276f249c4706cdc4d9e08e4b7">FIFOStaticQueue::pop</a></div><div class="ttdeci">T pop(void)</div><div class="ttdoc">Extract an element of the StaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00039">FIFOStaticQueue.h:39</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_afb954a20662d63dc88e74a7e7a0f45ff"><div class="ttname"><a href="classStaticQueue.html#afb954a20662d63dc88e74a7e7a0f45ff">StaticQueue::full</a></div><div class="ttdeci">bool full(void)</div><div class="ttdoc">Return if the queue is full.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00083">StaticQueue.h:83</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a04709a0bfc1ae19cf4c80936263b9f8d"><div class="ttname"><a href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">StaticQueue::conditionPop</a></div><div class="ttdeci">pthread_cond_t conditionPop</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Pop function call.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00030">StaticQueue.h:30</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_adadb539531aa92d704d6a746d26a213d"><div class="ttname"><a href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">StaticQueue::count</a></div><div class="ttdeci">size_t count</div><div class="ttdoc">Number of element inside the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00021">StaticQueue.h:21</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a87b50a9d8024c75393d1eeac822b3ca8"><div class="ttname"><a href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">StaticQueue::blocked</a></div><div class="ttdeci">bool blocked</div><div class="ttdoc">Define if the call of a Push or Pop function must be blocked or unblocked.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00036">StaticQueue.h:36</a></div></div>
+<div class="ttc" id="aclassFIFOStaticQueue_html_af16b4eef3469feac45698c559bba761b"><div class="ttname"><a href="classFIFOStaticQueue.html#af16b4eef3469feac45698c559bba761b">FIFOStaticQueue::push</a></div><div class="ttdeci">void push(T element)</div><div class="ttdoc">Insert a new element inside the StaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00012">FIFOStaticQueue.h:12</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a6cd0be6da070784aaf2c56843e86fd3d"><div class="ttname"><a href="classStaticQueue.html#a6cd0be6da070784aaf2c56843e86fd3d">StaticQueue::front</a></div><div class="ttdeci">T front(void)</div><div class="ttdoc">Get the element of in front of the queue without remove it.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00059">StaticQueue.h:59</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a5717c30620e0bcee6f0aea049aa711ae"><div class="ttname"><a href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">StaticQueue::firstElem</a></div><div class="ttdeci">size_t firstElem</div><div class="ttdoc">First element's index of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00015">StaticQueue.h:15</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a3aa0b018488ce0cfe6ad1394096c2c4e"><div class="ttname"><a href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">StaticQueue::conditionPush</a></div><div class="ttdeci">pthread_cond_t conditionPush</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Push function call.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00027">StaticQueue.h:27</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a84b809176e57d1fed18b27f499dc6a01"><div class="ttname"><a href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">StaticQueue::mutex</a></div><div class="ttdeci">pthread_mutex_t mutex</div><div class="ttdoc">Mutex semaphore to access to Push or Pop function in a Thread safe way.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00033">StaticQueue.h:33</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_ae45dbb66dc85974bc27ec32f1a073dc1"><div class="ttname"><a href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">StaticQueue::lastElem</a></div><div class="ttdeci">size_t lastElem</div><div class="ttdoc">Last element's index of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00018">StaticQueue.h:18</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_a3009ac45a276de7ddfdc901fa9091635"><div class="ttname"><a href="classStaticQueue.html#a3009ac45a276de7ddfdc901fa9091635">StaticQueue::empty</a></div><div class="ttdeci">bool empty(void)</div><div class="ttdoc">Return if the queue is empty.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00078">StaticQueue.h:78</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

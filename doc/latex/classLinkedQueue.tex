@@ -11,8 +11,7 @@ Struture definition of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}.
 
 
 
-Inheritance diagram for Linked\+Queue$<$ T $>$\+:
-\nopagebreak
+Inheritance diagram for Linked\+Queue$<$ T $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +21,7 @@ Inheritance diagram for Linked\+Queue$<$ T $>$\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classLinkedQueue_a6dbb654045198b2247f4910255247f83}{Linked\+Queue}} (bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}, int \mbox{\hyperlink{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}{dimension}})
+\mbox{\hyperlink{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}{Linked\+Queue}} (bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}, size\+\_\+t \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}})
 \item 
 \mbox{\Hypertarget{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}\label{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}} 
 virtual void \mbox{\hyperlink{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}{push}} (T element)=0
@@ -54,9 +53,12 @@ bool \mbox{\hyperlink{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}{full}}
 \mbox{\Hypertarget{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}\label{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}} 
 \mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}}
 \begin{DoxyCompactList}\small\item\em Last element of the queue. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}\label{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}} 
-int \mbox{\hyperlink{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}{count}}
+\mbox{\Hypertarget{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}\label{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}} 
+size\+\_\+t \mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}}
 \begin{DoxyCompactList}\small\item\em Number of element inside the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}\label{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}} 
+size\+\_\+t \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}}
+\begin{DoxyCompactList}\small\item\em Define the maximum dimension of the queue. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}\label{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}} 
 pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}{condition\+Push}}
 \begin{DoxyCompactList}\small\item\em Condition variable to block thread or task waiting for a new Push function call. \end{DoxyCompactList}\item 
@@ -68,10 +70,7 @@ pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755
 \begin{DoxyCompactList}\small\item\em Mutex semaphore to access to Push or Pop function in a Thread safe way. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}\label{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}} 
 bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}
-\begin{DoxyCompactList}\small\item\em Define if the call of a Push or Pop function must be blocked or unblocked. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}\label{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}} 
-int \mbox{\hyperlink{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}{dimension}}
-\begin{DoxyCompactList}\small\item\em Define the maximum dimension of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Define if the call of a Push or Pop function must be blocked or unblocked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -85,12 +84,12 @@ Definition at line 10 of file Linked\+Queue.\+h.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classLinkedQueue_a6dbb654045198b2247f4910255247f83}\label{classLinkedQueue_a6dbb654045198b2247f4910255247f83}} 
+\mbox{\Hypertarget{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}\label{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}} 
 \index{LinkedQueue$<$ T $>$@{LinkedQueue$<$ T $>$}!LinkedQueue@{LinkedQueue}}
 \index{LinkedQueue@{LinkedQueue}!LinkedQueue$<$ T $>$@{LinkedQueue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{LinkedQueue()}{LinkedQueue()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} (\begin{DoxyParamCaption}\item[{bool}]{blocked,  }\item[{int}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} (\begin{DoxyParamCaption}\item[{bool}]{blocked,  }\item[{size\+\_\+t}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Constructor of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}. blocked and dimension are mandatory value. 
 
@@ -98,15 +97,15 @@ Definition at line 39 of file Linked\+Queue.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{39                                                 \{}
+\DoxyCodeLine{39                                                    \{}
 \DoxyCodeLine{40             \mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}} = NULL;}
 \DoxyCodeLine{41             \mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}} = NULL;}
-\DoxyCodeLine{42             \mbox{\hyperlink{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}{count}} = 0;}
+\DoxyCodeLine{42             \mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}} = 0;}
 \DoxyCodeLine{43             \mbox{\hyperlink{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}{conditionPush}} = PTHREAD\_COND\_INITIALIZER;}
 \DoxyCodeLine{44             \mbox{\hyperlink{classLinkedQueue_abf68072ebfc840014c1eda05fa194671}{conditionPop}} = PTHREAD\_COND\_INITIALIZER;}
 \DoxyCodeLine{45             \mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}} = PTHREAD\_MUTEX\_INITIALIZER;}
 \DoxyCodeLine{46             this-\/>\mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}} = \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}};}
-\DoxyCodeLine{47             this-\/>\mbox{\hyperlink{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}{dimension}} = \mbox{\hyperlink{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}{dimension}};}
+\DoxyCodeLine{47             this-\/>\mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}} = \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}};}
 \DoxyCodeLine{48         \}}
 
 \end{DoxyCode}

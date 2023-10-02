@@ -88,8 +88,8 @@ Inheritance diagram for LinkedQueue&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6dbb654045198b2247f4910255247f83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a6dbb654045198b2247f4910255247f83">LinkedQueue</a> (bool <a class="el" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a>, int <a class="el" href="classLinkedQueue.html#aa61f22ad6926a16b5d66e23e6faac695">dimension</a>)</td></tr>
-<tr class="separator:a6dbb654045198b2247f4910255247f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d9e2ad4c7e9922e21c3fca1f7711ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a92d9e2ad4c7e9922e21c3fca1f7711ac">LinkedQueue</a> (bool <a class="el" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a>, size_t <a class="el" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a>)</td></tr>
+<tr class="separator:a92d9e2ad4c7e9922e21c3fca1f7711ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afae894c7b31a2cc3fd6dadbc707fad17"><td class="memItemLeft" align="right" valign="top"><a id="afae894c7b31a2cc3fd6dadbc707fad17"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#afae894c7b31a2cc3fd6dadbc707fad17">push</a> (T element)=0</td></tr>
 <tr class="memdesc:afae894c7b31a2cc3fd6dadbc707fad17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new element inside the <a class="el" href="classLinkedQueue.html" title="Struture definition of a LinkedQueue.">LinkedQueue</a>. <br /></td></tr>
@@ -129,10 +129,14 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="classNode.html">Node</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a90ee5d3f8f5d44b74b4513d597a89d8c">last</a></td></tr>
 <tr class="memdesc:a90ee5d3f8f5d44b74b4513d597a89d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last element of the queue. <br /></td></tr>
 <tr class="separator:a90ee5d3f8f5d44b74b4513d597a89d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12aa25027a959f6b89c79959a7966590"><td class="memItemLeft" align="right" valign="top"><a id="a12aa25027a959f6b89c79959a7966590"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a12aa25027a959f6b89c79959a7966590">count</a></td></tr>
-<tr class="memdesc:a12aa25027a959f6b89c79959a7966590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of element inside the queue. <br /></td></tr>
-<tr class="separator:a12aa25027a959f6b89c79959a7966590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264bdb605dffa4b96e90a30248b398fd"><td class="memItemLeft" align="right" valign="top"><a id="a264bdb605dffa4b96e90a30248b398fd"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a264bdb605dffa4b96e90a30248b398fd">count</a></td></tr>
+<tr class="memdesc:a264bdb605dffa4b96e90a30248b398fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of element inside the queue. <br /></td></tr>
+<tr class="separator:a264bdb605dffa4b96e90a30248b398fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2599e95301d14f36092c66488e0779c"><td class="memItemLeft" align="right" valign="top"><a id="ae2599e95301d14f36092c66488e0779c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a></td></tr>
+<tr class="memdesc:ae2599e95301d14f36092c66488e0779c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the maximum dimension of the queue. <br /></td></tr>
+<tr class="separator:ae2599e95301d14f36092c66488e0779c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96f93d546c8727048658fe7b335fe881"><td class="memItemLeft" align="right" valign="top"><a id="a96f93d546c8727048658fe7b335fe881"></a>
 pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a96f93d546c8727048658fe7b335fe881">conditionPush</a></td></tr>
 <tr class="memdesc:a96f93d546c8727048658fe7b335fe881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition variable to block thread or task waiting for a new Push function call. <br /></td></tr>
@@ -149,10 +153,6 @@ pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a></td></tr>
 <tr class="memdesc:aba61a9751caa8a92ade0105ba2458505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define if the call of a Push or Pop function must be blocked or unblocked. <br /></td></tr>
 <tr class="separator:aba61a9751caa8a92ade0105ba2458505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa61f22ad6926a16b5d66e23e6faac695"><td class="memItemLeft" align="right" valign="top"><a id="aa61f22ad6926a16b5d66e23e6faac695"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#aa61f22ad6926a16b5d66e23e6faac695">dimension</a></td></tr>
-<tr class="memdesc:aa61f22ad6926a16b5d66e23e6faac695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the maximum dimension of the queue. <br /></td></tr>
-<tr class="separator:aa61f22ad6926a16b5d66e23e6faac695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
@@ -162,8 +162,8 @@ class LinkedQueue&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="LinkedQueue_8h_source.html#l00010">10</a> of file <a class="el" href="LinkedQueue_8h_source.html">LinkedQueue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6dbb654045198b2247f4910255247f83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dbb654045198b2247f4910255247f83">&#9670;&nbsp;</a></span>LinkedQueue()</h2>
+<a id="a92d9e2ad4c7e9922e21c3fca1f7711ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d9e2ad4c7e9922e21c3fca1f7711ac">&#9670;&nbsp;</a></span>LinkedQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +182,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>dimension</em>&#160;</td>
         </tr>
         <tr>
@@ -200,15 +200,15 @@ template&lt;class T &gt; </div>
 <p>Constructor of a <a class="el" href="classLinkedQueue.html" title="Struture definition of a LinkedQueue.">LinkedQueue</a>. blocked and dimension are mandatory value. </p>
 
 <p class="definition">Definition at line <a class="el" href="LinkedQueue_8h_source.html#l00039">39</a> of file <a class="el" href="LinkedQueue_8h_source.html">LinkedQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                {</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                   {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classLinkedQueue.html#adfea27d5f8028ff7b02c6555bb2657bd">first</a> = NULL;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classLinkedQueue.html#a90ee5d3f8f5d44b74b4513d597a89d8c">last</a> = NULL;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classLinkedQueue.html#a12aa25027a959f6b89c79959a7966590">count</a> = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classLinkedQueue.html#a264bdb605dffa4b96e90a30248b398fd">count</a> = 0;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classLinkedQueue.html#a96f93d546c8727048658fe7b335fe881">conditionPush</a> = PTHREAD_COND_INITIALIZER;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classLinkedQueue.html#abf68072ebfc840014c1eda05fa194671">conditionPop</a> = PTHREAD_COND_INITIALIZER;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classLinkedQueue.html#a5c1e6792ffb12805755dc2f8a11cb3f8">mutex</a> = PTHREAD_MUTEX_INITIALIZER;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            this-&gt;<a class="code" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a> = <a class="code" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;<a class="code" href="classLinkedQueue.html#aa61f22ad6926a16b5d66e23e6faac695">dimension</a> = <a class="code" href="classLinkedQueue.html#aa61f22ad6926a16b5d66e23e6faac695">dimension</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;<a class="code" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a> = <a class="code" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -217,14 +217,14 @@ template&lt;class T &gt; </div>
 <li><a class="el" href="LinkedQueue_8h_source.html">LinkedQueue.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassLinkedQueue_html_a96f93d546c8727048658fe7b335fe881"><div class="ttname"><a href="classLinkedQueue.html#a96f93d546c8727048658fe7b335fe881">LinkedQueue::conditionPush</a></div><div class="ttdeci">pthread_cond_t conditionPush</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Push function call.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00022">LinkedQueue.h:22</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_a96f93d546c8727048658fe7b335fe881"><div class="ttname"><a href="classLinkedQueue.html#a96f93d546c8727048658fe7b335fe881">LinkedQueue::conditionPush</a></div><div class="ttdeci">pthread_cond_t conditionPush</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Push function call.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00025">LinkedQueue.h:25</a></div></div>
 <div class="ttc" id="aclassLinkedQueue_html_adfea27d5f8028ff7b02c6555bb2657bd"><div class="ttname"><a href="classLinkedQueue.html#adfea27d5f8028ff7b02c6555bb2657bd">LinkedQueue::first</a></div><div class="ttdeci">Node&lt; T &gt; * first</div><div class="ttdoc">First element of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00013">LinkedQueue.h:13</a></div></div>
 <div class="ttc" id="aclassLinkedQueue_html_a90ee5d3f8f5d44b74b4513d597a89d8c"><div class="ttname"><a href="classLinkedQueue.html#a90ee5d3f8f5d44b74b4513d597a89d8c">LinkedQueue::last</a></div><div class="ttdeci">Node&lt; T &gt; * last</div><div class="ttdoc">Last element of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00016">LinkedQueue.h:16</a></div></div>
-<div class="ttc" id="aclassLinkedQueue_html_a5c1e6792ffb12805755dc2f8a11cb3f8"><div class="ttname"><a href="classLinkedQueue.html#a5c1e6792ffb12805755dc2f8a11cb3f8">LinkedQueue::mutex</a></div><div class="ttdeci">pthread_mutex_t mutex</div><div class="ttdoc">Mutex semaphore to access to Push or Pop function in a Thread safe way.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00028">LinkedQueue.h:28</a></div></div>
-<div class="ttc" id="aclassLinkedQueue_html_aba61a9751caa8a92ade0105ba2458505"><div class="ttname"><a href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">LinkedQueue::blocked</a></div><div class="ttdeci">bool blocked</div><div class="ttdoc">Define if the call of a Push or Pop function must be blocked or unblocked.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00031">LinkedQueue.h:31</a></div></div>
-<div class="ttc" id="aclassLinkedQueue_html_aa61f22ad6926a16b5d66e23e6faac695"><div class="ttname"><a href="classLinkedQueue.html#aa61f22ad6926a16b5d66e23e6faac695">LinkedQueue::dimension</a></div><div class="ttdeci">int dimension</div><div class="ttdoc">Define the maximum dimension of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00034">LinkedQueue.h:34</a></div></div>
-<div class="ttc" id="aclassLinkedQueue_html_abf68072ebfc840014c1eda05fa194671"><div class="ttname"><a href="classLinkedQueue.html#abf68072ebfc840014c1eda05fa194671">LinkedQueue::conditionPop</a></div><div class="ttdeci">pthread_cond_t conditionPop</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Pop function call.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00025">LinkedQueue.h:25</a></div></div>
-<div class="ttc" id="aclassLinkedQueue_html_a12aa25027a959f6b89c79959a7966590"><div class="ttname"><a href="classLinkedQueue.html#a12aa25027a959f6b89c79959a7966590">LinkedQueue::count</a></div><div class="ttdeci">int count</div><div class="ttdoc">Number of element inside the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00019">LinkedQueue.h:19</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_a5c1e6792ffb12805755dc2f8a11cb3f8"><div class="ttname"><a href="classLinkedQueue.html#a5c1e6792ffb12805755dc2f8a11cb3f8">LinkedQueue::mutex</a></div><div class="ttdeci">pthread_mutex_t mutex</div><div class="ttdoc">Mutex semaphore to access to Push or Pop function in a Thread safe way.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00031">LinkedQueue.h:31</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_aba61a9751caa8a92ade0105ba2458505"><div class="ttname"><a href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">LinkedQueue::blocked</a></div><div class="ttdeci">bool blocked</div><div class="ttdoc">Define if the call of a Push or Pop function must be blocked or unblocked.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00034">LinkedQueue.h:34</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_ae2599e95301d14f36092c66488e0779c"><div class="ttname"><a href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">LinkedQueue::dimension</a></div><div class="ttdeci">size_t dimension</div><div class="ttdoc">Define the maximum dimension of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00022">LinkedQueue.h:22</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_abf68072ebfc840014c1eda05fa194671"><div class="ttname"><a href="classLinkedQueue.html#abf68072ebfc840014c1eda05fa194671">LinkedQueue::conditionPop</a></div><div class="ttdeci">pthread_cond_t conditionPop</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Pop function call.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00028">LinkedQueue.h:28</a></div></div>
+<div class="ttc" id="aclassLinkedQueue_html_a264bdb605dffa4b96e90a30248b398fd"><div class="ttname"><a href="classLinkedQueue.html#a264bdb605dffa4b96e90a30248b398fd">LinkedQueue::count</a></div><div class="ttdeci">size_t count</div><div class="ttdoc">Number of element inside the queue.</div><div class="ttdef"><b>Definition:</b> <a href="LinkedQueue_8h_source.html#l00019">LinkedQueue.h:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

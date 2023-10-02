@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['node_18',['Node',['../classNode.html',1,'']]]
+  ['multiplelinkedqueue_19',['MultipleLinkedQueue',['../classMultipleLinkedQueue.html',1,'']]],
+  ['multiplestaticqueue_20',['MultipleStaticQueue',['../classMultipleStaticQueue.html',1,'']]],
+  ['mutex_21',['mutex',['../classLinkedQueue.html#a5c1e6792ffb12805755dc2f8a11cb3f8',1,'LinkedQueue::mutex()'],['../classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01',1,'StaticQueue::mutex()']]]
 ];
