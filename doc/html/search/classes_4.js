@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['staticqueue_18',['StaticQueue',['../classStaticQueue.html',1,'']]]
+  ['staticqueue_31',['StaticQueue',['../classStaticQueue.html',1,'']]]
 ];

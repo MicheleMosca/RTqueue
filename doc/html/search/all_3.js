@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_6',['Node',['../classNode.html',1,'']]]
+  ['empty_6',['empty',['../classLinkedQueue.html#a5d011165fa8d26421fae69e3b5abd52e',1,'LinkedQueue']]]
 ];

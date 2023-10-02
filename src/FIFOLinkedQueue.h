@@ -4,12 +4,17 @@
 #include <LinkedQueue.h>
 #include <iostream>
 
+//! define UNLIMITED value for dimension
 #define UNLIMITED -1
 
 //! Definition of a LinkedQueue based on FIFO schedular's rule
 
 template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {  
     public:
+        //! Constructor of a FIFOLinkedQueue.
+        //! blocked and dimension are unmandatory values.
+        //! Default value for blocked are true (Push and Pop function will be blocked functions).
+        //! Default value for dimension are UNLIMITED.
         FIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
 
         //! Insert a new element inside the FIFOLinkedQueue
@@ -22,7 +27,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
                 throw std::logic_error("Queue is full");
             }
 
-            //if the queue is full => block
+            // if the queue is full => block
             while(this->count == this->dimension){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
@@ -50,7 +55,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
-            /* release function if the queue is empty and unblocked function is enable */
+            // release function if the queue is empty and unblocked function is enable
             if ( this->empty() && !this->blocked ){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
@@ -79,7 +84,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
                 throw std::logic_error("Queue is empty");
             }
 
-            //prendo la coda da stampare e la itero
+            // Take a single element of the queue and print it
             Node<T>* current = this->first;
             while (current->getNext()) {
                 std::cout << current->getData() << ' ';
