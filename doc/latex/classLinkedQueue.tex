@@ -1,0 +1,81 @@
+\hypertarget{classLinkedQueue}{}\doxysection{Linked\+Queue$<$ T $>$ Class Template Reference}
+\label{classLinkedQueue}\index{LinkedQueue$<$ T $>$@{LinkedQueue$<$ T $>$}}
+
+
+Inheritance diagram for Linked\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLinkedQueue__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a6dbb654045198b2247f4910255247f83}\label{classLinkedQueue_a6dbb654045198b2247f4910255247f83}} 
+{\bfseries Linked\+Queue} (bool blocked, int dimension)
+\item 
+\mbox{\Hypertarget{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}\label{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}} 
+virtual void {\bfseries push} (T element)=0
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a2da765bc8256e88f60e98fc62d94643f}\label{classLinkedQueue_a2da765bc8256e88f60e98fc62d94643f}} 
+virtual T {\bfseries pop} (void)=0
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a48ec59f701bdadac4faaa0e187cd243f}\label{classLinkedQueue_a48ec59f701bdadac4faaa0e187cd243f}} 
+T {\bfseries front} (void)
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a2f04342e90059292518de831cf6542b1}\label{classLinkedQueue_a2f04342e90059292518de831cf6542b1}} 
+T {\bfseries back} (void)
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a0964ef202a3038d12fd5ae5a78ddb474}\label{classLinkedQueue_a0964ef202a3038d12fd5ae5a78ddb474}} 
+int {\bfseries size} (void)
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a5d011165fa8d26421fae69e3b5abd52e}\label{classLinkedQueue_a5d011165fa8d26421fae69e3b5abd52e}} 
+bool {\bfseries empty} (void)
+\item 
+\mbox{\Hypertarget{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}\label{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}} 
+bool {\bfseries full} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}\label{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}} 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries first}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}\label{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}} 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries last}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}\label{classLinkedQueue_a12aa25027a959f6b89c79959a7966590}} 
+int {\bfseries count}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}\label{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}} 
+pthread\+\_\+cond\+\_\+t {\bfseries condition\+Push}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_abf68072ebfc840014c1eda05fa194671}\label{classLinkedQueue_abf68072ebfc840014c1eda05fa194671}} 
+pthread\+\_\+cond\+\_\+t {\bfseries condition\+Pop}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}\label{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries mutex}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}\label{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}} 
+bool {\bfseries blocked}
+\item 
+\mbox{\Hypertarget{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}\label{classLinkedQueue_aa61f22ad6926a16b5d66e23e6faac695}} 
+int {\bfseries dimension}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Linked\+Queue$<$ T $>$}
+
+
+
+Definition at line 8 of file Linked\+Queue.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Linked\+Queue.\+h\end{DoxyCompactItemize}

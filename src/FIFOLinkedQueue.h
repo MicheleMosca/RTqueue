@@ -6,10 +6,13 @@
 
 #define UNLIMITED -1
 
+//! Definition of a LinkedQueue based on FIFO schedular's rule
+
 template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {  
     public:
         FIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
 
+        //! Insert a new element inside the FIFOLinkedQueue
         void push(T element)
         {
             pthread_mutex_lock(&this->mutex);
@@ -42,6 +45,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             pthread_mutex_unlock(&this->mutex);
         }
 
+        //! Extract the first element that was insert into the FIFOLinkedQueue
         T pop(void)
         {
             pthread_mutex_lock(&this->mutex);
@@ -69,6 +73,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             return ret;
         }
 
+        //! Print to the standard output the current state of the queue. It used only for debug purpose
         void printQueue(){
             if(this->empty()){
                 throw std::logic_error("Queue is empty");

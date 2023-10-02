@@ -1,0 +1,84 @@
+\hypertarget{classStaticQueue}{}\doxysection{Static\+Queue$<$ T $>$ Class Template Reference}
+\label{classStaticQueue}\index{StaticQueue$<$ T $>$@{StaticQueue$<$ T $>$}}
+
+
+Inheritance diagram for Static\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classStaticQueue__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStaticQueue_acf4a4042040df902117095f34a4f6f36}\label{classStaticQueue_acf4a4042040df902117095f34a4f6f36}} 
+{\bfseries Static\+Queue} (size\+\_\+t dimension, bool blocked=true)
+\item 
+\mbox{\Hypertarget{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}\label{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}} 
+virtual void {\bfseries push} (T element)=0
+\item 
+\mbox{\Hypertarget{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}\label{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}} 
+virtual T {\bfseries pop} (void)=0
+\item 
+\mbox{\Hypertarget{classStaticQueue_a6cd0be6da070784aaf2c56843e86fd3d}\label{classStaticQueue_a6cd0be6da070784aaf2c56843e86fd3d}} 
+T {\bfseries front} (void)
+\item 
+\mbox{\Hypertarget{classStaticQueue_a1cac324441ba84478b7e82b12145ae32}\label{classStaticQueue_a1cac324441ba84478b7e82b12145ae32}} 
+T {\bfseries back} (void)
+\item 
+\mbox{\Hypertarget{classStaticQueue_aad53e1647a02c317ad43f6ad3982bdea}\label{classStaticQueue_aad53e1647a02c317ad43f6ad3982bdea}} 
+int {\bfseries size} (void)
+\item 
+\mbox{\Hypertarget{classStaticQueue_a3009ac45a276de7ddfdc901fa9091635}\label{classStaticQueue_a3009ac45a276de7ddfdc901fa9091635}} 
+bool {\bfseries empty} (void)
+\item 
+\mbox{\Hypertarget{classStaticQueue_afb954a20662d63dc88e74a7e7a0f45ff}\label{classStaticQueue_afb954a20662d63dc88e74a7e7a0f45ff}} 
+bool {\bfseries full} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}\label{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}} 
+T $\ast$ {\bfseries queue}
+\item 
+\mbox{\Hypertarget{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}\label{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}} 
+size\+\_\+t {\bfseries first\+Elem}
+\item 
+\mbox{\Hypertarget{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}\label{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}} 
+size\+\_\+t {\bfseries last\+Elem}
+\item 
+\mbox{\Hypertarget{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}\label{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}} 
+size\+\_\+t {\bfseries dimension}
+\item 
+\mbox{\Hypertarget{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}\label{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}} 
+pthread\+\_\+cond\+\_\+t {\bfseries condition\+Push}
+\item 
+\mbox{\Hypertarget{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}\label{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}} 
+pthread\+\_\+cond\+\_\+t {\bfseries condition\+Pop}
+\item 
+\mbox{\Hypertarget{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}\label{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries mutex}
+\item 
+\mbox{\Hypertarget{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}\label{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}} 
+bool {\bfseries blocked}
+\item 
+\mbox{\Hypertarget{classStaticQueue_adadb539531aa92d704d6a746d26a213d}\label{classStaticQueue_adadb539531aa92d704d6a746d26a213d}} 
+size\+\_\+t {\bfseries count}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Static\+Queue$<$ T $>$}
+
+
+
+Definition at line 7 of file Static\+Queue.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Static\+Queue.\+h\end{DoxyCompactItemize}
