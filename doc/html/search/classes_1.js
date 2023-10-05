@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lifolinkedqueue_33',['LIFOLinkedQueue',['../classLIFOLinkedQueue.html',1,'']]],
-  ['linkedqueue_34',['LinkedQueue',['../classLinkedQueue.html',1,'']]]
+  ['lifolinkedqueue_34',['LIFOLinkedQueue',['../classLIFOLinkedQueue.html',1,'']]],
+  ['lifostaticqueue_35',['LIFOStaticQueue',['../classLIFOStaticQueue.html',1,'']]],
+  ['linkedqueue_36',['LinkedQueue',['../classLinkedQueue.html',1,'']]]
 ];

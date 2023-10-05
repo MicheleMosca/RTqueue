@@ -16,12 +16,15 @@ Inheritance diagram for Static\+Queue$<$ T $>$\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{classStaticQueue__inherit__graph}
+\includegraphics[width=350pt]{classStaticQueue__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}\label{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}} 
+\mbox{\hyperlink{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}{Static\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Dummy constructor (D\+ON\textquotesingle{}T U\+SE I\+T!) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classStaticQueue_abcc55edd6afb406b17b78a96e5e17821}{Static\+Queue}} (size\+\_\+t \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}, bool \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}})
 \item 
 \mbox{\Hypertarget{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}\label{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}} 
@@ -97,20 +100,20 @@ Definition at line 9 of file Static\+Queue.\+h.
 
 Constructor of a \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. blocked and dimension are mandatory value. 
 
-Definition at line 41 of file Static\+Queue.\+h.
+Definition at line 44 of file Static\+Queue.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{41                                                    \{}
-\DoxyCodeLine{42             this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}} = \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}};}
-\DoxyCodeLine{43             \mbox{\hyperlink{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}{queue}} = \textcolor{keyword}{new} T[this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}];}
-\DoxyCodeLine{44             this-\/>\mbox{\hyperlink{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}{firstElem}} = this-\/>\mbox{\hyperlink{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}{lastElem}} = 0;}
-\DoxyCodeLine{45             \mbox{\hyperlink{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}{conditionPush}} = PTHREAD\_COND\_INITIALIZER;}
-\DoxyCodeLine{46             \mbox{\hyperlink{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}{conditionPop}} = PTHREAD\_COND\_INITIALIZER;}
-\DoxyCodeLine{47             \mbox{\hyperlink{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}{mutex}} = PTHREAD\_MUTEX\_INITIALIZER;}
-\DoxyCodeLine{48             \mbox{\hyperlink{classStaticQueue_adadb539531aa92d704d6a746d26a213d}{count}} = 0;}
-\DoxyCodeLine{49             this-\/>\mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}} = \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}};}
-\DoxyCodeLine{50         \}}
+\DoxyCodeLine{44                                                    \{}
+\DoxyCodeLine{45             this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}} = \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}};}
+\DoxyCodeLine{46             \mbox{\hyperlink{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}{queue}} = \textcolor{keyword}{new} T[this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}];}
+\DoxyCodeLine{47             this-\/>\mbox{\hyperlink{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}{firstElem}} = this-\/>\mbox{\hyperlink{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}{lastElem}} = 0;}
+\DoxyCodeLine{48             \mbox{\hyperlink{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}{conditionPush}} = PTHREAD\_COND\_INITIALIZER;}
+\DoxyCodeLine{49             \mbox{\hyperlink{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}{conditionPop}} = PTHREAD\_COND\_INITIALIZER;}
+\DoxyCodeLine{50             \mbox{\hyperlink{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}{mutex}} = PTHREAD\_MUTEX\_INITIALIZER;}
+\DoxyCodeLine{51             \mbox{\hyperlink{classStaticQueue_adadb539531aa92d704d6a746d26a213d}{count}} = 0;}
+\DoxyCodeLine{52             this-\/>\mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}} = \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}};}
+\DoxyCodeLine{53         \}}
 
 \end{DoxyCode}
 

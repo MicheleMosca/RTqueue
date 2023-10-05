@@ -80,13 +80,18 @@ Inheritance diagram for StaticQueue&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStaticQueue__inherit__graph.png" border="0" usemap="#StaticQueue_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="StaticQueue_3_01T_01_4_inherit__map" id="StaticQueue_3_01T_01_4_inherit__map">
-<area shape="rect" title="Struture definition of a StaticQueue." alt="" coords="21,5,159,32"/>
-<area shape="rect" href="classFIFOStaticQueue.html" title=" " alt="" coords="5,80,175,107"/>
+<area shape="rect" title="Struture definition of a StaticQueue." alt="" coords="117,5,255,32"/>
+<area shape="rect" href="classFIFOStaticQueue.html" title="Definition of a LinkedQueue based on FIFO schedular&#39;s rule." alt="" coords="5,80,175,107"/>
+<area shape="rect" href="classLIFOStaticQueue.html" title=" " alt="" coords="199,80,367,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa74c41724a545921ad12ed173c1bf2c5"><td class="memItemLeft" align="right" valign="top"><a id="aa74c41724a545921ad12ed173c1bf2c5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#aa74c41724a545921ad12ed173c1bf2c5">StaticQueue</a> ()</td></tr>
+<tr class="memdesc:aa74c41724a545921ad12ed173c1bf2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy constructor (DON'T USE IT!) <br /></td></tr>
+<tr class="separator:aa74c41724a545921ad12ed173c1bf2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc55edd6afb406b17b78a96e5e17821"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#abcc55edd6afb406b17b78a96e5e17821">StaticQueue</a> (size_t <a class="el" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>, bool <a class="el" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>)</td></tr>
 <tr class="separator:abcc55edd6afb406b17b78a96e5e17821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0416b8e37be7a36b5a5fe280ac509ff4"><td class="memItemLeft" align="right" valign="top"><a id="a0416b8e37be7a36b5a5fe280ac509ff4"></a>
@@ -202,17 +207,17 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Constructor of a <a class="el" href="classStaticQueue.html" title="Struture definition of a StaticQueue.">StaticQueue</a>. blocked and dimension are mandatory value. </p>
 
-<p class="definition">Definition at line <a class="el" href="StaticQueue_8h_source.html#l00041">41</a> of file <a class="el" href="StaticQueue_8h_source.html">StaticQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                   {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a> = <a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a> = <span class="keyword">new</span> T[this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> = this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a> = PTHREAD_COND_INITIALIZER;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a> = PTHREAD_COND_INITIALIZER;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a> = PTHREAD_MUTEX_INITIALIZER;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a> = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a> = <a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="StaticQueue_8h_source.html#l00044">44</a> of file <a class="el" href="StaticQueue_8h_source.html">StaticQueue.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                   {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a> = <a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a> = <span class="keyword">new</span> T[this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> = this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a> = PTHREAD_COND_INITIALIZER;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a> = PTHREAD_COND_INITIALIZER;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a> = PTHREAD_MUTEX_INITIALIZER;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a> = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a> = <a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

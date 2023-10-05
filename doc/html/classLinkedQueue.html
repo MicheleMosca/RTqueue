@@ -88,8 +88,8 @@ Inheritance diagram for LinkedQueue&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92d9e2ad4c7e9922e21c3fca1f7711ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a92d9e2ad4c7e9922e21c3fca1f7711ac">LinkedQueue</a> (bool <a class="el" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a>, size_t <a class="el" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a>)</td></tr>
-<tr class="separator:a92d9e2ad4c7e9922e21c3fca1f7711ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c7f2692e2cad47a7433bd15fb9c182"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#a52c7f2692e2cad47a7433bd15fb9c182">LinkedQueue</a> (int <a class="el" href="classLinkedQueue.html#ae2599e95301d14f36092c66488e0779c">dimension</a>, bool <a class="el" href="classLinkedQueue.html#aba61a9751caa8a92ade0105ba2458505">blocked</a>)</td></tr>
+<tr class="separator:a52c7f2692e2cad47a7433bd15fb9c182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afae894c7b31a2cc3fd6dadbc707fad17"><td class="memItemLeft" align="right" valign="top"><a id="afae894c7b31a2cc3fd6dadbc707fad17"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLinkedQueue.html#afae894c7b31a2cc3fd6dadbc707fad17">push</a> (T element)=0</td></tr>
 <tr class="memdesc:afae894c7b31a2cc3fd6dadbc707fad17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new element inside the <a class="el" href="classLinkedQueue.html" title="Struture definition of a LinkedQueue.">LinkedQueue</a>. <br /></td></tr>
@@ -162,8 +162,8 @@ class LinkedQueue&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="LinkedQueue_8h_source.html#l00010">10</a> of file <a class="el" href="LinkedQueue_8h_source.html">LinkedQueue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a92d9e2ad4c7e9922e21c3fca1f7711ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92d9e2ad4c7e9922e21c3fca1f7711ac">&#9670;&nbsp;</a></span>LinkedQueue()</h2>
+<a id="a52c7f2692e2cad47a7433bd15fb9c182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c7f2692e2cad47a7433bd15fb9c182">&#9670;&nbsp;</a></span>LinkedQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,14 +176,14 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classLinkedQueue.html">LinkedQueue</a>&lt; T &gt;::<a class="el" href="classLinkedQueue.html">LinkedQueue</a> </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>blocked</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>dimension</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>blocked</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,7 +200,7 @@ template&lt;class T &gt; </div>
 <p>Constructor of a <a class="el" href="classLinkedQueue.html" title="Struture definition of a LinkedQueue.">LinkedQueue</a>. blocked and dimension are mandatory value. </p>
 
 <p class="definition">Definition at line <a class="el" href="LinkedQueue_8h_source.html#l00039">39</a> of file <a class="el" href="LinkedQueue_8h_source.html">LinkedQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                   {</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classLinkedQueue.html#adfea27d5f8028ff7b02c6555bb2657bd">first</a> = NULL;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classLinkedQueue.html#a90ee5d3f8f5d44b74b4513d597a89d8c">last</a> = NULL;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classLinkedQueue.html#a264bdb605dffa4b96e90a30248b398fd">count</a> = 0;</div>

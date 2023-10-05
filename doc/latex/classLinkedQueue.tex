@@ -21,7 +21,7 @@ Inheritance diagram for Linked\+Queue$<$ T $>$\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}{Linked\+Queue}} (bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}, size\+\_\+t \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}})
+\mbox{\hyperlink{classLinkedQueue_a52c7f2692e2cad47a7433bd15fb9c182}{Linked\+Queue}} (int \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}}, bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}})
 \item 
 \mbox{\Hypertarget{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}\label{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}} 
 virtual void \mbox{\hyperlink{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}{push}} (T element)=0
@@ -84,12 +84,12 @@ Definition at line 10 of file Linked\+Queue.\+h.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}\label{classLinkedQueue_a92d9e2ad4c7e9922e21c3fca1f7711ac}} 
+\mbox{\Hypertarget{classLinkedQueue_a52c7f2692e2cad47a7433bd15fb9c182}\label{classLinkedQueue_a52c7f2692e2cad47a7433bd15fb9c182}} 
 \index{LinkedQueue$<$ T $>$@{LinkedQueue$<$ T $>$}!LinkedQueue@{LinkedQueue}}
 \index{LinkedQueue@{LinkedQueue}!LinkedQueue$<$ T $>$@{LinkedQueue$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{LinkedQueue()}{LinkedQueue()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} (\begin{DoxyParamCaption}\item[{bool}]{blocked,  }\item[{size\+\_\+t}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} (\begin{DoxyParamCaption}\item[{int}]{dimension,  }\item[{bool}]{blocked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Constructor of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}}. blocked and dimension are mandatory value. 
 
@@ -97,7 +97,7 @@ Definition at line 39 of file Linked\+Queue.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{39                                                    \{}
+\DoxyCodeLine{39                                                 \{}
 \DoxyCodeLine{40             \mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}} = NULL;}
 \DoxyCodeLine{41             \mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}} = NULL;}
 \DoxyCodeLine{42             \mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}} = 0;}

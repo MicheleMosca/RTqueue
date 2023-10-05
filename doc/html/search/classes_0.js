@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fifolinkedqueue_31',['FIFOLinkedQueue',['../classFIFOLinkedQueue.html',1,'']]],
-  ['fifostaticqueue_32',['FIFOStaticQueue',['../classFIFOStaticQueue.html',1,'']]]
+  ['fifolinkedqueue_32',['FIFOLinkedQueue',['../classFIFOLinkedQueue.html',1,'']]],
+  ['fifostaticqueue_33',['FIFOStaticQueue',['../classFIFOStaticQueue.html',1,'']]]
 ];

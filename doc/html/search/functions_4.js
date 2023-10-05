@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linkedqueue_46',['LinkedQueue',['../classLinkedQueue.html#a92d9e2ad4c7e9922e21c3fca1f7711ac',1,'LinkedQueue']]]
+  ['linkedqueue_49',['LinkedQueue',['../classLinkedQueue.html#a52c7f2692e2cad47a7433bd15fb9c182',1,'LinkedQueue']]]
 ];

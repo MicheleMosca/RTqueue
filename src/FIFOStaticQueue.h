@@ -4,13 +4,20 @@
 #include <StaticQueue.h>
 #include <iostream>
 
-template <class T> class FIFOStaticQueue : public StaticQueue<T> {  
-    
+//! Definition of a LinkedQueue based on FIFO schedular's rule
+
+template <class T> class FIFOStaticQueue : public StaticQueue<T> {
     public:
+        //! Dummy constructor (DON'T USE IT!)
         FIFOStaticQueue(){}
 
+        //! Constructor of a FIFOStaticQueue.
+        //! blocked is unmandatory value.
+        //! Default value for blocked are true (Push and Pop function will be blocked functions).
+        //! Dimension is the queue's dimension
         FIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
 
+        //! Insert a new element inside the FIFOStaticQueue
         void push(T element)
         {
             pthread_mutex_lock(&this->mutex);
@@ -38,6 +45,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             pthread_mutex_unlock(&this->mutex);
         }
 
+        //! Extract the first element that was insert into the FIFOStaticQueue
         T pop(void){
             pthread_mutex_lock(&this->mutex);
             
@@ -66,6 +74,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             return ret;
         }
 
+        //! Print to the standard output the current state of the queue. It used only for debug purpose
         void printQueue(){
             size_t i;
             std::cout << "[ ";

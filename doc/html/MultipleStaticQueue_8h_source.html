@@ -72,36 +72,36 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;StaticQueue.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;FIFOStaticQueue.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef queuetype</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define queuetype</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">enum</span> QueueType { FIFO, LIFO };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMultipleStaticQueue.html">   15</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classMultipleStaticQueue.html">MultipleStaticQueue</a> {  </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classStaticQueue.html">StaticQueue&lt;T&gt;</a> *queue;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">size_t</span> num;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classMultipleStaticQueue.html">MultipleStaticQueue</a>(<span class="keywordtype">size_t</span> num, QueueType type, <span class="keywordtype">int</span> dimension, <span class="keywordtype">bool</span> blocked = <span class="keyword">true</span>){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            this-&gt; num = num;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">case</span> FIFO:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    this-&gt;queue = <span class="keyword">new</span> <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>[this-&gt;num];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;num; i++)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        this-&gt;queue[i] = <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>(dimension, blocked);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">case</span> LIFO:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="comment">/*</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">                    this-&gt;queue = new LIFOStaticQueue&lt;T&gt;[this-&gt;num];</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">                    for (size_t i = 0; i &lt; this-&gt;num; i++)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">                        this-&gt;queue[i] = LIFOStaticQueue&lt;T&gt;(dimension, blocked);*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;LIFOStaticQueue.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef queuetype</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define queuetype</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">enum</span> QueueType { FIFO, LIFO };</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classMultipleStaticQueue.html">   16</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classMultipleStaticQueue.html">MultipleStaticQueue</a> {  </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classStaticQueue.html">StaticQueue&lt;T&gt;</a> *queue;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">size_t</span> num;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classMultipleStaticQueue.html">MultipleStaticQueue</a>(<span class="keywordtype">size_t</span> num, QueueType type, <span class="keywordtype">size_t</span> dimension, <span class="keywordtype">bool</span> blocked = <span class="keyword">true</span>){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            this-&gt; num = num;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">case</span> FIFO:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    this-&gt;queue = <span class="keyword">new</span> <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>[this-&gt;num];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;num; i++)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        this-&gt;queue[i] = <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>(dimension, blocked);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">case</span> LIFO:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    this-&gt;queue = <span class="keyword">new</span> <a class="code" href="classLIFOStaticQueue.html">LIFOStaticQueue&lt;T&gt;</a>[this-&gt;num];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;num; i++)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        this-&gt;queue[i] = <a class="code" href="classLIFOStaticQueue.html">LIFOStaticQueue&lt;T&gt;</a>(dimension, blocked);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">default</span>:</div>
@@ -109,19 +109,19 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> push(T element, <span class="keywordtype">size_t</span> priority)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> push(T element, <span class="keywordtype">size_t</span> priority = 0)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (priority &gt; this-&gt;num)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (priority &gt;= this-&gt;num)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Priority number is greater then number of queue&quot;</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = priority-1; i &lt; this-&gt;num; i++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = priority; i &lt; this-&gt;num; i++)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (!this-&gt;queue[i].full())</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    this-&gt;queue[i].<a class="code" href="classStaticQueue.html#a0416b8e37be7a36b5a5fe280ac509ff4">push</a>(element);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            this-&gt;queue[priority-1].<a class="code" href="classStaticQueue.html#a0416b8e37be7a36b5a5fe280ac509ff4">push</a>(element);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            this-&gt;queue[priority].<a class="code" href="classStaticQueue.html#a0416b8e37be7a36b5a5fe280ac509ff4">push</a>(element);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        T pop(<span class="keywordtype">void</span>)</div>
@@ -136,8 +136,9 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassMultipleStaticQueue_html"><div class="ttname"><a href="classMultipleStaticQueue.html">MultipleStaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="MultipleStaticQueue_8h_source.html#l00015">MultipleStaticQueue.h:15</a></div></div>
-<div class="ttc" id="aclassFIFOStaticQueue_html"><div class="ttname"><a href="classFIFOStaticQueue.html">FIFOStaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00007">FIFOStaticQueue.h:7</a></div></div>
+<div class="ttc" id="aclassMultipleStaticQueue_html"><div class="ttname"><a href="classMultipleStaticQueue.html">MultipleStaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="MultipleStaticQueue_8h_source.html#l00016">MultipleStaticQueue.h:16</a></div></div>
+<div class="ttc" id="aclassLIFOStaticQueue_html"><div class="ttname"><a href="classLIFOStaticQueue.html">LIFOStaticQueue</a></div><div class="ttdef"><b>Definition:</b> <a href="LIFOStaticQueue_8h_source.html#l00007">LIFOStaticQueue.h:7</a></div></div>
+<div class="ttc" id="aclassFIFOStaticQueue_html"><div class="ttname"><a href="classFIFOStaticQueue.html">FIFOStaticQueue</a></div><div class="ttdoc">Definition of a LinkedQueue based on FIFO schedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00009">FIFOStaticQueue.h:9</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html"><div class="ttname"><a href="classStaticQueue.html">StaticQueue</a></div><div class="ttdoc">Struture definition of a StaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00009">StaticQueue.h:9</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html_a0416b8e37be7a36b5a5fe280ac509ff4"><div class="ttname"><a href="classStaticQueue.html#a0416b8e37be7a36b5a5fe280ac509ff4">StaticQueue::push</a></div><div class="ttdeci">virtual void push(T element)=0</div><div class="ttdoc">Insert a new element inside the StaticQueue.</div></div>
 <div class="ttc" id="aclassStaticQueue_html_a58e61e6c1efc58c6bba9caa9dc28be92"><div class="ttname"><a href="classStaticQueue.html#a58e61e6c1efc58c6bba9caa9dc28be92">StaticQueue::pop</a></div><div class="ttdeci">virtual T pop(void)=0</div><div class="ttdoc">Extract an element of the StaticQueue.</div></div>

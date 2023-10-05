@@ -2,6 +2,15 @@
 \label{classFIFOStaticQueue}\index{FIFOStaticQueue$<$ T $>$@{FIFOStaticQueue$<$ T $>$}}
 
 
+Definition of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on F\+I\+FO schedular\textquotesingle{}s rule.  
+
+
+
+
+{\ttfamily \#include $<$F\+I\+F\+O\+Static\+Queue.\+h$>$}
+
+
+
 Inheritance diagram for F\+I\+F\+O\+Static\+Queue$<$ T $>$\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,18 +32,20 @@ Collaboration diagram for F\+I\+F\+O\+Static\+Queue$<$ T $>$\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classFIFOStaticQueue_a0e0fb602ef46a58f0818bc648eac5185}\label{classFIFOStaticQueue_a0e0fb602ef46a58f0818bc648eac5185}} 
-{\bfseries F\+I\+F\+O\+Static\+Queue} (size\+\_\+t \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}})
+\mbox{\Hypertarget{classFIFOStaticQueue_a76c97bebe767a4c39176af5580f3cbab}\label{classFIFOStaticQueue_a76c97bebe767a4c39176af5580f3cbab}} 
+\mbox{\hyperlink{classFIFOStaticQueue_a76c97bebe767a4c39176af5580f3cbab}{F\+I\+F\+O\+Static\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Dummy constructor (D\+ON\textquotesingle{}T U\+SE I\+T!) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFIFOStaticQueue_aaf37129099d61585b3c7aa9eb5ad1aab}{F\+I\+F\+O\+Static\+Queue}} (size\+\_\+t \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}, bool \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}}=true)
 \item 
 \mbox{\Hypertarget{classFIFOStaticQueue_af16b4eef3469feac45698c559bba761b}\label{classFIFOStaticQueue_af16b4eef3469feac45698c559bba761b}} 
 void \mbox{\hyperlink{classFIFOStaticQueue_af16b4eef3469feac45698c559bba761b}{push}} (T element)
-\begin{DoxyCompactList}\small\item\em Insert a new element inside the \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Insert a new element inside the \mbox{\hyperlink{classFIFOStaticQueue}{F\+I\+F\+O\+Static\+Queue}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classFIFOStaticQueue_acc52aef276f249c4706cdc4d9e08e4b7}\label{classFIFOStaticQueue_acc52aef276f249c4706cdc4d9e08e4b7}} 
 T \mbox{\hyperlink{classFIFOStaticQueue_acc52aef276f249c4706cdc4d9e08e4b7}{pop}} (void)
-\begin{DoxyCompactList}\small\item\em Extract an element of the \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Extract the first element that was insert into the \mbox{\hyperlink{classFIFOStaticQueue}{F\+I\+F\+O\+Static\+Queue}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classFIFOStaticQueue_a6c3c5de8ea4a4ed816ace777ed055907}\label{classFIFOStaticQueue_a6c3c5de8ea4a4ed816ace777ed055907}} 
-void {\bfseries print\+Queue} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classFIFOStaticQueue_a6c3c5de8ea4a4ed816ace777ed055907}{print\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Print to the standard output the current state of the queue. It used only for debug purpose. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -42,10 +53,29 @@ void {\bfseries print\+Queue} ()
 \subsubsection*{template$<$class T$>$\newline
 class F\+I\+F\+O\+Static\+Queue$<$ T $>$}
 
+Definition of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on F\+I\+FO schedular\textquotesingle{}s rule. 
+
+Definition at line 9 of file F\+I\+F\+O\+Static\+Queue.\+h.
 
 
-Definition at line 7 of file F\+I\+F\+O\+Static\+Queue.\+h.
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFIFOStaticQueue_aaf37129099d61585b3c7aa9eb5ad1aab}\label{classFIFOStaticQueue_aaf37129099d61585b3c7aa9eb5ad1aab}} 
+\index{FIFOStaticQueue$<$ T $>$@{FIFOStaticQueue$<$ T $>$}!FIFOStaticQueue@{FIFOStaticQueue}}
+\index{FIFOStaticQueue@{FIFOStaticQueue}!FIFOStaticQueue$<$ T $>$@{FIFOStaticQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FIFOStaticQueue()}{FIFOStaticQueue()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classFIFOStaticQueue}{F\+I\+F\+O\+Static\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classFIFOStaticQueue}{F\+I\+F\+O\+Static\+Queue}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{dimension,  }\item[{bool}]{blocked = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of a \mbox{\hyperlink{classFIFOStaticQueue}{F\+I\+F\+O\+Static\+Queue}}. blocked is unmandatory value. Default value for blocked are true (Push and Pop function will be blocked functions). Dimension is the queue\textquotesingle{}s dimension 
+
+Definition at line 18 of file F\+I\+F\+O\+Static\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 : \mbox{\hyperlink{classStaticQueue}{StaticQueue<T>}}(\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}, \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}})\{\}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
