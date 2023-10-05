@@ -1,0 +1,78 @@
+\hypertarget{classFIFOLinkedQueue}{}\doxysection{F\+I\+F\+O\+Linked\+Queue$<$ T $>$ Class Template Reference}
+\label{classFIFOLinkedQueue}\index{FIFOLinkedQueue$<$ T $>$@{FIFOLinkedQueue$<$ T $>$}}
+
+
+Definition of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on F\+I\+FO schedular\textquotesingle{}s rule.  
+
+
+
+
+{\ttfamily \#include $<$F\+I\+F\+O\+Linked\+Queue.\+h$>$}
+
+
+
+Inheritance diagram for F\+I\+F\+O\+Linked\+Queue$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classFIFOLinkedQueue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\+I\+F\+O\+Linked\+Queue$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classFIFOLinkedQueue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFIFOLinkedQueue_a7019e8961ffac2cc01aaa86a2f2ca301}{F\+I\+F\+O\+Linked\+Queue}} (bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}=true, int \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}}=U\+N\+L\+I\+M\+I\+T\+ED)
+\item 
+\mbox{\Hypertarget{classFIFOLinkedQueue_ab137301fef6d2e8d675af9b85b27fb5c}\label{classFIFOLinkedQueue_ab137301fef6d2e8d675af9b85b27fb5c}} 
+void \mbox{\hyperlink{classFIFOLinkedQueue_ab137301fef6d2e8d675af9b85b27fb5c}{push}} (T element)
+\begin{DoxyCompactList}\small\item\em Insert a new element inside the \mbox{\hyperlink{classFIFOLinkedQueue}{F\+I\+F\+O\+Linked\+Queue}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFIFOLinkedQueue_abeadf7a27dd84c5d96a576cea0a7b7d3}\label{classFIFOLinkedQueue_abeadf7a27dd84c5d96a576cea0a7b7d3}} 
+T \mbox{\hyperlink{classFIFOLinkedQueue_abeadf7a27dd84c5d96a576cea0a7b7d3}{pop}} (void)
+\begin{DoxyCompactList}\small\item\em Extract the first element that was insert into the \mbox{\hyperlink{classFIFOLinkedQueue}{F\+I\+F\+O\+Linked\+Queue}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFIFOLinkedQueue_ada14f3daa368d5d55db687348ccebe02}\label{classFIFOLinkedQueue_ada14f3daa368d5d55db687348ccebe02}} 
+void \mbox{\hyperlink{classFIFOLinkedQueue_ada14f3daa368d5d55db687348ccebe02}{print\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Print to the standard output the current state of the queue. It used only for debug purpose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class F\+I\+F\+O\+Linked\+Queue$<$ T $>$}
+
+Definition of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on F\+I\+FO schedular\textquotesingle{}s rule. 
+
+Definition at line 12 of file F\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFIFOLinkedQueue_a7019e8961ffac2cc01aaa86a2f2ca301}\label{classFIFOLinkedQueue_a7019e8961ffac2cc01aaa86a2f2ca301}} 
+\index{FIFOLinkedQueue$<$ T $>$@{FIFOLinkedQueue$<$ T $>$}!FIFOLinkedQueue@{FIFOLinkedQueue}}
+\index{FIFOLinkedQueue@{FIFOLinkedQueue}!FIFOLinkedQueue$<$ T $>$@{FIFOLinkedQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FIFOLinkedQueue()}{FIFOLinkedQueue()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classFIFOLinkedQueue}{F\+I\+F\+O\+Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classFIFOLinkedQueue}{F\+I\+F\+O\+Linked\+Queue}} (\begin{DoxyParamCaption}\item[{bool}]{blocked = {\ttfamily true},  }\item[{int}]{dimension = {\ttfamily UNLIMITED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of a \mbox{\hyperlink{classFIFOLinkedQueue}{F\+I\+F\+O\+Linked\+Queue}}. blocked and dimension are unmandatory values. Default value for blocked are true (Push and Pop function will be blocked functions). Default value for dimension are U\+N\+L\+I\+M\+I\+T\+ED. 
+
+Definition at line 18 of file F\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 : \mbox{\hyperlink{classLinkedQueue}{LinkedQueue<T>}}(\mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}, \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}})\{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+I\+F\+O\+Linked\+Queue.\+h\end{DoxyCompactItemize}
