@@ -8,7 +8,7 @@
 
 template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {  
     public:
-        LIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
+        LIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
 
         void push(T element)
         {

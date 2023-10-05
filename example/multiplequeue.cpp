@@ -4,17 +4,18 @@ extern "C"	{
 #include <iostream>
 #include <RTqueue.h>
 
-MultipleLinkedQueue<int> *queue;
+MultipleStaticQueue<int> *queue;
 
 ptask writer(){
     int id = ptask_get_index();
 
     printf("[ptask %d] Writer Started!\n", id);
 
-    for (int i=0; i < 10; i++)
+    for (int i=0; i < 30; i++)
     {
-        queue->push(i, 1);
-        printf("[ptask %d] Writed %d\n", id, i);
+        int q = (i+1) % 3;
+        queue->push(i, q);
+        printf("[ptask %d] Writed %d in Queue %d\n", id, i, q);
     }
 
     printf("[ptask %d] Writer Finish!\n", id);
@@ -35,7 +36,7 @@ int main()
 {
     ptask_init(SCHED_FIFO, GLOBAL, NO_PROTOCOL);
     
-    queue = new MultipleLinkedQueue<int>(3, FIFO);
+    queue = new MultipleStaticQueue<int>(3, FIFO, 3, true);
 
     tpars params_scrittori = TASK_SPEC_DFL;
     params_scrittori.period = tspec_from(20, MILLI);

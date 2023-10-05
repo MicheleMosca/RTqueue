@@ -17,7 +17,7 @@ template <class T> class LinkedQueue {
         int dimension;
     
     public:
-        LinkedQueue(bool blocked, int dimension){
+        LinkedQueue(int dimension, bool blocked){
             first = NULL;
             last = NULL;
             count = 0;

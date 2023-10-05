@@ -7,7 +7,9 @@
 template <class T> class LIFOStaticQueue : public StaticQueue<T> {  
     
     public:
-        LIFOStaticQueue(size_t dimension) : StaticQueue<T>(dimension){}
+        LIFOStaticQueue(){}
+
+        LIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
 
         void push(T element)
         {
@@ -32,7 +34,7 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             this->queue[0] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
             
-            this->printQueue();
+            // this->printQueue();
             
             this->count++;
 
@@ -55,7 +57,7 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
                 pthread_cond_wait(&this->conditionPush, &this->mutex);
             }
             
-            this->printQueue();
+            // this->printQueue();
             T ret = this->front();
             size_t i;
             for(i = 0; i <= this->count; i++){

@@ -7,7 +7,9 @@
 template <class T> class FIFOStaticQueue : public StaticQueue<T> {  
     
     public:
-        FIFOStaticQueue(size_t dimension) : StaticQueue<T>(dimension){}
+        FIFOStaticQueue(){}
+
+        FIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
 
         void push(T element)
         {
@@ -27,7 +29,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             this->queue[this->lastElem] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
 
-            this->printQueue();
+            // this->printQueue();
             
             this->count++;
 
@@ -55,7 +57,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
 
             this->count--;
 
-            this->printQueue();
+            // this->printQueue();
 
             pthread_cond_signal(&this->conditionPop);
 

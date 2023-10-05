@@ -8,7 +8,7 @@
 
 template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {  
     public:
-        FIFOLinkedQueue(bool blocked = true, int dimension = UNLIMITED) : LinkedQueue<T>(blocked, dimension){}
+        FIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
 
         void push(T element)
         {

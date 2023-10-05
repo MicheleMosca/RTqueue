@@ -17,7 +17,9 @@ template <class T> class StaticQueue {
         size_t count;
     
     public:
-        StaticQueue(size_t dimension, bool blocked = true){
+        StaticQueue(){}
+
+        StaticQueue(size_t dimension, bool blocked){
             this->dimension = dimension;
             queue = new T[this->dimension];
             this->firstElem = this->lastElem = 0;

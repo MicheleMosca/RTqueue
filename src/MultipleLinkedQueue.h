@@ -19,7 +19,7 @@ template <class T> class MultipleLinkedQueue {
         size_t num;
     
     public:
-        MultipleLinkedQueue(size_t num, QueueType type, bool blocked = true, int dimension = UNLIMITED){
+        MultipleLinkedQueue(size_t num, QueueType type, int dimension = UNLIMITED, bool blocked = true){
             this-> num = num;
 
             switch (type)
@@ -27,13 +27,13 @@ template <class T> class MultipleLinkedQueue {
                 case FIFO:
                     this->queue = new FIFOLinkedQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = FIFOLinkedQueue<T>(blocked, dimension);
+                        this->queue[i] = FIFOLinkedQueue<T>(dimension, blocked);
                     break;
 
                 case LIFO:
                     this->queue = new LIFOLinkedQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = LIFOLinkedQueue<T>(blocked, dimension);
+                        this->queue[i] = LIFOLinkedQueue<T>(dimension, blocked);
                     break;
                     
                 default:
@@ -43,17 +43,17 @@ template <class T> class MultipleLinkedQueue {
 
         void push(T element, size_t priority)
         {
-            if (priority > this->num)
+            if (priority >= this->num)
                 throw std::out_of_range("Priority number is greater then number of queue");
 
-            for (size_t i = priority-1; i < this->num; i++)
+            for (size_t i = priority; i < this->num; i++)
                 if (!this->queue[i].full())
                 {
                     this->queue[i].push(element);
                     return;
                 }
 
-            this->queue[priority-1].push(element);
+            this->queue[priority].push(element);
         }
 
         T pop(void)
