@@ -22,55 +22,61 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
-            //dimension control
+            //! Simension control and check if block is set
             if(this->full() && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
-            //blocked condition
+            //! wait condition: queue is full
             while(this->full()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
+            //! Insert the new element in the queue
             this->queue[this->lastElem] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
 
-            // this->printQueue();
-            
+            //! Update the number of elements inside the queue
             this->count++;
 
+            //! Signal push done
             pthread_cond_signal(&this->conditionPush);
 
+            //! Leave the critical section
             pthread_mutex_unlock(&this->mutex);
         }
 
         //! Extract the first element that was insert into the FIFOStaticQueue
         T pop(void){
+            //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
             
-            //empty control
+            //! empty control and check if block is set
             if ( this->empty() && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
             }
 
-            //block condition
+            //! wait condition: queue empty
             while(this->empty()){
                 pthread_cond_wait(&this->conditionPush, &this->mutex);
             }
             
+            //! Extract an element
             T ret = this->front();
             this->firstElem = (this->firstElem + 1) % this->dimension;
 
+            //! Upgrade the number of elements inside the queue
             this->count--;
 
-            // this->printQueue();
-
+            //! Signal pop done
             pthread_cond_signal(&this->conditionPop);
 
+            //! Leave the critical section
             pthread_mutex_unlock(&this->mutex);
 
+            //! Return the element
             return ret;
         }
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['first_66',['first',['../classLinkedQueue.html#adfea27d5f8028ff7b02c6555bb2657bd',1,'LinkedQueue']]],
-  ['firstelem_67',['firstElem',['../classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae',1,'StaticQueue']]]
+  ['first_67',['first',['../classLinkedQueue.html#adfea27d5f8028ff7b02c6555bb2657bd',1,'LinkedQueue']]],
+  ['firstelem_68',['firstElem',['../classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae',1,'StaticQueue']]]
 ];
