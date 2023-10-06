@@ -15,7 +15,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
         //! blocked is unmandatory value.
         //! Default value for blocked are true (Push and Pop function will be blocked functions).
         //! Dimension is the queue's dimension
-        FIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
+        FIFOStaticQueue(size_t dimension, bool blocked = true, bool persistence = true) : StaticQueue<T>(dimension, blocked, persistence = true){}
 
         //! Insert a new element inside the FIFOStaticQueue
         void push(T element)

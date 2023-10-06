@@ -34,6 +34,9 @@ template <class T> class StaticQueue {
 
         //! Define if the call of a Push or Pop function must be blocked or unblocked
         bool blocked;
+
+        //! Define if element inside the queue are persistent, that means it can be removed only with a pop() function. Otherwise the element will be replaced with a newer one if the queue is full
+        bool persistence;
     
     public:
         //! Dummy constructor (DON'T USE IT!)
@@ -41,7 +44,7 @@ template <class T> class StaticQueue {
 
         //! Constructor of a StaticQueue.
         //! blocked and dimension are mandatory value.
-        StaticQueue(size_t dimension, bool blocked){
+        StaticQueue(size_t dimension, bool blocked, bool persistence){
             this->dimension = dimension;
             queue = new T[this->dimension];
             this->firstElem = this->lastElem = 0;
@@ -50,6 +53,7 @@ template <class T> class StaticQueue {
             mutex = PTHREAD_MUTEX_INITIALIZER;
             count = 0;
             this->blocked = blocked;
+            this->persistence = persistence;
         }
 
         //! Insert a new element inside the StaticQueue

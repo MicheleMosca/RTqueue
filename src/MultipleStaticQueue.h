@@ -19,7 +19,7 @@ template <class T> class MultipleStaticQueue {
         size_t num;
     
     public:
-        MultipleStaticQueue(size_t num, QueueType type, size_t dimension, bool blocked = true){
+        MultipleStaticQueue(size_t num, QueueType type, size_t dimension, bool blocked = true, bool persistence = true){
             this-> num = num;
 
             switch (type)
@@ -27,13 +27,13 @@ template <class T> class MultipleStaticQueue {
                 case FIFO:
                     this->queue = new FIFOStaticQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = FIFOStaticQueue<T>(dimension, blocked);
+                        this->queue[i] = FIFOStaticQueue<T>(dimension, blocked, persistence);
                     break;
 
                 case LIFO:
                     this->queue = new LIFOStaticQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = LIFOStaticQueue<T>(dimension, blocked);
+                        this->queue[i] = LIFOStaticQueue<T>(dimension, blocked, persistence);
                     break;
                     
                 default:

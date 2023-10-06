@@ -19,7 +19,7 @@ template <class T> class MultipleLinkedQueue {
         size_t num;
     
     public:
-        MultipleLinkedQueue(size_t num, QueueType type, int dimension = UNLIMITED, bool blocked = true){
+        MultipleLinkedQueue(size_t num, QueueType type, int dimension = UNLIMITED, bool blocked = true, bool persistence = true){
             this-> num = num;
 
             switch (type)
@@ -27,13 +27,13 @@ template <class T> class MultipleLinkedQueue {
                 case FIFO:
                     this->queue = new FIFOLinkedQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = FIFOLinkedQueue<T>(dimension, blocked);
+                        this->queue[i] = FIFOLinkedQueue<T>(dimension, blocked, persistence);
                     break;
 
                 case LIFO:
                     this->queue = new LIFOLinkedQueue<T>[this->num];
                     for (size_t i = 0; i < this->num; i++)
-                        this->queue[i] = LIFOLinkedQueue<T>(dimension, blocked);
+                        this->queue[i] = LIFOLinkedQueue<T>(dimension, blocked, persistence);
                     break;
                     
                 default:

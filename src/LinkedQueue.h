@@ -32,11 +32,14 @@ template <class T> class LinkedQueue {
 
         //! Define if the call of a Push or Pop function must be blocked or unblocked
         bool blocked;
-    
+
+        //! Define if element inside the queue are persistent, that means it can be removed only with a pop() function. Otherwise the element will be replaced with a newer one if the queue is full
+        bool persistence;
+
     public:
         //! Constructor of a LinkedQueue.
         //! blocked and dimension are mandatory value.
-        LinkedQueue(int dimension, bool blocked){
+        LinkedQueue(int dimension, bool blocked, bool persistence){
             first = NULL;
             last = NULL;
             count = 0;
@@ -45,6 +48,7 @@ template <class T> class LinkedQueue {
             mutex = PTHREAD_MUTEX_INITIALIZER;
             this->blocked = blocked;
             this->dimension = dimension;
+            this->persistence = persistence;
         }
 
         //! Insert a new element inside the LinkedQueue

@@ -12,24 +12,34 @@
 template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {  
     public:
         //! Constructor of a FIFOLinkedQueue.
-        //! blocked and dimension are unmandatory values.
+        //! dimension, blocked and persistence are unmandatory values.
         //! Default value for blocked are true (Push and Pop function will be blocked functions).
         //! Default value for dimension are UNLIMITED.
-        FIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
+        //! Default value for persistence are true (only a pop() function can be remove element inside the queue).
+        FIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true, bool persistence = true) : LinkedQueue<T>(dimension, blocked, persistence){}
 
         //! Insert a new element inside the FIFOLinkedQueue
         void push(T element)
         {
             pthread_mutex_lock(&this->mutex);
 
-            if(this->count == this->dimension && !this->blocked){
+            if(this->full() && !this->blocked && this->persistence){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             // if the queue is full => block
-            while(this->count == this->dimension){
+            while(this->full() && this->persistence){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
+            }
+
+            // if element are not persistence and the queue is full, remove the element on top of the queue
+            if (this->full() && !this->persistence)
+            {
+                Node<T>* tmp_first = this->first;
+                this->first = this->first->getNext();
+                this->count--;
+                delete tmp_first;
             }
 
             Node<T>* tmp = new Node<T>();
