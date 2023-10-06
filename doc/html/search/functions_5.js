@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_50',['Node',['../classNode.html#a0ac1d44cfe588be564acf25485029bd8',1,'Node']]]
+  ['multiplestaticqueue_51',['MultipleStaticQueue',['../classMultipleStaticQueue.html#ab30ca5b22ba2fca4953ae194bdf624a1',1,'MultipleStaticQueue']]]
 ];

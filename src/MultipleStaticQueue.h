@@ -17,7 +17,7 @@ enum QueueType { FIFO, LIFO };
 
 template <class T> class MultipleStaticQueue {  
     protected:
-        //! Pointer to the queue
+        //! Pointer to the StaticQueue
         StaticQueue<T> *queue;
 
         //! Number of the queues
