@@ -90,6 +90,11 @@ template <class T> class StaticQueue {
         bool full(void){
             return this->firstElem == this->lastElem && this->count == this->dimension ? true : false;
         }
+
+        //! Return if element inside the queue are persistent
+        bool persistent(void){
+            return persistence;
+        }
 };
 
 #endif

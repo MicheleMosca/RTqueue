@@ -85,6 +85,11 @@ template <class T> class LinkedQueue {
         bool full(void){
             return this->count == this->dimension ? true : false;
         }
+
+        //! Return if element inside the queue are persistent
+        bool persistent(void){
+            return persistence;
+        }
 };
 
 #endif

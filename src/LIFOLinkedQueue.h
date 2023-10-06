@@ -8,20 +8,29 @@
 
 template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {  
     public:
-        LIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
+        LIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true, bool persistence = true) : LinkedQueue<T>(dimension, blocked, persistence){}
 
         void push(T element)
         {
             pthread_mutex_lock(&this->mutex);
 
-            if(this->count == this->dimension && !this->blocked){
+            if(this->full() && !this->blocked && this->persistent()){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             //if the queue is full => block
-            while(this->count == this->dimension){
+            while(this->full()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
+            }
+
+            // if element are not persistence and the queue is full, remove the element on bottom of the queue
+            if (this->full() && !this->persistent())
+            {
+                Node<T>* tmp = this->first;
+                this->first = this->first->getNext();
+                delete tmp;
+                this->count--;
             }
 
             //se la coda è vuota ne creo una nuova ...

@@ -9,22 +9,37 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
     public:
         LIFOStaticQueue(){}
 
-        LIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
+        LIFOStaticQueue(size_t dimension, bool blocked = true, bool persistence = true) : StaticQueue<T>(dimension, blocked, persistence){}
 
         void push(T element)
         {
             pthread_mutex_lock(&this->mutex);
 
             //dimension control
-            if(this->full() && !this->blocked){
+            if(this->full() && !this->blocked && this->persistent()){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             //blocked condition
-            while(this->full()){
+            while(this->full() && this->persistent()){
                 std::cout << "push full" << std::endl;
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
+            }
+
+            // if element are not persistence and the queue is full, remove the element on bottom of the queue
+            if (this->full() && !this->persistent())
+            {
+                size_t i;
+                for(i = 0; i <= this->count; i++){
+                    this->queue[i] = this->queue[i + 1];
+                }
+                //ripulisco la coda
+                for(i = this->count; i <= this->dimension; i++)
+                    this->queue[i] = 0;
+                
+                this->lastElem = (this->lastElem - 1) % this->dimension;
+                this->count--;
             }
 
             int i;

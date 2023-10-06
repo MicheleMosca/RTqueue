@@ -23,18 +23,18 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
-            if(this->full() && !this->blocked && this->persistence){
+            if(this->full() && !this->blocked && this->persistent()){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             // if the queue is full => block
-            while(this->full() && this->persistence){
+            while(this->full() && this->persistent()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
             // if element are not persistence and the queue is full, remove the element on top of the queue
-            if (this->full() && !this->persistence)
+            if (this->full() && !this->persistent())
             {
                 Node<T>* tmp_first = this->first;
                 this->first = this->first->getNext();

@@ -23,14 +23,21 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             pthread_mutex_lock(&this->mutex);
 
             //dimension control
-            if(this->full() && !this->blocked){
+            if(this->full() && !this->blocked && this->persistent()){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
             //blocked condition
-            while(this->full()){
+            while(this->full() && this->persistent()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
+            }
+
+            // if element are not persistence and the queue is full, remove the element on top of the queue
+            if (this->full() && !this->persistent())
+            {
+                this->firstElem = (this->firstElem + 1) % this->dimension;
+                this->count--;
             }
 
             this->queue[this->lastElem] = element;

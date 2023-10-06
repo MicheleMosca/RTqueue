@@ -47,7 +47,7 @@ template <class T> class MultipleStaticQueue {
                 throw std::out_of_range("Priority number is greater then number of queue");
 
             for (size_t i = priority; i < this->num; i++)
-                if (!this->queue[i].full())
+                if (!this->queue[i].full() || !this->queue[i].persistent())
                 {
                     this->queue[i].push(element);
                     return;
