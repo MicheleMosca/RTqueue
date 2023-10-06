@@ -13,15 +13,22 @@ enum QueueType { FIFO, LIFO };
 
 #endif
 
+//! Stucture definition of a MultipleStaticQueue
+
 template <class T> class MultipleStaticQueue {  
     protected:
+        //! Pointer to the queue
         StaticQueue<T> *queue;
+
+        //! Number of the queues
         size_t num;
     
     public:
+        //! Constructor of the MultipleStaticQueue
         MultipleStaticQueue(size_t num, QueueType type, size_t dimension, bool blocked = true){
             this-> num = num;
 
+            //! switch case for FIFO or LIFO politics
             switch (type)
             {
                 case FIFO:
@@ -41,11 +48,14 @@ template <class T> class MultipleStaticQueue {
             }
         }
 
+        //! push method for each queue
         void push(T element, size_t priority = 0)
         {
+            //! Check priority value
             if (priority >= this->num)
                 throw std::out_of_range("Priority number is greater then number of queue");
 
+            //! Insert element
             for (size_t i = priority; i < this->num; i++)
                 if (!this->queue[i].full())
                 {
@@ -56,6 +66,7 @@ template <class T> class MultipleStaticQueue {
             this->queue[priority].push(element);
         }
 
+        //! pop method for each queue
         T pop(void)
         {
             for (size_t i = 0; i < this->num; i++)
