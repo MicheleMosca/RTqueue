@@ -4,7 +4,7 @@
 #include <StaticQueue.h>
 #include <iostream>
 
-//! Stucture definition of a LIFOStaticQueue
+//! Definition of a StaticQueue based on LIFO shedular's rule
 
 template <class T> class LIFOStaticQueue : public StaticQueue<T> {  
     
@@ -14,9 +14,10 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
 
         //! Constructor of a LIFOStaticQueue
         //! blocked and dimension are mandatory value
+        //! Default value for blocked is true (Push and Pop function will be blocked functions)
         LIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
 
-        //! push method for insert a new element
+        //! Insert a new element inside the LIFOStaticQueue
         void push(T element)
         {
             //! Mutex for critical section
@@ -52,12 +53,12 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             pthread_mutex_unlock(&this->mutex);
         }
 
-        //! pop method for extract an element
+        //! Extract the last element that was insert into the LIFOStaticQueue
         T pop(void){
             //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
             
-            //! empty control and check if block is set
+            //! Empty control and check if block is set
             if ( this->empty() && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
@@ -95,7 +96,7 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             return ret;
         }
 
-        //! printQueue method
+//! Print to the standard output the current state of the queue. It used only for debug purpose
         void printQueue(){
             size_t i;
             std::cout << "[ ";

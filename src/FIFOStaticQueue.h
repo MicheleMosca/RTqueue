@@ -4,22 +4,23 @@
 #include <StaticQueue.h>
 #include <iostream>
 
-//! Definition of a LinkedQueue based on FIFO schedular's rule
+//! Definition of a StaticQueue based on FIFO schedular's rule
 
 template <class T> class FIFOStaticQueue : public StaticQueue<T> {
     public:
-        //! Dummy constructor (DON'T USE IT!)
+        //! Dummy constructor of a FIFOStaticQueue (DON'T USE IT!)
         FIFOStaticQueue(){}
 
         //! Constructor of a FIFOStaticQueue.
         //! blocked is unmandatory value.
-        //! Default value for blocked are true (Push and Pop function will be blocked functions).
+        //! Default value for blocked is true (Push and Pop function will be blocked functions).
         //! Dimension is the queue's dimension
         FIFOStaticQueue(size_t dimension, bool blocked = true) : StaticQueue<T>(dimension, blocked){}
 
         //! Insert a new element inside the FIFOStaticQueue
         void push(T element)
         {
+            //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
             //! Dimension control and check if block is set
