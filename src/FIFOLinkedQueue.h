@@ -23,7 +23,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             //! mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
-            //! DImension control and check if block is set
+            //! Dimension control and check if block is set
             if(this->count == this->dimension && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
@@ -34,7 +34,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
-            //! Insert the new element in the queue
+            //! Insert the new element inside the queue
             Node<T>* tmp = new Node<T>();
             tmp->setData(element);
             tmp->setNext(NULL);
@@ -47,7 +47,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
                 this->last = tmp;
             }
 
-            //! Update number of elements inside the queue
+            //! Update the number of elements inside the queue
             this->count++;
 
             //! Signal push done
@@ -63,7 +63,7 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
             //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
-            //! empty control and check if block is set
+            //! Empty control and check if block is set
             if ( this->empty() && !this->blocked ){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
