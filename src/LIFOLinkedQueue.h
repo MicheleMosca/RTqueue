@@ -37,8 +37,8 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
             // if element are not persistence and the queue is full, remove the element on bottom of the queue
             if (this->full() && !this->persistent())
             {
-                Node<T>* tmp = this->first;
-                this->first = this->first->getNext();
+                Node<T>* tmp = this->last;
+                this->last = this->last->getNext();
                 delete tmp;
                 this->count--;
             }
