@@ -6,82 +6,93 @@
 
 #define UNLIMITED -1
 
+//! Structure definition of a LIFOLinkedQueue
+
 template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {  
     public:
+        //! Constructor of a LIFOLinkedQueue
+        //! blocked and dimensione are mandatory value
         LIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
 
+        //! push method for insert a new value
         void push(T element)
         {
+            //! mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
+            //! Dimension control and check if block is set
             if(this->count == this->dimension && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
-            //if the queue is full => block
+            //! Wait condition: queue is full
             while(this->count == this->dimension){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
-            //se la coda è vuota ne creo una nuova ...
+            //! Insert the new element in the queue
             Node<T>* tmp = new Node<T>();
             if(this->empty()){
                 this->first = this->last = tmp;
             }
             else{
-                // ... altrimenti inserisco l'elemento in cima
-                // NOTA: lo inserisco in cima per facilitare la pop
                 tmp->setData(element);
                 tmp->setNext(this->first);
                 this->first = tmp;
             }
 
+            //! Update the number of elements inside the queue
             this->count++;
 
+            //! Signal push done
             pthread_cond_signal(&this->conditionPush);
 
+            //! Leave the critical section
             pthread_mutex_unlock(&this->mutex);
         }
 
+        //! pop method for extract an alement
         T pop(void){
+            //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
-            /* release function if the queue is empty and unblocked function is enable */
+            //! empty control and check if block is set
             if ( this->empty() && !this->blocked ){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
             }
 
-            //if the queue is empty => block
+            //! Wait condition: queue empty
             while (this->empty()){
                 pthread_cond_wait(&this->conditionPush, &this->mutex);
             }
 
-            //recupero l'elemento in cima (l'ultimo inserito => LIFO)
+            //! Extract an element
             T ret = this->first->getData();
 
-            //aggiorno la coda
+            //! Update the queue
             Node<T>* tmp = this->first;
             this->first = this->first->getNext();
             delete tmp;
             
-            //printQueue();
-
+            //! Update the number of elements inside the queue
             this->count --;
 
+            //! Signal pop done
             pthread_cond_signal(&this->conditionPop);
 
+            //! Leave the critical section
             pthread_mutex_unlock(&this->mutex);
             return ret;
         }
 
+        //! printQueue method
         void printQueue(){
             if(this->empty()){
                 throw std::logic_error("Queue is empty");
             }
 
-            //prendo la coda da stampare e la itero
             Node<T>* current = this->first;
             while (current->getNext()) {
                 std::cout << current->getData() << ' ';
