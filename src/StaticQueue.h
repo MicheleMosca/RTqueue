@@ -93,7 +93,7 @@ template <class T> class StaticQueue {
 
         //! Return if element inside the queue are persistent
         bool persistent(void){
-            return persistence;
+            return this->persistence;
         }
 };
 

@@ -15,7 +15,7 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
         //! blocked is unmandatory value.
         //! Default value for blocked is true (Push and Pop function will be blocked functions).
         //! Dimension is the queue's dimension
-        FIFOStaticQueue(size_t dimension, bool blocked = true, bool persistence = true) : StaticQueue<T>(dimension, blocked, persistence = true){}
+        FIFOStaticQueue(size_t dimension, bool blocked = true, bool persistence = true) : StaticQueue<T>(dimension, blocked, persistence){}
 
         //! Insert a new element inside the FIFOStaticQueue
         void push(T element)
@@ -32,27 +32,6 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             //! Wait condition: queue is full
             while(this->full() && this->persistent()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
-            }
-
-            // if element are not persistence and the queue is full, remove the element on top of the queue
-            if (this->full() && !this->persistent())
-            {
-                this->firstElem = (this->firstElem + 1) % this->dimension;
-                this->count--;
-            }
-
-            // if element are not persistence and the queue is full, remove the element on top of the queue
-            if (this->full() && !this->persistent())
-            {
-                this->firstElem = (this->firstElem + 1) % this->dimension;
-                this->count--;
-            }
-
-            // if element are not persistence and the queue is full, remove the element on top of the queue
-            if (this->full() && !this->persistent())
-            {
-                this->firstElem = (this->firstElem + 1) % this->dimension;
-                this->count--;
             }
 
             // if element are not persistence and the queue is full, remove the element on top of the queue

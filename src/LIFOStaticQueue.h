@@ -50,21 +50,6 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
                 this->count--;
             }
 
-            // if element are not persistence and the queue is full, remove the element on bottom of the queue
-            if (this->full() && !this->persistent())
-            {
-                size_t i;
-                for(i = 0; i <= this->count; i++){
-                    this->queue[i] = this->queue[i + 1];
-                }
-                //ripulisco la coda
-                for(i = this->count; i <= this->dimension; i++)
-                    this->queue[i] = 0;
-                
-                this->lastElem = (this->lastElem - 1) % this->dimension;
-                this->count--;
-            }
-
             //! Insert the new element in the queue
             int i;
             for(i = this->count; i >= 0; i--){
@@ -126,7 +111,7 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             return ret;
         }
 
-//! Print to the standard output the current state of the queue. It used only for debug purpose
+        //! Print to the standard output the current state of the queue. It used only for debug purpose
         void printQueue(){
             size_t i;
             std::cout << "[ ";
