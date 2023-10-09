@@ -4,6 +4,7 @@
 #include <node.h>
 #include <iostream>
 
+//! define UNLIMITED value for dimension
 #define UNLIMITED -1
 
 //! Structure definition of a LIFOLinkedQueue
@@ -84,6 +85,8 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
 
             //! Leave the critical section
             pthread_mutex_unlock(&this->mutex);
+
+            //! Return the element
             return ret;
         }
 

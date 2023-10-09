@@ -42,7 +42,7 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             this->queue[0] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
             
-            //! Upgrade the number of elements inside the queue
+            //! Update the number of elements inside the queue
             this->count++;
 
             //! Signal push done
