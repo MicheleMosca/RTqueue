@@ -7,18 +7,20 @@
 //! define UNLIMITED value for dimension
 #define UNLIMITED -1
 
-//! Structure definition of a LIFOLinkedQueue
+//! Structure of a LinkedQueue based on LIFO shedular's rule
 
 template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {  
     public:
         //! Constructor of a LIFOLinkedQueue
-        //! blocked and dimensione are mandatory value
+        //! blocked and dimensione are mandatory values
+        //! Default value for blocked is true (Push and Pop function will be blocked functions)
+        //! Default value for dimension is UNLIMITED
         LIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
 
-        //! push method for insert a new value
+        //! Insert a new element inside the LIFOLinkedQueue
         void push(T element)
         {
-            //! mutex for critical section
+            //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
             //! Dimension control and check if block is set
@@ -53,12 +55,12 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
             pthread_mutex_unlock(&this->mutex);
         }
 
-        //! pop method for extract an alement
+        //! Extract the last element that was insert into the LIFOLinkedQueue
         T pop(void){
             //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
-            //! empty control and check if block is set
+            //! Empty control and check if block is set
             if ( this->empty() && !this->blocked ){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
@@ -90,7 +92,7 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
             return ret;
         }
 
-        //! printQueue method
+        //! Print to the standard output the current state of the queue. It used only for debug purpose
         void printQueue(){
             if(this->empty()){
                 throw std::logic_error("Queue is empty");

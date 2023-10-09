@@ -13,14 +13,14 @@ template <class T> class FIFOLinkedQueue : public LinkedQueue<T> {
     public:
         //! Constructor of a FIFOLinkedQueue.
         //! blocked and dimension are unmandatory values.
-        //! Default value for blocked are true (Push and Pop function will be blocked functions).
-        //! Default value for dimension are UNLIMITED.
+        //! Default value for blocked is true (Push and Pop function will be blocked functions).
+        //! Default value for dimension is UNLIMITED.
         FIFOLinkedQueue(int dimension = UNLIMITED, bool blocked = true) : LinkedQueue<T>(dimension, blocked){}
 
         //! Insert a new element inside the FIFOLinkedQueue
         void push(T element)
         {
-            //! mutex for critical section
+            //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
 
             //! Dimension control and check if block is set
