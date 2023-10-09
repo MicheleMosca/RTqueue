@@ -1,5 +1,5 @@
 <map id="LinkedQueue&lt; T &gt;" name="LinkedQueue&lt; T &gt;">
 <area shape="rect" id="node1" title="Struture definition of a LinkedQueue." alt="" coords="119,5,263,32"/>
 <area shape="rect" id="node2" href="$classFIFOLinkedQueue.html" title="Definition of a LinkedQueue based on FIFO schedular&#39;s rule." alt="" coords="5,80,180,107"/>
-<area shape="rect" id="node3" href="$classLIFOLinkedQueue.html" title=" " alt="" coords="205,80,378,107"/>
+<area shape="rect" id="node3" href="$classLIFOLinkedQueue.html" title="Structure definition of a LIFOLinkedQueue." alt="" coords="205,80,378,107"/>
 </map>
