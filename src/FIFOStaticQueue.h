@@ -22,18 +22,18 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
         {
             pthread_mutex_lock(&this->mutex);
 
-            //! Simension control and check if block is set
+            //! Dimension control and check if block is set
             if(this->full() && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is full");
             }
 
-            //! wait condition: queue is full
+            //! Wait condition: queue is full
             while(this->full()){
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
-            //! Insert the new element in the queue
+            //! Insert the new element inside the queue
             this->queue[this->lastElem] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
 
@@ -52,13 +52,13 @@ template <class T> class FIFOStaticQueue : public StaticQueue<T> {
             //! Mutex for critical section
             pthread_mutex_lock(&this->mutex);
             
-            //! empty control and check if block is set
+            //! Empty control and check if block is set
             if ( this->empty() && !this->blocked){
                 pthread_mutex_unlock(&this->mutex);
                 throw std::logic_error("Queue is empty");
             }
 
-            //! wait condition: queue empty
+            //! Wait condition: queue empty
             while(this->empty()){
                 pthread_cond_wait(&this->conditionPush, &this->mutex);
             }
