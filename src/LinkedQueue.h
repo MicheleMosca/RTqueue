@@ -47,6 +47,9 @@ template <class T> class LinkedQueue {
             conditionPop = PTHREAD_COND_INITIALIZER;
             mutex = PTHREAD_MUTEX_INITIALIZER;
             this->blocked = blocked;
+            if (dimension < -1)
+                throw std::logic_error("Dimension can not be negative");
+
             this->dimension = dimension;
             this->persistence = persistence;
         }
