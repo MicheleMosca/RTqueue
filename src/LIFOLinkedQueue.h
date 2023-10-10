@@ -34,11 +34,16 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
-            // if element are not persistence and the queue is full, remove the element on bottom of the queue
+            //! If element are not persistence and the queue is full, remove the element on bottom of the queue
             if (this->full() && !this->persistent())
             {
+                Node<T>* current = this->first; 
+                while (current->getNext() != this->last && current->getNext() != nullptr)
+                    current = current->getNext();
+
                 Node<T>* tmp = this->last;
-                this->last = this->last->getNext();
+                this->last = current;
+                this->last->setNext(nullptr);
                 delete tmp;
                 this->count--;
             }
@@ -47,6 +52,7 @@ template <class T> class LIFOLinkedQueue : public LinkedQueue<T> {
             Node<T>* tmp = new Node<T>();
             if(this->empty()){
                 this->first = this->last = tmp;
+                tmp->setData(element);
             }
             else{
                 tmp->setData(element);

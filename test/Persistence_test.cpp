@@ -119,5 +119,21 @@ int main()
     cout << endl;
 
 
+    // da sistemare (non persistente e non bloccante)
+
+    LIFOLinkedQueue<int> *linkedQueue = new LIFOLinkedQueue<int>(2,false, false);
+    linkedQueue->push(1);
+    linkedQueue->printQueue();
+    linkedQueue->push(2);
+    linkedQueue->printQueue();
+    linkedQueue->push(3);
+    linkedQueue->printQueue();
+    linkedQueue->push(4);
+    linkedQueue->printQueue();
+
+    while (!linkedQueue->empty())
+        cout << linkedQueue->pop() << " ";
+
+    cout << endl;
     return 0;
 }
