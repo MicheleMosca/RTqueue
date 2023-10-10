@@ -293,7 +293,7 @@ int main(){
         test_passed = true;
         cout << "[ OK ]" << endl;
     }
-    assertm(test_passed == true, "Expected logic_error because the dimension is negative");
+    assertm(test_passed == true, "Expected bad_array_new_length because the dimension is negative");
     cout << endl;
 
     cout << endl;
