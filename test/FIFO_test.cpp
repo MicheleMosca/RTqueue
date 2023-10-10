@@ -93,7 +93,7 @@ int main(){
     //! dimension: 1
     //! blocked: false
     //! persistance: true
-    cout << "[*] Executing tests of unblocked push and pop with queue of dimension 1 and push these values:" << endl;
+    cout << "[*] Executing tests of unblocked push and pop with FIFOLinkedQueue of dimension 1 and push these values:" << endl;
     cout << "[*] 1,2" << endl;
     cout << "[*] Expected pop value: 1" << endl << endl;
     
@@ -103,6 +103,8 @@ int main(){
     
     bool test_passed = true;
 
+    //! try to push two element
+    cout << "Trying to overflow the queue ... ";
     try
     {
         for (size_t i = 1; i <= 2; i++)
@@ -113,24 +115,104 @@ int main(){
     catch(const std::logic_error& e)
     {
         test_passed = true;
-        cout << "[*] Test on queue is full exception: [ ok ]" << endl;
+        cout << "[ OK ]" << endl;
     }
     assertm(test_passed == true, "Expected logic_error because the queue is full");
-    
+
+    //! try to pop element in a empty queue
+    cout << "Trying to pop in a empty queue ... ";
     try
     {
         for (size_t i = 1; i <= 2; i++)
-            cout << queueLinked->pop() << endl;
+            queueLinked->pop();
 
         test_passed = false;
     }
     catch(const std::logic_error& e)
     {
         test_passed = true;
-        cout << "[*] Test on queue is empty exception: [ ok ]" << endl;
+        cout << "[ OK ]" << endl;
     }
     assertm(test_passed == true, "Expected logic_error because the queue is empty");
 
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
+    cout << endl;
+
+
+    //! Test FIFOStaticQueue
+    //! dimension: 1
+    //! blocked: false
+    //! persistance: true
+    cout << "[*] Executing tests of unblocked push and pop with FIFOStaticQueue of dimension 1 and push these values:" << endl;
+    cout << "[*] 1,2" << endl;
+    cout << "[*] Expected pop value: 1" << endl << endl;
+
+    queueStatic = new FIFOStaticQueue<int>(1, false, true);
+
+    cout << "[*] Test" << endl;
+    
+    test_passed = true;
+
+    //! try to push two element
+    cout << "Trying to overflow the queue ... ";
+    try
+    {
+        for (size_t i = 1; i <= 2; i++)
+            queueStatic->push(i);
+
+        test_passed = false;
+    }
+    catch(const std::logic_error& e)
+    {
+        test_passed = true;
+        cout << "[ OK ]" << endl;
+    }
+    assertm(test_passed == true, "Expected logic_error because the queue is full");
+    
+    //! try to pop element in a empty queue
+    cout << "Trying to pop in a empty queue ... ";
+    try
+    {
+        for (size_t i = 1; i <= 2; i++)
+            queueStatic->pop();
+
+        test_passed = false;
+    }
+    catch(const std::logic_error& e)
+    {
+        test_passed = true;
+        cout << "[ OK ]" << endl;
+    }
+    assertm(test_passed == true, "Expected logic_error because the queue is empty");
+
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
+    cout << endl;
+
+
+    //! Test FIFOLinkedQueue
+    //! dimension: 2
+    //! blocked: false
+    //! persistance: false
+    cout << "[*] Executing tests of unblocked push and pop with FIFOLinkedQueue of dimension 2 and push these values:" << endl;
+    cout << "[*] 1,2,3,4" << endl;
+    cout << "[*] Expected pop value: 3,4" << endl << endl;
+
+    FIFOLinkedQueue<int> *linkedQueue = new FIFOLinkedQueue<int>(2,false, false);
+    
+    //! push four elements
+    for(size_t i = 1; i <= 4; i++)
+        linkedQueue->push(i);
+    
+    //! pop
+    cout << "final pop values: ";
+    while (!linkedQueue->empty())
+        cout << linkedQueue->pop() << " ";
+    cout << endl;
+
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
     cout << endl;
 
     return 0;
