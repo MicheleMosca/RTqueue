@@ -1,7 +1,7 @@
 #ifndef LIFOlinkedqueue
 #define LIFOlinkedqueue
 
-#include <node.h>
+#include <LinkedQueue.h>
 #include <iostream>
 
 //! define UNLIMITED value for dimension
