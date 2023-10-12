@@ -215,5 +215,90 @@ int main(){
     cout << "----- END TEST -----" << endl;
     cout << endl;
 
+
+    //! Test FIFOStaticQueue
+    //! dimension: 2
+    //! blocked: false
+    //! persistance: false
+    cout << "[*] Executing tests of unblocked push and pop with FIFOStaticQueue of dimension 2 and push these values:" << endl;
+    cout << "[*] 1,2,3,4" << endl;
+    cout << "[*] Expected pop value: 3,4" << endl << endl;
+
+    FIFOStaticQueue<int> *staticQueue = new FIFOStaticQueue<int>(2,false, false);
+    
+    //! push four elements
+    for(size_t i = 1; i <= 4; i++)
+        staticQueue->push(i);
+    
+    //! pop
+    cout << "final pop values: ";
+    while (!staticQueue->empty())
+        cout << staticQueue->pop() << " ";
+    cout << endl;
+
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
+    cout << endl;
+
+
+    //! Test FIFOLinkedQueue
+    //! dimension: -5
+    cout << "Executing test of dimension with FIFOLinkedQueue" << endl;
+
+    LinkedQueue<int> *queueLinkedDimension;
+
+    cout << "[*] Test" << endl;
+
+    //! try to create a FIFOLinkedQueue with dimension = -5
+    cout << "Trying to create a FIFOLinkedQueue with negative dimension ... ";
+    try
+    {
+        queueLinkedDimension = new FIFOLinkedQueue<int>(-5, true, false);
+        free(queueLinkedDimension);
+
+        test_passed = false;
+    }
+    catch(const std::logic_error& e)
+    {
+        test_passed = true;
+        cout << "[ OK ]" << endl;
+    }
+    assertm(test_passed == true, "Expected logic_error because the dimension is negative");
+    cout << endl;
+
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
+    cout << endl;
+
+
+    //! Test FIFOStaticQueue
+    //! dimension: -5
+    cout << "Executing test of dimension with FIFOStaticQueue" << endl;
+
+    StaticQueue<int> *queueStaticDimension;
+
+    cout << "[*] Test" << endl;
+
+    //! try to create a FIFOStaticQueue with dimension = -5
+    cout << "Trying to create a FIFOStaticQueue with negative dimension ... ";
+    try
+    {
+        queueStaticDimension = new FIFOStaticQueue<int>(-5, true, false);
+        free(queueStaticDimension);
+
+        test_passed = false;
+    }
+    catch(const std::bad_array_new_length& e)
+    {
+        test_passed = true;
+        cout << "[ OK ]" << endl;
+    }
+    assertm(test_passed == true, "Expected bad_array_new_length because the dimension is negative");
+    cout << endl;
+
+    cout << endl;
+    cout << "----- END TEST -----" << endl;
+    cout << endl;
+
     return 0;
 }
