@@ -10,7 +10,7 @@ typedef struct struct_data{
     int data;
 }data;
 
-MultipleStaticQueue<data> *queue;
+MultipleLinkedQueue<data> *queue;
 
 ptask writer(){
     int id = ptask_get_index();
@@ -52,7 +52,7 @@ int main()
 {
     ptask_init(SCHED_FIFO, GLOBAL, NO_PROTOCOL);
     
-    queue = new MultipleStaticQueue<data>(3, FIFO, 3, true);
+    queue = new MultipleLinkedQueue<data>(3, FIFO, 3, true);
 
     tpars params_scrittori = TASK_SPEC_DFL;
     params_scrittori.period = tspec_from(20, MILLI);
