@@ -38,16 +38,19 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             // if element are not persistence and the queue is full, remove the element on bottom of the queue
             if (this->full() && !this->persistent())
             {
-                for(size_t i = this->count; i >= 0; i--){
+                for(size_t i = 0; i < this->count; i++){
                     this->queue[i + 1] = this->queue[i];
                 }
                 
+                std::cout << "Prima: " << this->lastElem << std::endl;
                 this->lastElem = (this->lastElem - 1) % this->dimension;
+                std::cout << "Dopo: " << this->lastElem << std::endl;
                 this->count--;
+                std::cout << "[--] Count: " << this->count << " Dimension: " << this->dimension << " Element: " << element << std::endl;
             }
 
             //! Insert the new element in the queue
-            for(size_t i = this->count; i >= 0; i--){
+            for(size_t i = 0; i < this->count; i++){
                 this->queue[i + 1] = this->queue[i];
             }
             this->queue[0] = element;
@@ -55,6 +58,8 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             
             //! Update the number of elements inside the queue
             this->count++;
+            std::cout << this->lastElem << std::endl;
+            std::cout << "Count: " << this->count << " Dimension: " << this->dimension << " Element: " << element << std::endl;
 
             //! Signal push done
             pthread_cond_signal(&this->conditionPush);
@@ -87,10 +92,13 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             }
             
             //! Update last element index of the queue
+            std::cout << "Prima: " << this->lastElem << std::endl;
             this->lastElem = (this->lastElem - 1) % this->dimension;
+            std::cout << "Dopo: " << this->lastElem << std::endl;
 
             //! Update the number of elements inside the queue
             this->count--;
+            std::cout << "Count: " << this->count << " Dimension: " << this->dimension << " Element: " << ret << std::endl;
 
             //! Signal pop done
             pthread_cond_signal(&this->conditionPop);

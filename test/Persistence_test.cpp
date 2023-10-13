@@ -121,7 +121,7 @@ int main()
 
     // da sistemare (non persistente e non bloccante)
 
-    LIFOLinkedQueue<int> *linkedQueue = new LIFOLinkedQueue<int>(2,false, false);
+    FIFOLinkedQueue<int> *linkedQueue = new FIFOLinkedQueue<int>(2,false, false);
     linkedQueue->push(1);
     linkedQueue->printQueue();
     linkedQueue->push(2);
