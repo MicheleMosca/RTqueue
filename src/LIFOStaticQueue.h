@@ -36,19 +36,15 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             }
 
             // if element are not persistence and the queue is full, remove the element on bottom of the queue
-            if ((this->count + 1) == this->dimension && !this->persistent())
-            {
-                for(size_t i = this->dimension - 1; i > 0; i--){
-                    this->queue[i + 1] = this->queue[i];
-                }
-                
-                this->lastElem = this->dimension - 1;
+            if (this->full() && !this->persistent())
+            {   
+                this->lastElem = (this->lastElem + (this->dimension -1)) % this->dimension;
                 this->count--;
             }
 
             //! Insert the new element in the queue
-            for(size_t i = 0; i < this->count; i++){
-                this->queue[i + 1] = this->queue[i];
+            for(size_t i = this->dimension -1; i > 0; i--){
+                this->queue[i] = this->queue[i - 1];
             }
             this->queue[0] = element;
             this->lastElem = (this->lastElem + 1) % this->dimension;
@@ -81,13 +77,12 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
             
             //! Extract an element
             T ret = this->front();
-            size_t i;
-            for(i = 0; i <= this->count; i++){
+            for(size_t i = 0; i < this->count; i++){
                 this->queue[i] = this->queue[i + 1];
             }
             
             //! Update last element index of the queue
-            this->lastElem = this->dimension - 1;
+            this->lastElem = (this->lastElem + (this->dimension -1)) % this->dimension;
           
             //! Update the number of elements inside the queue
             this->count--;

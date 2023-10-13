@@ -80,7 +80,7 @@ int main(){
     cout << "final pop values: ";
     while (!queueStatic->empty())
     {
-        cout << queueStatic->pop() << " ";      // TODO: Sistemare sto porco dio
+        cout << queueStatic->pop() << " ";
     }
     cout << endl;
 
@@ -95,7 +95,7 @@ int main(){
     //! persistance: true
     cout << "[*] Executing tests of unblocked push and pop with LIFOLinkedQueue of dimension 1 and push these values:" << endl;
     cout << "[*] 1,2" << endl;
-    cout << "[*] Expected pop value: 1" << endl << endl;
+    cout << "[*] Expected pop value: 2" << endl << endl;
     
     queueLinked = new LIFOLinkedQueue<int>(1, false, true);
 
@@ -146,7 +146,7 @@ int main(){
     //! persistance: true
     cout << "[*] Executing tests of unblocked push and pop with LIFOStaticQueue of dimension 1 and push these values:" << endl;
     cout << "[*] 1,2" << endl;
-    cout << "[*] Expected pop value: 1" << endl << endl;
+    cout << "[*] Expected pop value: 2" << endl << endl;
 
     queueStatic = new LIFOStaticQueue<int>(1, false, true);
 
@@ -197,7 +197,7 @@ int main(){
     //! persistance: false
     cout << "[*] Executing tests of unblocked push and pop with LIFOLinkedQueue of dimension 2 and push these values:" << endl;
     cout << "[*] 1,2,3,4" << endl;
-    cout << "[*] Expected pop value: 3,4" << endl << endl;
+    cout << "[*] Expected pop value: 4,3" << endl << endl;
 
     LIFOLinkedQueue<int> *linkedQueue = new LIFOLinkedQueue<int>(2,false, false);
     
@@ -222,7 +222,7 @@ int main(){
     //! persistance: false
     cout << "[*] Executing tests of unblocked push and pop with LIFOStaticQueue of dimension 2 and push these values:" << endl;
     cout << "[*] 1,2,3,4" << endl;
-    cout << "[*] Expected pop value: 3,4" << endl << endl;
+    cout << "[*] Expected pop value: 4, 3" << endl << endl;
 
     LIFOStaticQueue<int> *staticQueue = new LIFOStaticQueue<int>(2,false, false);
     
