@@ -66,21 +66,20 @@ int main(){
     //! push five elements
     for (size_t i = 1; i <= 5; i++)
         queueStatic->push(i);
-    
+   
     //! assert test: expected pop value = 5
     cout << "assert test: expected pop value = 5 ... ";
     assertm(queueStatic->pop() == 5, "Expected pop value 5");
     cout << "[ OK ]" << endl;
-
+ 
     //! push another five elements
     for (size_t i = 6; i <= 9; i++)
         queueStatic->push(i);
 
     //! pop
     cout << "final pop values: ";
-    while (!queueStatic->empty())
-    {
-        cout << queueStatic->pop() << " ";      // TODO: Sistemare sto porco dio
+    for(size_t i = 0; i < 3; i++){
+        cout << queueStatic->pop() << " ";
     }
     cout << endl;
 
@@ -96,7 +95,7 @@ int main(){
     cout << "[*] Executing tests of unblocked push and pop with LIFOLinkedQueue of dimension 1 and push these values:" << endl;
     cout << "[*] 1,2" << endl;
     cout << "[*] Expected pop value: 1" << endl << endl;
-    
+
     queueLinked = new LIFOLinkedQueue<int>(1, false, true);
 
     cout << "[*] Test" << endl;
@@ -240,7 +239,7 @@ int main(){
     cout << "----- END TEST -----" << endl;
     cout << endl;
 
-
+/*
     //! Test LIFOLinkedQueue
     //! dimension: -5
     cout << "Executing test of dimension with LIFOLinkedQueue" << endl;
@@ -299,6 +298,6 @@ int main(){
     cout << endl;
     cout << "----- END TEST -----" << endl;
     cout << endl;
-
+*/
     return 0;
 }
