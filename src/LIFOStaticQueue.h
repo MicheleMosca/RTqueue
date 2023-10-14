@@ -31,7 +31,6 @@ template <class T> class LIFOStaticQueue : public StaticQueue<T> {
 
             //! Wait condition: queue is full
             while(this->full() && this->persistent()){
-                std::cout << "push full" << std::endl;
                 pthread_cond_wait(&this->conditionPop, &this->mutex);
             }
 
