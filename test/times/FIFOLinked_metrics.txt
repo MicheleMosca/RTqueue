@@ -1,0 +1,44 @@
+Statistics Metrics Writer0 (Write)
+count      100.000000
+mean      3187.950000
+std       5504.157043
+min        301.000000
+25%        493.750000
+50%        883.500000
+75%       3632.000000
+max      31119.000000
+Name: Time, dtype: float64
+
+Statistics Metrics Writer0 (Read)
+count    1.000000e+02
+mean     2.313880e+05
+std      6.022107e+05
+min      1.550000e+02
+25%      2.455000e+02
+50%      4.115000e+02
+75%      3.484275e+04
+max      3.011805e+06
+Name: Time, dtype: float64
+
+Statistics Metrics Writer1 (Write)
+count      100.000000
+mean      3221.960000
+std       6647.779635
+min        263.000000
+25%        546.500000
+50%       1049.000000
+75%       4002.500000
+max      60443.000000
+Name: Time, dtype: float64
+
+Statistics Metrics Writer1 (Read)
+count    1.000000e+02
+mean     2.854878e+05
+std      8.413325e+05
+min      1.550000e+02
+25%      2.492500e+02
+50%      4.990000e+02
+75%      4.824800e+04
+max      4.036200e+06
+Name: Time, dtype: float64
+
