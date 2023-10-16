@@ -81,8 +81,8 @@ Inheritance diagram for StaticQueue&lt; T &gt;:</div>
 <div class="center"><img src="classStaticQueue__inherit__graph.png" border="0" usemap="#StaticQueue_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="StaticQueue_3_01T_01_4_inherit__map" id="StaticQueue_3_01T_01_4_inherit__map">
 <area shape="rect" title="Struture definition of a StaticQueue." alt="" coords="117,5,255,32"/>
-<area shape="rect" href="classFIFOStaticQueue.html" title="Definition of a LinkedQueue based on FIFO schedular&#39;s rule." alt="" coords="5,80,175,107"/>
-<area shape="rect" href="classLIFOStaticQueue.html" title="Stucture definition of a LIFOStaticQueue." alt="" coords="199,80,367,107"/>
+<area shape="rect" href="classFIFOStaticQueue.html" title="Definition of a StaticQueue based on FIFO schedular&#39;s rule." alt="" coords="5,80,175,107"/>
+<area shape="rect" href="classLIFOStaticQueue.html" title="Definition of a StaticQueue based on LIFO shedular&#39;s rule." alt="" coords="199,80,367,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#aa74c41724a545921ad12ed173c1bf2c5">StaticQueue</a> ()</td></tr>
 <tr class="memdesc:aa74c41724a545921ad12ed173c1bf2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy constructor (DON'T USE IT!) <br /></td></tr>
 <tr class="separator:aa74c41724a545921ad12ed173c1bf2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcc55edd6afb406b17b78a96e5e17821"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#abcc55edd6afb406b17b78a96e5e17821">StaticQueue</a> (size_t <a class="el" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>, bool <a class="el" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>)</td></tr>
-<tr class="separator:abcc55edd6afb406b17b78a96e5e17821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a115e94be875ab972efdca0c0c3d0d616"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#a115e94be875ab972efdca0c0c3d0d616">StaticQueue</a> (size_t <a class="el" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>, bool <a class="el" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>, bool <a class="el" href="classStaticQueue.html#ae829521ae3f530393794241de25f1ff7">persistence</a>)</td></tr>
+<tr class="separator:a115e94be875ab972efdca0c0c3d0d616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0416b8e37be7a36b5a5fe280ac509ff4"><td class="memItemLeft" align="right" valign="top"><a id="a0416b8e37be7a36b5a5fe280ac509ff4"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#a0416b8e37be7a36b5a5fe280ac509ff4">push</a> (T element)=0</td></tr>
 <tr class="memdesc:a0416b8e37be7a36b5a5fe280ac509ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new element inside the <a class="el" href="classStaticQueue.html" title="Struture definition of a StaticQueue.">StaticQueue</a>. <br /></td></tr>
@@ -122,6 +122,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#afb954a20662d63dc88e74a7e7a0f45ff">full</a> (void)</td></tr>
 <tr class="memdesc:afb954a20662d63dc88e74a7e7a0f45ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the queue is full. <br /></td></tr>
 <tr class="separator:afb954a20662d63dc88e74a7e7a0f45ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a594e29b10c1caed8c327e769f80671c9"><td class="memItemLeft" align="right" valign="top"><a id="a594e29b10c1caed8c327e769f80671c9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#a594e29b10c1caed8c327e769f80671c9">persistent</a> (void)</td></tr>
+<tr class="memdesc:a594e29b10c1caed8c327e769f80671c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if element inside the queue are persistent. <br /></td></tr>
+<tr class="separator:a594e29b10c1caed8c327e769f80671c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -161,6 +165,10 @@ pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a></td></tr>
 <tr class="memdesc:a87b50a9d8024c75393d1eeac822b3ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define if the call of a Push or Pop function must be blocked or unblocked. <br /></td></tr>
 <tr class="separator:a87b50a9d8024c75393d1eeac822b3ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae829521ae3f530393794241de25f1ff7"><td class="memItemLeft" align="right" valign="top"><a id="ae829521ae3f530393794241de25f1ff7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStaticQueue.html#ae829521ae3f530393794241de25f1ff7">persistence</a></td></tr>
+<tr class="memdesc:ae829521ae3f530393794241de25f1ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define if element inside the queue are persistent, that means it can be removed only with a <a class="el" href="classStaticQueue.html#a58e61e6c1efc58c6bba9caa9dc28be92" title="Extract an element of the StaticQueue.">pop()</a> function. Otherwise the element will be replaced with a newer one if the queue is full. <br /></td></tr>
+<tr class="separator:ae829521ae3f530393794241de25f1ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
@@ -170,8 +178,8 @@ class StaticQueue&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="StaticQueue_8h_source.html#l00009">9</a> of file <a class="el" href="StaticQueue_8h_source.html">StaticQueue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abcc55edd6afb406b17b78a96e5e17821"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcc55edd6afb406b17b78a96e5e17821">&#9670;&nbsp;</a></span>StaticQueue()</h2>
+<a id="a115e94be875ab972efdca0c0c3d0d616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a115e94be875ab972efdca0c0c3d0d616">&#9670;&nbsp;</a></span>StaticQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,7 +199,13 @@ template&lt;class T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>blocked</em>&#160;</td>
+          <td class="paramname"><em>blocked</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>persistence</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -207,17 +221,18 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 <p>Constructor of a <a class="el" href="classStaticQueue.html" title="Struture definition of a StaticQueue.">StaticQueue</a>. blocked and dimension are mandatory value. </p>
 
-<p class="definition">Definition at line <a class="el" href="StaticQueue_8h_source.html#l00044">44</a> of file <a class="el" href="StaticQueue_8h_source.html">StaticQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                   {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a> = <a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a> = <span class="keyword">new</span> T[this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> = this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a> = PTHREAD_COND_INITIALIZER;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a> = PTHREAD_COND_INITIALIZER;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a> = PTHREAD_MUTEX_INITIALIZER;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a> = 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a> = <a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="StaticQueue_8h_source.html#l00047">47</a> of file <a class="el" href="StaticQueue_8h_source.html">StaticQueue.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a> = <a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">queue</a> = <span class="keyword">new</span> T[this-&gt;<a class="code" href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">dimension</a>];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a5717c30620e0bcee6f0aea049aa711ae">firstElem</a> = this-&gt;<a class="code" href="classStaticQueue.html#ae45dbb66dc85974bc27ec32f1a073dc1">lastElem</a> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classStaticQueue.html#a3aa0b018488ce0cfe6ad1394096c2c4e">conditionPush</a> = PTHREAD_COND_INITIALIZER;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">conditionPop</a> = PTHREAD_COND_INITIALIZER;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classStaticQueue.html#a84b809176e57d1fed18b27f499dc6a01">mutex</a> = PTHREAD_MUTEX_INITIALIZER;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">count</a> = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a> = <a class="code" href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">blocked</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            this-&gt;<a class="code" href="classStaticQueue.html#ae829521ae3f530393794241de25f1ff7">persistence</a> = <a class="code" href="classStaticQueue.html#ae829521ae3f530393794241de25f1ff7">persistence</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,6 +242,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <div class="ttc" id="aclassStaticQueue_html_ad7235bbc1381b5fe9ab60bb51e17ac9b"><div class="ttname"><a href="classStaticQueue.html#ad7235bbc1381b5fe9ab60bb51e17ac9b">StaticQueue::queue</a></div><div class="ttdeci">T * queue</div><div class="ttdoc">Definition on the static queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00012">StaticQueue.h:12</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html_acc0d210b1988952e2110bda1e8929bf3"><div class="ttname"><a href="classStaticQueue.html#acc0d210b1988952e2110bda1e8929bf3">StaticQueue::dimension</a></div><div class="ttdeci">size_t dimension</div><div class="ttdoc">Define the maximum dimension of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00024">StaticQueue.h:24</a></div></div>
+<div class="ttc" id="aclassStaticQueue_html_ae829521ae3f530393794241de25f1ff7"><div class="ttname"><a href="classStaticQueue.html#ae829521ae3f530393794241de25f1ff7">StaticQueue::persistence</a></div><div class="ttdeci">bool persistence</div><div class="ttdoc">Define if element inside the queue are persistent, that means it can be removed only with a pop() fun...</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00039">StaticQueue.h:39</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html_a04709a0bfc1ae19cf4c80936263b9f8d"><div class="ttname"><a href="classStaticQueue.html#a04709a0bfc1ae19cf4c80936263b9f8d">StaticQueue::conditionPop</a></div><div class="ttdeci">pthread_cond_t conditionPop</div><div class="ttdoc">Condition variable to block thread or task waiting for a new Pop function call.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00030">StaticQueue.h:30</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html_adadb539531aa92d704d6a746d26a213d"><div class="ttname"><a href="classStaticQueue.html#adadb539531aa92d704d6a746d26a213d">StaticQueue::count</a></div><div class="ttdeci">size_t count</div><div class="ttdoc">Number of element inside the queue.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00021">StaticQueue.h:21</a></div></div>
 <div class="ttc" id="aclassStaticQueue_html_a87b50a9d8024c75393d1eeac822b3ca8"><div class="ttname"><a href="classStaticQueue.html#a87b50a9d8024c75393d1eeac822b3ca8">StaticQueue::blocked</a></div><div class="ttdeci">bool blocked</div><div class="ttdoc">Define if the call of a Push or Pop function must be blocked or unblocked.</div><div class="ttdef"><b>Definition:</b> <a href="StaticQueue_8h_source.html#l00036">StaticQueue.h:36</a></div></div>

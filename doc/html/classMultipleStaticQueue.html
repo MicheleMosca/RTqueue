@@ -78,9 +78,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab30ca5b22ba2fca4953ae194bdf624a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleStaticQueue.html#ab30ca5b22ba2fca4953ae194bdf624a1">MultipleStaticQueue</a> (size_t <a class="el" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>, QueueType type, size_t dimension, bool blocked=true)</td></tr>
-<tr class="memdesc:ab30ca5b22ba2fca4953ae194bdf624a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classMultipleStaticQueue.html" title="Stucture definition of a MultipleStaticQueue.">MultipleStaticQueue</a>.  <a href="classMultipleStaticQueue.html#ab30ca5b22ba2fca4953ae194bdf624a1">More...</a><br /></td></tr>
-<tr class="separator:ab30ca5b22ba2fca4953ae194bdf624a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6047e86afea4e1a4552f058a59b64bc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleStaticQueue.html#a6047e86afea4e1a4552f058a59b64bc3">MultipleStaticQueue</a> (size_t <a class="el" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>, QueueType type, size_t dimension, bool blocked=true, bool persistence=true)</td></tr>
+<tr class="memdesc:a6047e86afea4e1a4552f058a59b64bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classMultipleStaticQueue.html" title="Stucture definition of a MultipleStaticQueue.">MultipleStaticQueue</a>.  <a href="classMultipleStaticQueue.html#a6047e86afea4e1a4552f058a59b64bc3">More...</a><br /></td></tr>
+<tr class="separator:a6047e86afea4e1a4552f058a59b64bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a021d19687be81ed19c2261286c07a960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleStaticQueue.html#a021d19687be81ed19c2261286c07a960">push</a> (T element, size_t priority=0)</td></tr>
 <tr class="memdesc:a021d19687be81ed19c2261286c07a960"><td class="mdescLeft">&#160;</td><td class="mdescRight">push method for each queue  <a href="classMultipleStaticQueue.html#a021d19687be81ed19c2261286c07a960">More...</a><br /></td></tr>
 <tr class="separator:a021d19687be81ed19c2261286c07a960"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +108,8 @@ class MultipleStaticQueue&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="MultipleStaticQueue_8h_source.html#l00018">18</a> of file <a class="el" href="MultipleStaticQueue_8h_source.html">MultipleStaticQueue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab30ca5b22ba2fca4953ae194bdf624a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab30ca5b22ba2fca4953ae194bdf624a1">&#9670;&nbsp;</a></span>MultipleStaticQueue()</h2>
+<a id="a6047e86afea4e1a4552f058a59b64bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6047e86afea4e1a4552f058a59b64bc3">&#9670;&nbsp;</a></span>MultipleStaticQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +141,13 @@ template&lt;class T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>blocked</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>blocked</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>persistence</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,7 +166,7 @@ template&lt;class T &gt; </div>
 <p>switch case for FIFO or LIFO politics</p>
 
 <p class="definition">Definition at line <a class="el" href="MultipleStaticQueue_8h_source.html#l00028">28</a> of file <a class="el" href="MultipleStaticQueue_8h_source.html">MultipleStaticQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                              {</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                                                       {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this-&gt; <a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a> = <a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
@@ -168,13 +174,13 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">case</span> FIFO:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a> = <span class="keyword">new</span> <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>[this-&gt;<a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>];</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;<a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>; i++)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i] = <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>(dimension, blocked);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i] = <a class="code" href="classFIFOStaticQueue.html">FIFOStaticQueue&lt;T&gt;</a>(dimension, blocked, persistence);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">case</span> LIFO:</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a> = <span class="keyword">new</span> <a class="code" href="classLIFOStaticQueue.html">LIFOStaticQueue&lt;T&gt;</a>[this-&gt;<a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>];</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;<a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>; i++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i] = <a class="code" href="classLIFOStaticQueue.html">LIFOStaticQueue&lt;T&gt;</a>(dimension, blocked);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i] = <a class="code" href="classLIFOStaticQueue.html">LIFOStaticQueue&lt;T&gt;</a>(dimension, blocked, persistence);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">default</span>:</div>
@@ -231,7 +237,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Priority number is greater then number of queue&quot;</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = priority; i &lt; this-&gt;<a class="code" href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">num</a>; i++)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i].full())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i].full() || !this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i].persistent())</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    this-&gt;<a class="code" href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">queue</a>[i].push(element);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">return</span>;</div>
@@ -246,8 +252,8 @@ template&lt;class T &gt; </div>
 <li><a class="el" href="MultipleStaticQueue_8h_source.html">MultipleStaticQueue.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassLIFOStaticQueue_html"><div class="ttname"><a href="classLIFOStaticQueue.html">LIFOStaticQueue</a></div><div class="ttdoc">Stucture definition of a LIFOStaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="LIFOStaticQueue_8h_source.html#l00009">LIFOStaticQueue.h:9</a></div></div>
-<div class="ttc" id="aclassFIFOStaticQueue_html"><div class="ttname"><a href="classFIFOStaticQueue.html">FIFOStaticQueue</a></div><div class="ttdoc">Definition of a LinkedQueue based on FIFO schedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00009">FIFOStaticQueue.h:9</a></div></div>
+<div class="ttc" id="aclassLIFOStaticQueue_html"><div class="ttname"><a href="classLIFOStaticQueue.html">LIFOStaticQueue</a></div><div class="ttdoc">Definition of a StaticQueue based on LIFO shedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="LIFOStaticQueue_8h_source.html#l00009">LIFOStaticQueue.h:9</a></div></div>
+<div class="ttc" id="aclassFIFOStaticQueue_html"><div class="ttname"><a href="classFIFOStaticQueue.html">FIFOStaticQueue</a></div><div class="ttdoc">Definition of a StaticQueue based on FIFO schedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOStaticQueue_8h_source.html#l00009">FIFOStaticQueue.h:9</a></div></div>
 <div class="ttc" id="aclassMultipleStaticQueue_html_a7eb36d17d8dcc741f9f592f8130ebd39"><div class="ttname"><a href="classMultipleStaticQueue.html#a7eb36d17d8dcc741f9f592f8130ebd39">MultipleStaticQueue::queue</a></div><div class="ttdeci">StaticQueue&lt; T &gt; * queue</div><div class="ttdoc">Pointer to the StaticQueue.</div><div class="ttdef"><b>Definition:</b> <a href="MultipleStaticQueue_8h_source.html#l00021">MultipleStaticQueue.h:21</a></div></div>
 <div class="ttc" id="aclassMultipleStaticQueue_html_a0e6584b078699e7b1d386cedb194b4c8"><div class="ttname"><a href="classMultipleStaticQueue.html#a0e6584b078699e7b1d386cedb194b4c8">MultipleStaticQueue::num</a></div><div class="ttdeci">size_t num</div><div class="ttdoc">Number of the queues.</div><div class="ttdef"><b>Definition:</b> <a href="MultipleStaticQueue_8h_source.html#l00024">MultipleStaticQueue.h:24</a></div></div>
 <!-- start footer part -->

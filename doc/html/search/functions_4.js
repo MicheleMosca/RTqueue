@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lifolinkedqueue_50',['LIFOLinkedQueue',['../classLIFOLinkedQueue.html#a14385c911f2dd3d86e77bddc5425c879',1,'LIFOLinkedQueue']]],
-  ['lifostaticqueue_51',['LIFOStaticQueue',['../classLIFOStaticQueue.html#a101bd4f290ee51b261b5e54da7650a87',1,'LIFOStaticQueue::LIFOStaticQueue()'],['../classLIFOStaticQueue.html#a551d27449b3cd34326e0e30bf2e9c4bc',1,'LIFOStaticQueue::LIFOStaticQueue(size_t dimension, bool blocked=true)']]],
-  ['linkedqueue_52',['LinkedQueue',['../classLinkedQueue.html#a52c7f2692e2cad47a7433bd15fb9c182',1,'LinkedQueue']]]
+  ['lifolinkedqueue_52',['LIFOLinkedQueue',['../classLIFOLinkedQueue.html#a6b72067a164bb80265e78b9ffcd433f6',1,'LIFOLinkedQueue']]],
+  ['lifostaticqueue_53',['LIFOStaticQueue',['../classLIFOStaticQueue.html#a101bd4f290ee51b261b5e54da7650a87',1,'LIFOStaticQueue::LIFOStaticQueue()'],['../classLIFOStaticQueue.html#afbda816829fa9af9c82d5f77921bb706',1,'LIFOStaticQueue::LIFOStaticQueue(size_t dimension, bool blocked=true, bool persistence=true)']]],
+  ['linkedqueue_54',['LinkedQueue',['../classLinkedQueue.html#a641e6ad1c37af48f9eb044c5daacb495',1,'LinkedQueue']]]
 ];

@@ -78,9 +78,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4509b64c9aba6772cb1e9c3dbc5b48e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleLinkedQueue.html#a4509b64c9aba6772cb1e9c3dbc5b48e7">MultipleLinkedQueue</a> (size_t <a class="el" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>, QueueType type, int dimension=UNLIMITED, bool blocked=true)</td></tr>
-<tr class="memdesc:a4509b64c9aba6772cb1e9c3dbc5b48e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classMultipleLinkedQueue.html" title="Structure definition of a MultipleLinkedQueue.">MultipleLinkedQueue</a>.  <a href="classMultipleLinkedQueue.html#a4509b64c9aba6772cb1e9c3dbc5b48e7">More...</a><br /></td></tr>
-<tr class="separator:a4509b64c9aba6772cb1e9c3dbc5b48e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485c0bf031ea8796027001fa3c79dd37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleLinkedQueue.html#a485c0bf031ea8796027001fa3c79dd37">MultipleLinkedQueue</a> (size_t <a class="el" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>, QueueType type, int dimension=UNLIMITED, bool blocked=true, bool persistence=true)</td></tr>
+<tr class="memdesc:a485c0bf031ea8796027001fa3c79dd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classMultipleLinkedQueue.html" title="Structure definition of a MultipleLinkedQueue.">MultipleLinkedQueue</a>.  <a href="classMultipleLinkedQueue.html#a485c0bf031ea8796027001fa3c79dd37">More...</a><br /></td></tr>
+<tr class="separator:a485c0bf031ea8796027001fa3c79dd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7d8272583328ab08c86966b9ed9e1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultipleLinkedQueue.html#ace7d8272583328ab08c86966b9ed9e1d">push</a> (T element, size_t priority)</td></tr>
 <tr class="memdesc:ace7d8272583328ab08c86966b9ed9e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">push method for each queue  <a href="classMultipleLinkedQueue.html#ace7d8272583328ab08c86966b9ed9e1d">More...</a><br /></td></tr>
 <tr class="separator:ace7d8272583328ab08c86966b9ed9e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +108,8 @@ class MultipleLinkedQueue&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="MultipleLinkedQueue_8h_source.html#l00018">18</a> of file <a class="el" href="MultipleLinkedQueue_8h_source.html">MultipleLinkedQueue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4509b64c9aba6772cb1e9c3dbc5b48e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4509b64c9aba6772cb1e9c3dbc5b48e7">&#9670;&nbsp;</a></span>MultipleLinkedQueue()</h2>
+<a id="a485c0bf031ea8796027001fa3c79dd37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485c0bf031ea8796027001fa3c79dd37">&#9670;&nbsp;</a></span>MultipleLinkedQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +141,13 @@ template&lt;class T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>blocked</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>blocked</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>persistence</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,7 +166,7 @@ template&lt;class T &gt; </div>
 <p>switch case for FIFO or LIFO politics</p>
 
 <p class="definition">Definition at line <a class="el" href="MultipleLinkedQueue_8h_source.html#l00028">28</a> of file <a class="el" href="MultipleLinkedQueue_8h_source.html">MultipleLinkedQueue.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                                       {</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                                                                {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this-&gt; <a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a> = <a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
@@ -168,13 +174,13 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">case</span> FIFO:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a> = <span class="keyword">new</span> <a class="code" href="classFIFOLinkedQueue.html">FIFOLinkedQueue&lt;T&gt;</a>[this-&gt;<a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>];</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;<a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>; i++)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i] = <a class="code" href="classFIFOLinkedQueue.html">FIFOLinkedQueue&lt;T&gt;</a>(dimension, blocked);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i] = <a class="code" href="classFIFOLinkedQueue.html">FIFOLinkedQueue&lt;T&gt;</a>(dimension, blocked, persistence);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">case</span> LIFO:</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a> = <span class="keyword">new</span> <a class="code" href="classLIFOLinkedQueue.html">LIFOLinkedQueue&lt;T&gt;</a>[this-&gt;<a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>];</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;<a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>; i++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i] = <a class="code" href="classLIFOLinkedQueue.html">LIFOLinkedQueue&lt;T&gt;</a>(dimension, blocked);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i] = <a class="code" href="classLIFOLinkedQueue.html">LIFOLinkedQueue&lt;T&gt;</a>(dimension, blocked, persistence);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">default</span>:</div>
@@ -231,7 +237,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Priority number is greater then number of queue&quot;</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = priority; i &lt; this-&gt;<a class="code" href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">num</a>; i++)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i].full())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i].full() || !this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i].persistent())</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    this-&gt;<a class="code" href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">queue</a>[i].push(element);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">return</span>;</div>
@@ -249,7 +255,7 @@ template&lt;class T &gt; </div>
 <div class="ttc" id="aclassMultipleLinkedQueue_html_ae43c6bf4eab5f1bc8010ee7e8f68b3f4"><div class="ttname"><a href="classMultipleLinkedQueue.html#ae43c6bf4eab5f1bc8010ee7e8f68b3f4">MultipleLinkedQueue::num</a></div><div class="ttdeci">size_t num</div><div class="ttdoc">Number of the queues.</div><div class="ttdef"><b>Definition:</b> <a href="MultipleLinkedQueue_8h_source.html#l00024">MultipleLinkedQueue.h:24</a></div></div>
 <div class="ttc" id="aclassMultipleLinkedQueue_html_abae782c33a56263df6ae64c2fd5bad57"><div class="ttname"><a href="classMultipleLinkedQueue.html#abae782c33a56263df6ae64c2fd5bad57">MultipleLinkedQueue::queue</a></div><div class="ttdeci">LinkedQueue&lt; T &gt; * queue</div><div class="ttdoc">Pointer to the LinkedQueue.</div><div class="ttdef"><b>Definition:</b> <a href="MultipleLinkedQueue_8h_source.html#l00021">MultipleLinkedQueue.h:21</a></div></div>
 <div class="ttc" id="aclassFIFOLinkedQueue_html"><div class="ttname"><a href="classFIFOLinkedQueue.html">FIFOLinkedQueue</a></div><div class="ttdoc">Definition of a LinkedQueue based on FIFO schedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="FIFOLinkedQueue_8h_source.html#l00012">FIFOLinkedQueue.h:12</a></div></div>
-<div class="ttc" id="aclassLIFOLinkedQueue_html"><div class="ttname"><a href="classLIFOLinkedQueue.html">LIFOLinkedQueue</a></div><div class="ttdoc">Structure definition of a LIFOLinkedQueue.</div><div class="ttdef"><b>Definition:</b> <a href="LIFOLinkedQueue_8h_source.html#l00011">LIFOLinkedQueue.h:11</a></div></div>
+<div class="ttc" id="aclassLIFOLinkedQueue_html"><div class="ttname"><a href="classLIFOLinkedQueue.html">LIFOLinkedQueue</a></div><div class="ttdoc">Structure of a LinkedQueue based on LIFO shedular's rule.</div><div class="ttdef"><b>Definition:</b> <a href="LIFOLinkedQueue_8h_source.html#l00012">LIFOLinkedQueue.h:12</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

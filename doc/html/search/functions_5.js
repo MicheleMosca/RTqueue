@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['multiplelinkedqueue_53',['MultipleLinkedQueue',['../classMultipleLinkedQueue.html#a4509b64c9aba6772cb1e9c3dbc5b48e7',1,'MultipleLinkedQueue']]],
-  ['multiplestaticqueue_54',['MultipleStaticQueue',['../classMultipleStaticQueue.html#ab30ca5b22ba2fca4953ae194bdf624a1',1,'MultipleStaticQueue']]]
+  ['multiplelinkedqueue_55',['MultipleLinkedQueue',['../classMultipleLinkedQueue.html#a485c0bf031ea8796027001fa3c79dd37',1,'MultipleLinkedQueue']]],
+  ['multiplestaticqueue_56',['MultipleStaticQueue',['../classMultipleStaticQueue.html#a6047e86afea4e1a4552f058a59b64bc3',1,'MultipleStaticQueue']]]
 ];
