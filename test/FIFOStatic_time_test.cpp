@@ -93,6 +93,11 @@ int main()
         return -1;
     }
 
+    if(ptask_create_param(reader, &params_lettori) == -1){
+        std::cerr << "errore ptask_create_'param()" << std::endl;
+        return -1;
+    }
+
     for (;;);
 
     return 0;

@@ -31,4 +31,4 @@ print("Statistics Metrics Writer1 (Read)")
 print(df[df['Thread'] == 'read_thread1']['Time'].describe())
 print()
 
-plt.show()
+#plt.show()

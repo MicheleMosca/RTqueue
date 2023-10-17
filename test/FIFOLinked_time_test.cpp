@@ -62,7 +62,7 @@ int main()
 {
     ptask_init(SCHED_FIFO, GLOBAL, NO_PROTOCOL);
 
-    queue = new FIFOLinkedQueue<data>();
+    queue = new FIFOLinkedQueue<data>(100);
 
     tpars params_scrittori = TASK_SPEC_DFL;
     params_scrittori.period = tspec_from(20, MILLI);
@@ -87,6 +87,11 @@ int main()
     params_lettori.priority = 1;
     params_lettori.measure_flag = 1;
     params_lettori.act_flag = NOW;
+
+    if(ptask_create_param(reader, &params_lettori) == -1){
+        std::cerr << "errore ptask_create_'param()" << std::endl;
+        return -1;
+    }
 
     if(ptask_create_param(reader, &params_lettori) == -1){
         std::cerr << "errore ptask_create_'param()" << std::endl;
