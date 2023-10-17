@@ -1,0 +1,130 @@
+\hypertarget{classStaticQueue}{}\doxysection{Static\+Queue$<$ T $>$ Class Template Reference}
+\label{classStaticQueue}\index{StaticQueue$<$ T $>$@{StaticQueue$<$ T $>$}}
+
+
+Struture definition of a \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}.  
+
+
+
+
+{\ttfamily \#include $<$Static\+Queue.\+h$>$}
+
+
+
+Inheritance diagram for Static\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStaticQueue__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}\label{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}} 
+\mbox{\hyperlink{classStaticQueue_aa74c41724a545921ad12ed173c1bf2c5}{Static\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Dummy constructor (D\+ON\textquotesingle{}T U\+SE I\+T!) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStaticQueue_a115e94be875ab972efdca0c0c3d0d616}{Static\+Queue}} (size\+\_\+t \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}, bool \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}}, bool \mbox{\hyperlink{classStaticQueue_ae829521ae3f530393794241de25f1ff7}{persistence}})
+\item 
+\mbox{\Hypertarget{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}\label{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}} 
+virtual void \mbox{\hyperlink{classStaticQueue_a0416b8e37be7a36b5a5fe280ac509ff4}{push}} (T element)=0
+\begin{DoxyCompactList}\small\item\em Insert a new element inside the \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}\label{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}} 
+virtual T \mbox{\hyperlink{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}{pop}} (void)=0
+\begin{DoxyCompactList}\small\item\em Extract an element of the \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a6cd0be6da070784aaf2c56843e86fd3d}\label{classStaticQueue_a6cd0be6da070784aaf2c56843e86fd3d}} 
+T \mbox{\hyperlink{classStaticQueue_a6cd0be6da070784aaf2c56843e86fd3d}{front}} (void)
+\begin{DoxyCompactList}\small\item\em Get the element of in front of the queue without remove it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a1cac324441ba84478b7e82b12145ae32}\label{classStaticQueue_a1cac324441ba84478b7e82b12145ae32}} 
+T \mbox{\hyperlink{classStaticQueue_a1cac324441ba84478b7e82b12145ae32}{back}} (void)
+\begin{DoxyCompactList}\small\item\em Get the element of in back of the queue without remove it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_aad53e1647a02c317ad43f6ad3982bdea}\label{classStaticQueue_aad53e1647a02c317ad43f6ad3982bdea}} 
+int \mbox{\hyperlink{classStaticQueue_aad53e1647a02c317ad43f6ad3982bdea}{size}} (void)
+\begin{DoxyCompactList}\small\item\em Get the current size of the queue (number of element inside) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a3009ac45a276de7ddfdc901fa9091635}\label{classStaticQueue_a3009ac45a276de7ddfdc901fa9091635}} 
+bool \mbox{\hyperlink{classStaticQueue_a3009ac45a276de7ddfdc901fa9091635}{empty}} (void)
+\begin{DoxyCompactList}\small\item\em Return if the queue is empty. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_afb954a20662d63dc88e74a7e7a0f45ff}\label{classStaticQueue_afb954a20662d63dc88e74a7e7a0f45ff}} 
+bool \mbox{\hyperlink{classStaticQueue_afb954a20662d63dc88e74a7e7a0f45ff}{full}} (void)
+\begin{DoxyCompactList}\small\item\em Return if the queue is full. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a594e29b10c1caed8c327e769f80671c9}\label{classStaticQueue_a594e29b10c1caed8c327e769f80671c9}} 
+bool \mbox{\hyperlink{classStaticQueue_a594e29b10c1caed8c327e769f80671c9}{persistent}} (void)
+\begin{DoxyCompactList}\small\item\em Return if element inside the queue are persistent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}\label{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}} 
+T $\ast$ \mbox{\hyperlink{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}{queue}}
+\begin{DoxyCompactList}\small\item\em Definition on the static queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}\label{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}} 
+size\+\_\+t \mbox{\hyperlink{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}{first\+Elem}}
+\begin{DoxyCompactList}\small\item\em First element\textquotesingle{}s index of the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}\label{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}} 
+size\+\_\+t \mbox{\hyperlink{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}{last\+Elem}}
+\begin{DoxyCompactList}\small\item\em Last element\textquotesingle{}s index of the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_adadb539531aa92d704d6a746d26a213d}\label{classStaticQueue_adadb539531aa92d704d6a746d26a213d}} 
+size\+\_\+t \mbox{\hyperlink{classStaticQueue_adadb539531aa92d704d6a746d26a213d}{count}}
+\begin{DoxyCompactList}\small\item\em Number of element inside the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}\label{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}} 
+size\+\_\+t \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}
+\begin{DoxyCompactList}\small\item\em Define the maximum dimension of the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}\label{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}} 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}{condition\+Push}}
+\begin{DoxyCompactList}\small\item\em Condition variable to block thread or task waiting for a new Push function call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}\label{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}} 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}{condition\+Pop}}
+\begin{DoxyCompactList}\small\item\em Condition variable to block thread or task waiting for a new Pop function call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}\label{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}} 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}{mutex}}
+\begin{DoxyCompactList}\small\item\em Mutex semaphore to access to Push or Pop function in a Thread safe way. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}\label{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}} 
+bool \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}}
+\begin{DoxyCompactList}\small\item\em Define if the call of a Push or Pop function must be blocked or unblocked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStaticQueue_ae829521ae3f530393794241de25f1ff7}\label{classStaticQueue_ae829521ae3f530393794241de25f1ff7}} 
+bool \mbox{\hyperlink{classStaticQueue_ae829521ae3f530393794241de25f1ff7}{persistence}}
+\begin{DoxyCompactList}\small\item\em Define if element inside the queue are persistent, that means it can be removed only with a \mbox{\hyperlink{classStaticQueue_a58e61e6c1efc58c6bba9caa9dc28be92}{pop()}} function. Otherwise the element will be replaced with a newer one if the queue is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Static\+Queue$<$ T $>$}
+
+Struture definition of a \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. 
+
+Definition at line 9 of file Static\+Queue.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStaticQueue_a115e94be875ab972efdca0c0c3d0d616}\label{classStaticQueue_a115e94be875ab972efdca0c0c3d0d616}} 
+\index{StaticQueue$<$ T $>$@{StaticQueue$<$ T $>$}!StaticQueue@{StaticQueue}}
+\index{StaticQueue@{StaticQueue}!StaticQueue$<$ T $>$@{StaticQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StaticQueue()}{StaticQueue()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classStaticQueue}{Static\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classStaticQueue}{Static\+Queue}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{dimension,  }\item[{bool}]{blocked,  }\item[{bool}]{persistence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of a \mbox{\hyperlink{classStaticQueue}{Static\+Queue}}. blocked and dimension are mandatory value. 
+
+Definition at line 47 of file Static\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                                                      \{}
+\DoxyCodeLine{48             this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}} = \mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}};}
+\DoxyCodeLine{49             \mbox{\hyperlink{classStaticQueue_ad7235bbc1381b5fe9ab60bb51e17ac9b}{queue}} = \textcolor{keyword}{new} T[this-\/>\mbox{\hyperlink{classStaticQueue_acc0d210b1988952e2110bda1e8929bf3}{dimension}}];}
+\DoxyCodeLine{50             this-\/>\mbox{\hyperlink{classStaticQueue_a5717c30620e0bcee6f0aea049aa711ae}{firstElem}} = this-\/>\mbox{\hyperlink{classStaticQueue_ae45dbb66dc85974bc27ec32f1a073dc1}{lastElem}} = 0;}
+\DoxyCodeLine{51             \mbox{\hyperlink{classStaticQueue_a3aa0b018488ce0cfe6ad1394096c2c4e}{conditionPush}} = PTHREAD\_COND\_INITIALIZER;}
+\DoxyCodeLine{52             \mbox{\hyperlink{classStaticQueue_a04709a0bfc1ae19cf4c80936263b9f8d}{conditionPop}} = PTHREAD\_COND\_INITIALIZER;}
+\DoxyCodeLine{53             \mbox{\hyperlink{classStaticQueue_a84b809176e57d1fed18b27f499dc6a01}{mutex}} = PTHREAD\_MUTEX\_INITIALIZER;}
+\DoxyCodeLine{54             \mbox{\hyperlink{classStaticQueue_adadb539531aa92d704d6a746d26a213d}{count}} = 0;}
+\DoxyCodeLine{55             this-\/>\mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}} = \mbox{\hyperlink{classStaticQueue_a87b50a9d8024c75393d1eeac822b3ca8}{blocked}};}
+\DoxyCodeLine{56             this-\/>\mbox{\hyperlink{classStaticQueue_ae829521ae3f530393794241de25f1ff7}{persistence}} = \mbox{\hyperlink{classStaticQueue_ae829521ae3f530393794241de25f1ff7}{persistence}};}
+\DoxyCodeLine{57         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Static\+Queue.\+h\end{DoxyCompactItemize}

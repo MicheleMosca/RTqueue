@@ -1,0 +1,5 @@
+<map id="StaticQueue&lt; T &gt;" name="StaticQueue&lt; T &gt;">
+<area shape="rect" id="node1" title="Struture definition of a StaticQueue." alt="" coords="117,5,255,32"/>
+<area shape="rect" id="node2" href="$classFIFOStaticQueue.html" title="Definition of a StaticQueue based on FIFO schedular&#39;s rule." alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node3" href="$classLIFOStaticQueue.html" title="Definition of a StaticQueue based on LIFO shedular&#39;s rule." alt="" coords="199,80,367,107"/>
+</map>

@@ -1,0 +1,401 @@
+Thread Iter Time Read
+writer1 0 13123
+writer0 0 77989
+reader2 0 51457 0
+reader2 0 476 1
+writer1 1 2907
+writer1 2 1830
+writer0 1 945
+reader3 1 112015 0
+writer0 2 436
+writer1 3 299
+reader2 3 145032 1
+reader2 2 247 1
+reader2 1 161 1
+reader3 2 357 0
+reader3 4 597 1
+writer1 4 5756
+writer0 3 21736
+writer0 4 621
+writer1 5 493
+reader3 4 44723 0
+reader3 5 314 1
+reader2 3 108627 0
+writer0 5 3812
+writer1 6 3256
+writer1 7 369
+reader3 7 81508 1
+reader3 5 322 0
+writer0 6 3152
+reader2 6 87753 1
+reader2 6 621 0
+writer1 8 2631
+writer0 7 3872
+reader2 7 83489 0
+reader2 8 271 1
+writer0 8 4623
+reader2 8 27842 0
+writer1 9 29582
+reader3 9 165782 1
+writer0 9 3836
+writer1 10 6676
+writer1 11 373
+reader3 11 87779 1
+reader3 9 344 0
+writer0 10 3203
+reader2 10 116467 1
+reader3 10 32551 0
+writer1 12 3009
+writer0 11 4743
+reader3 11 70091 0
+reader3 12 255 1
+writer0 12 6033
+writer1 13 402
+writer1 14 556
+writer0 13 706
+writer0 14 408
+writer0 15 586
+reader2 13 172429 0
+reader2 15 645 0
+reader2 14 198 0
+reader2 14 189 1
+writer0 16 287
+reader2 16 253 0
+reader2 15 262 1
+reader2 12 182 0
+reader3 13 83405 1
+writer1 15 428
+writer1 16 2147
+writer0 17 2671
+reader2 17 44475 0
+reader2 16 238 1
+writer0 18 33434
+reader2 18 68886 0
+writer1 17 43160
+reader2 17 24868 1
+writer0 19 1634
+writer1 18 26901
+reader2 18 50793 1
+reader3 19 186724 0
+writer0 20 2922
+writer1 19 3613
+reader2 19 59789 1
+reader2 20 238 0
+writer0 21 9995
+reader2 21 36434 0
+reader2 20 270 1
+writer1 20 27676
+writer0 22 2884
+writer1 21 7138
+reader3 21 146492 1
+reader3 22 208 0
+writer1 22 13494
+reader3 22 30145 1
+reader3 23 7801 0
+writer0 23 31407
+writer1 23 2860
+writer0 24 9576
+reader3 24 53746 0
+reader3 23 285 1
+writer0 25 25611
+reader3 25 34124 0
+reader3 24 538 1
+writer1 24 82829
+writer0 26 367
+reader2 26 234879 0
+writer0 27 2505
+writer1 25 2191
+reader3 25 48766 1
+reader3 27 216 0
+writer1 26 31624
+reader3 26 79154 1
+writer0 28 45858
+reader2 28 123324 0
+writer1 27 3725
+writer0 29 14584
+reader2 29 74110 0
+reader2 27 205 1
+writer1 28 3794
+writer0 30 3289
+writer0 31 338
+reader3 30 158226 0
+reader2 31 105687 0
+writer1 29 2724
+reader3 28 335 1
+reader2 29 26486 1
+writer0 32 3008
+writer1 30 3648
+reader3 30 57046 1
+reader3 32 202 0
+writer0 33 1995
+reader2 31 85995 1
+reader2 33 225 0
+writer1 31 4688
+writer0 34 1648
+writer1 32 2154
+reader2 32 36305 1
+reader2 34 197 0
+writer0 35 18459
+reader2 35 35138 0
+reader2 33 7495 1
+writer1 33 35252
+writer0 36 3206
+writer1 34 9587
+reader2 34 55533 1
+reader2 36 6888 0
+writer1 35 25678
+reader2 35 41518 1
+writer0 37 36948
+reader3 37 264600 0
+writer1 36 3978
+reader2 36 45798 1
+writer0 38 29145
+reader3 38 50800 0
+writer1 37 1702
+writer0 39 2866
+reader3 37 61928 1
+reader2 39 69445 0
+writer0 40 4134
+writer1 38 344
+reader3 38 27760 1
+reader3 40 319 0
+writer0 41 2966
+writer1 39 308
+reader3 41 37680 0
+reader2 39 40761 1
+writer0 42 8859
+reader3 42 33685 0
+reader3 40 387 1
+writer1 40 30376
+writer0 43 2679
+writer0 44 1050
+reader3 44 93063 0
+reader3 43 211 0
+writer1 41 694
+reader3 41 213 1
+writer0 45 10401
+reader2 45 185584 0
+reader2 42 308 1
+writer1 42 27677
+writer0 46 3102
+writer1 43 9199
+reader2 43 53366 1
+reader2 46 236 0
+writer1 44 25761
+reader2 44 42555 1
+writer0 47 42768
+reader3 47 175042 0
+writer1 45 2576
+writer1 46 25348
+reader3 46 97332 1
+reader3 45 260 1
+reader3 48 225 0
+writer0 48 42125
+writer0 49 3411
+writer0 50 3035
+reader3 47 72294 1
+reader2 50 227107 0
+writer1 47 667
+reader3 49 278 0
+writer0 51 2730
+writer0 52 1040
+reader2 52 90706 0
+reader2 51 228 0
+writer1 48 715
+reader2 48 193 1
+writer0 53 1986
+writer1 49 4866
+reader3 49 121527 1
+reader3 53 211 0
+writer1 50 366
+writer0 54 1612
+reader3 50 194 1
+reader3 54 511 0
+writer1 51 2909
+writer0 55 330
+reader3 51 33257 1
+reader2 55 61757 0
+writer0 56 4424
+reader3 56 21000 0
+writer1 52 30807
+reader2 52 40369 1
+writer0 57 3891
+writer1 53 9186
+reader3 53 81023 1
+reader3 54 433 1
+reader3 57 193 0
+writer1 54 321
+writer1 55 1500
+writer0 58 5156
+reader2 58 1178673 0
+reader2 55 256 1
+writer1 56 1502
+writer0 59 3390
+reader2 59 22773 0
+reader2 56 192 1
+writer0 60 5452
+reader2 60 21777 0
+writer1 57 41818
+writer1 58 870
+reader2 58 43694 1
+writer0 61 2985
+reader3 57 1216801 1
+reader2 61 36146 0
+writer1 59 2755
+writer1 60 1585
+reader2 60 67772 1
+writer0 62 704
+reader3 59 92021 1
+reader2 62 244 0
+writer1 61 10164
+reader3 61 35757 1
+writer0 63 34303
+reader2 63 46651 0
+writer1 62 1677
+reader3 62 70212 1
+writer1 63 3486
+writer0 64 25134
+reader3 64 50251 0
+reader2 63 103433 1
+writer1 64 2926
+writer0 65 3542
+reader3 65 55072 0
+reader3 64 207 1
+writer1 65 11358
+reader3 65 38339 1
+reader3 66 307 0
+writer0 66 28892
+writer1 66 2857
+writer0 67 7419
+reader2 67 146350 0
+reader2 66 194 1
+writer1 67 18045
+reader2 67 37061 1
+writer0 68 49895
+reader3 68 111984 0
+writer1 68 2665
+writer0 69 4029
+reader3 69 61529 0
+reader3 68 233 1
+writer1 69 10292
+reader3 69 35591 1
+writer0 70 35162
+writer1 70 313
+reader3 70 23456 1
+writer0 71 248
+reader2 70 160230 0
+reader3 71 295 0
+writer1 71 2625
+writer0 72 3318
+reader2 72 47163 0
+reader2 71 223 1
+writer0 73 4472
+reader2 73 12417 0
+writer1 72 35751
+writer0 74 31110
+writer1 73 332
+reader2 73 81975 1
+reader2 74 965 0
+writer0 75 1143
+writer1 74 303
+writer0 76 477
+writer1 75 290
+writer0 77 488
+reader3 72 161394 1
+reader3 76 434 1
+reader3 77 249 0
+reader3 76 179 0
+reader3 74 173 1
+reader2 75 67281 1
+writer1 76 723
+reader3 75 216 0
+writer1 77 7239
+writer0 78 440
+reader3 77 497 1
+reader2 78 55356 0
+writer0 79 4210
+writer1 78 312
+reader2 78 27387 1
+reader3 79 41061 0
+writer0 80 3130
+reader2 80 29510 0
+writer1 79 8035
+reader3 79 44655 1
+writer0 81 3497
+reader2 81 32401 0
+writer1 80 3896
+reader3 80 46040 1
+reader3 82 269 0
+writer0 82 20623
+writer1 81 9543
+reader3 81 38028 1
+writer0 83 2790
+reader2 83 103769 0
+writer1 82 2870
+reader3 82 42773 1
+writer0 84 2869
+writer1 83 22095
+reader3 83 2464766 1
+reader3 84 252 0
+writer0 85 34251
+reader2 85 2504246 0
+writer1 84 3537
+reader2 84 12205 1
+writer0 86 11002
+reader3 86 48471 0
+writer1 85 42564
+reader2 85 47966 1
+writer0 87 3433
+reader3 87 35242 0
+writer1 86 3942
+reader2 86 46249 1
+reader2 88 246 0
+writer0 88 20625
+writer1 87 106958
+reader2 87 141726 1
+writer0 89 96363
+reader3 89 187741 0
+writer1 88 1765
+writer0 90 9167
+reader3 90 51629 0
+reader3 88 277 1
+writer0 91 3060
+reader2 91 87968 0
+reader2 89 346 1
+writer1 89 1093
+writer0 92 7078
+reader2 92 34828 0
+writer0 93 3387
+writer1 90 28413
+reader2 90 74486 1
+reader2 93 302 0
+writer0 94 35102
+reader3 94 173717 0
+writer1 91 3611
+reader3 91 10926 1
+writer0 95 10156
+reader2 95 56716 0
+writer1 92 34115
+reader3 92 56824 1
+writer0 96 8129
+reader2 96 55920 0
+writer1 93 9354
+reader3 93 40472 1
+writer0 97 3326
+reader2 97 40996 0
+writer1 94 3824
+reader3 94 46270 1
+reader3 98 252 0
+writer0 98 20492
+writer1 95 7900
+reader3 95 34810 1
+writer0 99 2785
+reader2 99 97741 0
+writer1 96 2946
+reader3 96 42412 1
+writer1 97 2041
+reader2 97 65396 1
+writer1 98 3428
+reader3 98 74232 1
+writer1 99 3449
+reader2 99 48311 1

@@ -1,0 +1,225 @@
+\hypertarget{classLIFOLinkedQueue}{}\doxysection{L\+I\+F\+O\+Linked\+Queue$<$ T $>$ Class Template Reference}
+\label{classLIFOLinkedQueue}\index{LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}}
+
+
+Structure of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on L\+I\+FO shedular\textquotesingle{}s rule.  
+
+
+
+
+{\ttfamily \#include $<$L\+I\+F\+O\+Linked\+Queue.\+h$>$}
+
+
+
+Inheritance diagram for L\+I\+F\+O\+Linked\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classLIFOLinkedQueue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for L\+I\+F\+O\+Linked\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classLIFOLinkedQueue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLIFOLinkedQueue_a6b72067a164bb80265e78b9ffcd433f6}{L\+I\+F\+O\+Linked\+Queue}} (int \mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}}=U\+N\+L\+I\+M\+I\+T\+ED, bool \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}=true, bool \mbox{\hyperlink{classLinkedQueue_ac05eac8b998b529f9aff7762cbd2fc9e}{persistence}}=true)
+\item 
+void \mbox{\hyperlink{classLIFOLinkedQueue_a6d5bae79ec5e1fdfe6eaafd5d80fd91e}{push}} (T element)
+\begin{DoxyCompactList}\small\item\em Insert a new element inside the \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classLIFOLinkedQueue_a3ab23f0ab7ff46fb3d9d0c43f06d9fab}{pop}} (void)
+\begin{DoxyCompactList}\small\item\em Extract the last element that was insert into the \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLIFOLinkedQueue_ac87d16716c5af2e7d0d57b4ee953ab97}\label{classLIFOLinkedQueue_ac87d16716c5af2e7d0d57b4ee953ab97}} 
+void \mbox{\hyperlink{classLIFOLinkedQueue_ac87d16716c5af2e7d0d57b4ee953ab97}{print\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Print to the standard output the current state of the queue. It used only for debug purpose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class L\+I\+F\+O\+Linked\+Queue$<$ T $>$}
+
+Structure of a \mbox{\hyperlink{classLinkedQueue}{Linked\+Queue}} based on L\+I\+FO shedular\textquotesingle{}s rule. 
+
+Definition at line 12 of file L\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLIFOLinkedQueue_a6b72067a164bb80265e78b9ffcd433f6}\label{classLIFOLinkedQueue_a6b72067a164bb80265e78b9ffcd433f6}} 
+\index{LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}!LIFOLinkedQueue@{LIFOLinkedQueue}}
+\index{LIFOLinkedQueue@{LIFOLinkedQueue}!LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LIFOLinkedQueue()}{LIFOLinkedQueue()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}} (\begin{DoxyParamCaption}\item[{int}]{dimension = {\ttfamily UNLIMITED},  }\item[{bool}]{blocked = {\ttfamily true},  }\item[{bool}]{persistence = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of a \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}} blocked and dimensione are mandatory values Default value for blocked is true (Push and Pop function will be blocked functions) Default value for dimension is U\+N\+L\+I\+M\+I\+T\+ED 
+
+Definition at line 18 of file L\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 : \mbox{\hyperlink{classLinkedQueue}{LinkedQueue<T>}}(\mbox{\hyperlink{classLinkedQueue_ae2599e95301d14f36092c66488e0779c}{dimension}}, \mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}}, \mbox{\hyperlink{classLinkedQueue_ac05eac8b998b529f9aff7762cbd2fc9e}{persistence}})\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLIFOLinkedQueue_a3ab23f0ab7ff46fb3d9d0c43f06d9fab}\label{classLIFOLinkedQueue_a3ab23f0ab7ff46fb3d9d0c43f06d9fab}} 
+\index{LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Extract the last element that was insert into the \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}. 
+
+Mutex for critical section
+
+Empty control and check if block is set
+
+Wait condition\+: queue empty
+
+Extract an element
+
+Update the queue
+
+Update the number of elements inside the queue
+
+Signal pop done
+
+Leave the critical section
+
+Return the element
+
+Implements \mbox{\hyperlink{classLinkedQueue_a2da765bc8256e88f60e98fc62d94643f}{Linked\+Queue$<$ T $>$}}.
+
+
+
+Definition at line 74 of file L\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                    \{}
+\DoxyCodeLine{76             pthread\_mutex\_lock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79             \textcolor{keywordflow}{if} ( this-\/>\mbox{\hyperlink{classLinkedQueue_a5d011165fa8d26421fae69e3b5abd52e}{empty}}() \&\& !this-\/>\mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}} )\{}
+\DoxyCodeLine{80                 pthread\_mutex\_unlock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{throw} std::logic\_error(\textcolor{stringliteral}{"Queue is empty"});}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85             \textcolor{keywordflow}{while} (this-\/>\mbox{\hyperlink{classLinkedQueue_a5d011165fa8d26421fae69e3b5abd52e}{empty}}())\{}
+\DoxyCodeLine{86                 pthread\_cond\_wait(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}{conditionPush}}, \&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{87             \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90             T ret = this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}}-\/>getData();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93             \mbox{\hyperlink{classNode}{Node<T>}}* tmp = this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}};}
+\DoxyCodeLine{94             this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}} = this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}}-\/>getNext();}
+\DoxyCodeLine{95             \textcolor{keyword}{delete} tmp;}
+\DoxyCodeLine{96             }
+\DoxyCodeLine{98             this-\/>\mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}} -\/-\/;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{101             pthread\_cond\_signal(\&this-\/>\mbox{\hyperlink{classLinkedQueue_abf68072ebfc840014c1eda05fa194671}{conditionPop}});}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{104             pthread\_mutex\_unlock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{107             \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{108         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLIFOLinkedQueue_a6d5bae79ec5e1fdfe6eaafd5d80fd91e}\label{classLIFOLinkedQueue_a6d5bae79ec5e1fdfe6eaafd5d80fd91e}} 
+\index{LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}!push@{push}}
+\index{push@{push}!LIFOLinkedQueue$<$ T $>$@{LIFOLinkedQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Insert a new element inside the \mbox{\hyperlink{classLIFOLinkedQueue}{L\+I\+F\+O\+Linked\+Queue}}. 
+
+Mutex for critical section
+
+Dimension control and check if block is set
+
+Wait condition\+: queue is full
+
+If element are not persistence and the queue is full, remove the element on bottom of the queue
+
+Insert the new element in the queue
+
+Update the number of elements inside the queue
+
+Signal push done
+
+Leave the critical section
+
+Implements \mbox{\hyperlink{classLinkedQueue_afae894c7b31a2cc3fd6dadbc707fad17}{Linked\+Queue$<$ T $>$}}.
+
+
+
+Definition at line 21 of file L\+I\+F\+O\+Linked\+Queue.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{24             pthread\_mutex\_lock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27             \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}{full}}() \&\& !this-\/>\mbox{\hyperlink{classLinkedQueue_aba61a9751caa8a92ade0105ba2458505}{blocked}} \&\& this-\/>\mbox{\hyperlink{classLinkedQueue_ac43386b830bde22122b4049b3e4df565}{persistent}}())\{}
+\DoxyCodeLine{28                 pthread\_mutex\_unlock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{29                 \textcolor{keywordflow}{throw} std::logic\_error(\textcolor{stringliteral}{"Queue is full"});}
+\DoxyCodeLine{30             \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33             \textcolor{keywordflow}{while}(this-\/>\mbox{\hyperlink{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}{full}}() \&\& this-\/>\mbox{\hyperlink{classLinkedQueue_ac43386b830bde22122b4049b3e4df565}{persistent}}())\{}
+\DoxyCodeLine{34                 pthread\_cond\_wait(\&this-\/>\mbox{\hyperlink{classLinkedQueue_abf68072ebfc840014c1eda05fa194671}{conditionPop}}, \&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{35             \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38             \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLinkedQueue_acb93b29bd32a2e1b2cddfa7e2eed560c}{full}}() \&\& !this-\/>\mbox{\hyperlink{classLinkedQueue_ac43386b830bde22122b4049b3e4df565}{persistent}}())}
+\DoxyCodeLine{39             \{}
+\DoxyCodeLine{40                 \mbox{\hyperlink{classNode}{Node<T>}}* current = this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}}; }
+\DoxyCodeLine{41                 \textcolor{keywordflow}{while} (current-\/>\mbox{\hyperlink{classNode_ad09a8e2ee3df4d5d058356e517005a07}{getNext}}() != this-\/>last \&\& current-\/>\mbox{\hyperlink{classNode_ad09a8e2ee3df4d5d058356e517005a07}{getNext}}() != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{42                     current = current-\/>\mbox{\hyperlink{classNode_ad09a8e2ee3df4d5d058356e517005a07}{getNext}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44                 \mbox{\hyperlink{classNode}{Node<T>}}* tmp = this-\/>\mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}};}
+\DoxyCodeLine{45                 this-\/>\mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}} = current;}
+\DoxyCodeLine{46                 this-\/>\mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}}-\/>setNext(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{47                 \textcolor{keyword}{delete} tmp;}
+\DoxyCodeLine{48                 this-\/>\mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}}-\/-\/;}
+\DoxyCodeLine{49             \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52             \mbox{\hyperlink{classNode}{Node<T>}}* tmp = \textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node<T>}}();}
+\DoxyCodeLine{53             \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classLinkedQueue_a5d011165fa8d26421fae69e3b5abd52e}{empty}}())\{}
+\DoxyCodeLine{54                 this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}} = this-\/>\mbox{\hyperlink{classLinkedQueue_a90ee5d3f8f5d44b74b4513d597a89d8c}{last}} = tmp;}
+\DoxyCodeLine{55                 tmp-\/>\mbox{\hyperlink{classNode_a7d7bd6ce3bff8242ecb3352a449e1d48}{setData}}(element);}
+\DoxyCodeLine{56             \}}
+\DoxyCodeLine{57             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{58                 tmp-\/>\mbox{\hyperlink{classNode_a7d7bd6ce3bff8242ecb3352a449e1d48}{setData}}(element);}
+\DoxyCodeLine{59                 tmp-\/>\mbox{\hyperlink{classNode_ab3f03b7d668f36e4e3164998af528cec}{setNext}}(this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}});}
+\DoxyCodeLine{60                 this-\/>\mbox{\hyperlink{classLinkedQueue_adfea27d5f8028ff7b02c6555bb2657bd}{first}} = tmp;}
+\DoxyCodeLine{61             \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64             this-\/>\mbox{\hyperlink{classLinkedQueue_a264bdb605dffa4b96e90a30248b398fd}{count}}++;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67             pthread\_cond\_signal(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a96f93d546c8727048658fe7b335fe881}{conditionPush}});}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70             pthread\_mutex\_unlock(\&this-\/>\mbox{\hyperlink{classLinkedQueue_a5c1e6792ffb12805755dc2f8a11cb3f8}{mutex}});}
+\DoxyCodeLine{71         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+L\+I\+F\+O\+Linked\+Queue.\+h\end{DoxyCompactItemize}
