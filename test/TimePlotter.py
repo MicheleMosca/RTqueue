@@ -10,6 +10,7 @@ filename = sys.argv[1]
 df = pd.read_csv(filename, sep=' ')
 df.loc[df['Read'] == 0.0, 'Thread'] = "read_thread0"
 df.loc[df['Read'] == 1.0, 'Thread'] = "read_thread1"
+df = df[df['Iter'] <= 20]
 
 plt.figure(figsize=(15,10))
 sns.barplot(data=df, x = "Iter", y="Time", hue="Thread", errorbar=None)
